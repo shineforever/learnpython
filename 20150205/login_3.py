@@ -14,15 +14,18 @@ while True:
 	loginSuccess = False
 	username = raw_input('username:').strip()
 	lock_list = []
+#	lock_file = 'lock.txt'
 	f = file(lock_file)
 	for i in f.readlines():
 		h = i.strip('\n')
-	lock_list.append(h)
+		lock_list.append(h)
 	f.close()
-	print lock_list
+#	print lock_list
 	if username in lock_list:
 		print 'Sorry!%s has been locked!' % username
 		sys.exit()
+
+
 	for line in account_list:
 		line = line.split()
 		if username == line[0]:
