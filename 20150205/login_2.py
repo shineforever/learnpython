@@ -2,6 +2,7 @@
 # -*- coding:utf8 -*-
 
 import os
+import sys
 
 account_file = 'account.txt'
 lock_file = 'lock.txt'
@@ -19,7 +20,7 @@ while True:
 	lock_list.append(h)
 	if username in lock_list:
 		print 'Sorry!%s has been locked!' % username
-		break
+		sys.exit()
 	for line in account_list:
 		line = line.split()
 		if username == line[0]:
@@ -33,6 +34,7 @@ while True:
 				f = file(lock_file,'a')
 				f.write('%s\n' % username)
 				f.close()
-				print 'To many tries ,going to lock %s '% username
-  		if loginSuccess == True:break #jump out the 'for loop'
-	if loginSuccess == True:break #jump out the 'while loop'
+				print 'To many tries ,going to lock %s!'% username
+				sys.exit()
+  		if loginSuccess is True:break #jump out the 'for loop'
+	if loginSuccess is True:break #jump out the 'while loop'
