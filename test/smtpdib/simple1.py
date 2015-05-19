@@ -10,7 +10,7 @@ SUBJECT = "Test email from python"    #定义邮件主题
 TO = "xxxxxx@qq.com"    #定义邮件收件人
 FROM = "xxxxxx@163.com"    #定义邮件发件人
 text = "Python rules them all!"    #邮件内容
-BODY = string.join((    #组装sendmail方法的邮件主体内容，各段以"/r/n"进行分隔
+BODY = string.join((    #组装sendmail方法的邮件主体内容，各段以"\r\n"进行分隔
     "From: %s" % FROM,
     "To: %s" % TO,
     "Subject: %s" % SUBJECT,
