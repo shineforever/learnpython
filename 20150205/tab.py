@@ -17,4 +17,3 @@ try:
 except IOError:
 	pass
 atexit.register(readline.write_history_file,histfile)
-
