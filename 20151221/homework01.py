@@ -8,7 +8,6 @@
 -输错三次后锁定
 '''
 
-import sys
 import getpass
 
 account_file = "account.txt"
@@ -30,9 +29,10 @@ while not isLocked:
 		account_list = f2.readlines()
 	for line in account_list:
 		line = line.split()
+		print(line)
 		if user_name == line[0]:
 			for i in range(3):
-				pass_word = input("Password:")
+				pass_word = getpass.getpass("Password:")
 				if pass_word == line[1]:
 					print("Welcome to login!")
 					loginSuccess = True
@@ -45,7 +45,7 @@ while not isLocked:
 				print("Too many tries!You will be locked!")
 				isLocked=True
 				break
-		else:
-			print("You haven't registered!")
-			isLocked=True
-			break
+	else:
+		print("You haven't registered!")
+		isLocked=True
+		break
