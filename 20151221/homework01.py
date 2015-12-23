@@ -29,7 +29,6 @@ while not isLocked:
 		account_list = f2.readlines()
 	for line in account_list:
 		line = line.split()
-		print(line)
 		if user_name == line[0]:
 			for i in range(3):
 				pass_word = getpass.getpass("Password:")
