@@ -10,7 +10,7 @@
 '''
 
 city_dict = {
-	"北京":{
+	"北京": {
 		"朝阳区": ["国贸", "望京", "三里屯"],
 		"海淀区": ["五道口", "中关村", "学院路"],
 		"昌平区": ["沙河", "天通苑", "回龙观"]
@@ -26,6 +26,31 @@ city_dict = {
 		"西贡": ["清水湾", "将军澳", "北潭涌"]
 	}
 }
-print(city_dict.keys())
-#print(city_dict["北京"]["朝阳"][0])
-
+level1_list = city_dict.keys()
+print(type(level1_list))
+level2_list = city_dict["北京"].keys()
+print(type(level2_list))
+level3_list = city_dict["北京"]["朝阳区"]
+print(type(level3_list))
+print("第一级目录：")
+n = 1
+for item in city_dict:
+	print("%s.%s" % (n, item))
+	n += 1
+user_choice = input("请输入您的选择，按Q退出：").strip()
+if user_choice == "Q":
+	pass
+elif user_choice == "":
+	pass
+else:
+	print("Sorry!Bad input!")
+print("第二级目录：")
+n = 1
+for item in city_dict["北京"]:
+	print("%s.%s" % (n, item))
+	n += 1
+print("第三级目录：")
+n = 1
+for i in level3_list:
+	print("%s.%s" % (n, i))
+	n += 1
