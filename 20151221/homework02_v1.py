@@ -1,14 +1,9 @@
-#! /usr/bin/env python
-# -*- coding:utf-8 -*-
-# __author__ = "Q1mi"
-
 '''
 多级菜单
 -三级菜单
 -可依次选择进入各子菜单
 -所需新知识点：列表、字典
 '''
-
 city_dict = {
 	"北京":{
 		"朝阳区": ["国贸", "望京", "三里屯"],
@@ -28,4 +23,5 @@ city_dict = {
 }
 print(city_dict.keys())
 #print(city_dict["北京"]["朝阳"][0])
-
+#print(city_dict["北京"]["朝阳"][1])
+#print(city_dict["北京"]["朝阳"][2])
