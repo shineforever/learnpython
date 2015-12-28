@@ -46,6 +46,8 @@ while not isLocked:
 				isLocked=True
 				break
 		else:
-			print("You haven't registered!")
+			print("You haven't registered!\n")
 			isLocked=True
 			break
+def function():
+	pass
