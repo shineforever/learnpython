@@ -26,31 +26,49 @@ city_dict = {
 		"西贡": ["清水湾", "将军澳", "北潭涌"]
 	}
 }
-level1_list = city_dict.keys()
-print(type(level1_list))
-level2_list = city_dict["北京"].keys()
-print(type(level2_list))
-level3_list = city_dict["北京"]["朝阳区"]
-print(type(level3_list))
+
+level1_list = []
+level2_list = []
+
 print("第一级目录：")
-n = 1
-for item in city_dict:
-	print("%s.%s" % (n, item))
-	n += 1
-user_choice = input("请输入您的选择，按Q退出：").strip()
-if user_choice == "Q":
-	pass
-elif user_choice == "":
-	pass
+for i in iter(city_dict):
+	level1_list.append(i)   # 生成第一级菜单的列表
+for i in level1_list:
+	print("%s.%s" % (level1_list.index(i)+1, i))  # 打印出一级菜单
+
+user_input = input("请输入您的选择，按B退回上级，按Q退出：").strip()    # 获取用户的输入
+if user_input.isdigit():    # 判断输入是否为数字
+	user_input = int(user_input)    # 如果用户输入的是数字就把输入变成'int'类型
+	if user_input <= len(level1_list):  # 判断输入是否为有效数字
+		m = level1_list[user_input - 1]
+		print("您的选择是：%s" % m)
+		print("%s的下一级目录：" % m)
+		for i in iter(city_dict.get(m)):
+			level2_list.append(i)   # 生成二级菜单的列表
+			print("%s.%s" % (level2_list.index(i)+1, i))  # 打印出对应的二级菜单
+	else:
+		print("错误的输入！")
+elif user_input.upper() == 'B':
+	print("退出本级菜单...")
+elif user_input.upper() == 'Q':
+	print("退出程序...")
 else:
-	print("Sorry!Bad input!")
-print("第二级目录：")
-n = 1
-for item in city_dict["北京"]:
-	print("%s.%s" % (n, item))
-	n += 1
-print("第三级目录：")
-n = 1
-for i in level3_list:
-	print("%s.%s" % (n, i))
-	n += 1
+	print("Bad input!!!")
+
+user_input2 = input("请输入您的选择，按B退回上级，按Q退出：").strip()
+if user_input2.isdigit():
+	user_input2 = int(user_input2)    # 如果用户输入的是数字就把输入变成'int'类型
+	if user_input2 <= len(level2_list):  # 判断输入是否为有效数字
+		m1 = level2_list[user_input2 - 1]
+		print("您的选择是：%s" % m1)
+		print("%s的下一级菜单：" % m1)
+		for i in city_dict[m][m1]:
+			print("%s.%s" % (city_dict[m][m1].index(i)+1, i))  # 打印出对应的三级菜单
+	else:
+		print("错误的输入！")
+elif user_input.upper() == 'B':
+	print("退出本级菜单...")
+elif user_input.upper() == 'Q':
+	print("退出程序...")
+else:
+	print("Bad input!!!")
