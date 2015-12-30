@@ -1,4 +1,5 @@
-*/.idea/*
+2*/.idea/*
+.idea/
 Thumbs.db
 ehthumbs.db
 Desktop.ini
