@@ -11,8 +11,8 @@ while i_count < 3:
 	for i in name.readlines():
 		if username == i.split()[0] and userpasswd == i.split()[1]:
 			print("OK")
-			i_count = 3
+			i_count = 3   # 跳出while循环
 			break   # 跳出for循环
 	else:
-		print("No")
+		print("No")   # 用户名或密码不正确；超过三次都打印NO
 	i_count += 1
