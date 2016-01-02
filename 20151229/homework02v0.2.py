@@ -2,14 +2,13 @@
 # -*- coding: utf-8 -*-
 # __author__ = "Q1mi"
 
-'''
+"""
 多级菜单
 -三级菜单
 -可依次选择进入各子菜单
 -所需新知识点：列表、字典
-'''
+"""
 
-import sys
 import get_user_input
 
 
@@ -31,53 +30,48 @@ city_dict = {
 	}
 }
 
-level1_list = []
-level2_list = []
+loop_flag = True    # 定义循环标志
+while loop_flag:    # 定义第一级菜单的循环
+	print("第一级目录：")
+	level1_list = []
+	for i in iter(city_dict):
+		level1_list.append(i)   # 生成第一级菜单的列表
+	for i in level1_list:
+		print("%s.%s" % (level1_list.index(i)+1, i))  # 打印出一级菜单
 
-
-print("第一级目录：")
-for i in iter(city_dict):
-	level1_list.append(i)   # 生成第一级菜单的列表
-for i in level1_list:
-	print("%s.%s" % (level1_list.index(i)+1, i))  # 打印出一级菜单
-
-a = get_user_input.get_user_input(1, level1_list)
-print(type(a))
-if a == 'Q':
-	print("您的选择是退出本系统！")
-	sys.exit()
-else:
-	print("您的选择是%s" % a)
-	print("%s的子目录是：" % a)
-	for i in iter(city_dict[a]):
-		level2_list.append(i)
-	for i in level2_list:
-		print("%s.%s" % (level2_list.index(i) + 1, i))  # 打印对应的二级目录
-	b = get_user_input.get_user_input(2, level2_list)
-	if b == 'Q':
+	a = get_user_input.get_user_input(1, level1_list)   # 获取用户输入
+	if a == 'Q':
 		print("您的选择是退出本系统！")
-		sys.exit()
-	elif b == 'B':
-		print("您的选择是回到上一级菜单！")
+		loop_flag = False
+		break
+	else:
+		print("您的选择是%s，其子目录是：" % a)
+		while loop_flag:    # 定义第二级目录循环
+			level2_list = []    # 初始化二级目录列表
+			for i in iter(city_dict[a]):
+				level2_list.append(i)   # 生成二级目录列表
+			for i in level2_list:
+				print("%s.%s" % (level2_list.index(i) + 1, i))  # 打印对应的二级目录
 
-#
-# 	user_input2 = input("请输入您的选择，按B退回上级，按Q退出：").strip()
-# 	if user_input2.isdigit():
-# 		user_input2 = int(user_input2)    # 如果用户输入的是数字就把输入变成'int'类型
-# 		if user_input2 <= len(level2_list):  # 判断输入是否为有效数字
-# 			m1 = level2_list[user_input2 - 1]
-# 			print("您的选择是：%s" % m1)
-# 			print("%s的下一级菜单：" % m1)
-# 			for i in city_dict[m][m1]:
-# 				print("%s.%s" % (city_dict[m][m1].index(i)+1, i))  # 打印出对应的三级菜单
-# 		else:
-# 			print("错误的输入！")
-# 	elif user_input.upper() == 'B':
-# 		print("退出本级菜单...")
-# 	elif user_input.upper() == 'Q':
-# 		print("退出程序...")
-# 	else:
-# 		print("Bad input!!!")
-#
-# else:
-# 	sys.exit()
+			b = get_user_input.get_user_input(2, level2_list)   # 获取用户输入
+			if b == 'B':
+				print("您的选择是回到上一级菜单！")
+				break   # 跳出while循环
+			elif b == 'Q':
+				print("您的选择是退出本系统！")
+				loop_flag = False   # 准备跳出外层while循环
+				break   # 跳出本层while循环
+			else:
+				print("您的选择是%s，其子目录是：" % b)
+				while loop_flag:
+					level3_list = city_dict[a][b]   # 生成三级菜单列表
+					for i in level3_list:
+						print("%s.%s" % (level3_list.index(i) + 1, i))  # 打印对应的三级菜单
+					c = get_user_input.get_user_input(3, level3_list)   # 获取用户输入
+					if c == 'B':
+						print("您的选择是回到上一级菜单！")
+						break   # 跳出本层while循环
+					else:
+						print("您的选择是退出本系统！")
+						loop_flag = False   # 准备跳出最外层while循环
+						break   # 跳出本层while循环
