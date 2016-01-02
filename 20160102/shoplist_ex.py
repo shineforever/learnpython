@@ -14,3 +14,18 @@
 	可购买的商品总值不能超过预算总值，用户选择退出后，打印他已购商品及所剩金额。
 """
 
+shop_dic = {
+	"MacBook Air": 7999, "Starbucks Coffee": 33, "iphone 6 Plus": 6188, "Air Jordan S.F 4": 888, "Casio": 1799
+}
+
+while True:
+	user_budget = input("请输入您的预算：").strip()
+	if user_budget.isdigit():
+		user_budget = int(user_budget)
+		break
+	else:
+		print("无效的输入请重新输入！")
+
+for i, key in enumerate(shop_dic, 1):
+	print("%s. %-20s%10s" % (i, key, shop_dic[key]))    # 打印购物清单
+
