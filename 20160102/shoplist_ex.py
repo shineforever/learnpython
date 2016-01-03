@@ -18,7 +18,7 @@ from collections import OrderedDict
 shop_dic = {
 	"MacBook Air": 7999, "Starbucks Coffee": 33, "iphone 6 Plus": 6188, "Air Jordan S.F 4": 888, "Casio": 1799
 }
-shopping_cart = []  # 定义购物车列表
+shopping_cart = {}  # 定义购物车字典 用于记录所购物品及数量。格式为{物品名称：数量}
 while True:
 	user_budget = input("请输入您的预算：").strip()
 	if user_budget.isdigit():
@@ -32,6 +32,7 @@ while True:
 # print("====================")
 
 a = OrderedDict(sorted(shop_dic.items(), key=lambda t: t[1]))   # 价格从低到高排序成有序字典
+print("Welcome to Q1mi's shopping mall,below are the things we are selling:")
 for i, key in enumerate(a, 1):
 	print("%s. %-20s%10s" % (i, key, a[key]))
 	# 将脚标与价格对应起来
@@ -51,7 +52,13 @@ while True:
 		item_price = int(price_dict[int(user_choose)][1])
 		if user_budget - item_price >= 0:   # 判断余额是否能购买所选的商品
 			remain_budget = user_budget - item_price    # 余额减去所选商品的价格
-			shopping_cart.append(price_dict[int(user_choose)][0])   # 在购物车列表中添加用户选择的具体名称
+
+			# 判断购物车中是否有这个物品，如果有就在其数量上加1，如果没有就在购物车的字典里添加该物品，并把数量赋值为1
+			# if price_dict[int(user_choose)[0] in shopping_cart:
+			# 	shopping_cart.get(price_dict[int(user_choose)][1])
+			# else:
+			# 	shopping_cart[price_dict[int(user_choose)][0]] = 1
+
 			print("%s已加入购物车，Q结算退出：" % price_dict[int(user_choose)][0])
 			print("您当前余额：%s" % remain_budget)
 		else:
