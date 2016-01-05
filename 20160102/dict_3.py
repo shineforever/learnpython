@@ -10,3 +10,6 @@ d1 = dict(list(zip(l2, l3)))
 d = dict(list(zip(l1, d1.items())))
 print(d1)
 print(d)
+
+print("=" * 50)
+

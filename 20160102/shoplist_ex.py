@@ -3,28 +3,27 @@
 # __author__ = "Q1mi"
 
 """
-	题目：购物小程序
-	需求：程序启动后，要求用户输入购物预算，然后打印购物菜单，菜单格式如下：
-	Welcome to Alex's shopping mall,below are the things we are selling:
-		1. MacBook Air       7999
-		2. Starbucks Coffee  33
-		3. iphone 6 Plus     6188
-		4. ...
-	用户可以不断的购买商品，程序要实时的把购买的商品添加到购物车，并且从预算金额中扣掉相应商品的价格，
-	可购买的商品总值不能超过预算总值，用户选择退出后，打印他已购商品及所剩金额。
+题目：购物小程序
+需求：程序启动后，要求用户输入购物预算，然后打印购物菜单，菜单格式如下：
+Welcome to Alex's shopping mall,below are the things we are selling:
+--------1. MacBook Air       7999
+--------2. Starbucks Coffee  33
+--------3. iphone 6 Plus     6188
+--------4. ...
+----用户可以不断的购买商品，程序要实时的把购买的商品添加到购物车，并且从预算金额中扣掉相应商品的价格，
+----可购买的商品总值不能超过预算总值，用户选择退出后，打印他已购商品及所剩金额。
 """
 
 from collections import OrderedDict
 from collections import Counter
 
-shop_dic = {
-	"MacBook Air": 7999, "Starbucks Coffee": 33, "iphone 6 Plus": 6188, "Air Jordan S.F 4": 888, "Casio": 1799
-}
+shop_dic = {"MacBook Air": 7999, "Starbucks Coffee": 33, "iphone 6 Plus": 6188, "Air Jordan S.F 4": 888, "Casio": 1799}
+
 shopping_cart_list = []  # 定义购物车列表 用于记录所购物品。
 while True:
 	user_budget = input("请输入您的预算：").strip()
 	if user_budget.isdigit():
-		user_budget = int(user_budget)
+		init_user_budget = user_budget = int(user_budget)
 		break
 	else:
 		print("无效的输入请重新输入！")
@@ -68,13 +67,15 @@ while user_budget >= 0:    # 当用户的预算大于等于0时，就一直循�
 		else:
 			print("余额不足！")
 			print("您当前余额：%s" % user_budget)
-			break
 	elif user_choose.upper() == 'Q':
 		print("正在结算，请稍后...")
+		print("=" * 75)
+		print("您的预算总额是：%60s" % init_user_budget)
 		shopping_cart_count = Counter(shopping_cart_list)   # Counter统计序列中元素出现的次数
 		for key, val in shopping_cart_count.items():
-			print("商品名称：%-20s 数量：%-10s" % (key, shopping_cart_count[key]))
-		print("==============================")
+			print("商品名称：%-20s 数量：%-10s 单价：%-10s 总价：%-10s" % (
+				key, shopping_cart_count[key], a[key], a[key] * shopping_cart_count[key]))
+		print("=" * 75)
 		print("打印出购物车中的物品名称及数量")
 		break
 	else:
