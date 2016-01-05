@@ -15,10 +15,12 @@
 """
 
 from collections import OrderedDict
+from collections import Counter
+
 shop_dic = {
 	"MacBook Air": 7999, "Starbucks Coffee": 33, "iphone 6 Plus": 6188, "Air Jordan S.F 4": 888, "Casio": 1799
 }
-shopping_cart = {}  # 定义购物车字典 用于记录所购物品及数量。格式为{物品名称：数量}
+shopping_cart_list = []  # 定义购物车列表 用于记录所购物品。
 while True:
 	user_budget = input("请输入您的预算：").strip()
 	if user_budget.isdigit():
@@ -44,14 +46,14 @@ for i in range(1, len(a) + 1):
 	index_list.append(i)
 for j in a.items():
 	content_list.append(j)
-price_dict = dict(list(zip(index_list, content_list)))
+price_dict = dict(list(zip(index_list, content_list)))  # 字典格式：选项：(物品名称：价格)
 
-while True:
+while user_budget >= 0:    # 当用户的预算大于等于0时，就一直循环直到用户输入Q结算
 	user_choose = input("请输入您的选择，Q结算退出：")
 	if user_choose.isdigit():   # 判断输入是否为数字
 		item_price = int(price_dict[int(user_choose)][1])
 		if user_budget - item_price >= 0:   # 判断余额是否能购买所选的商品
-			remain_budget = user_budget - item_price    # 余额减去所选商品的价格
+			user_budget -= item_price    # 余额减去所选商品的价格
 
 			# 判断购物车中是否有这个物品，如果有就在其数量上加1，如果没有就在购物车的字典里添加该物品，并把数量赋值为1
 			# if price_dict[int(user_choose)[0] in shopping_cart:
@@ -59,12 +61,20 @@ while True:
 			# else:
 			# 	shopping_cart[price_dict[int(user_choose)][0]] = 1
 
+			object_name = price_dict[int(user_choose)][0]   # 定义物品名称
+			shopping_cart_list.append(object_name)  # 将用户选择的物品名称加入购物车列表
 			print("%s已加入购物车，Q结算退出：" % price_dict[int(user_choose)][0])
-			print("您当前余额：%s" % remain_budget)
+			print("您当前余额：%s" % user_budget)
 		else:
 			print("余额不足！")
+			print("您当前余额：%s" % user_budget)
+			break
 	elif user_choose.upper() == 'Q':
 		print("正在结算，请稍后...")
+		shopping_cart_count = Counter(shopping_cart_list)   # Counter统计序列中元素出现的次数
+		for key, val in shopping_cart_count.items():
+			print("商品名称：%-20s 数量：%-10s" % (key, shopping_cart_count[key]))
+		print("==============================")
 		print("打印出购物车中的物品名称及数量")
 		break
 	else:
