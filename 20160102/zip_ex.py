@@ -6,12 +6,18 @@ x = [1, 2, 3]
 y = [4, 5, 6]
 z = [7, 8, 9]
 
-xyz = zip(x, y, z)
-print(list(xyz))
-# zip(*xyz) 等价于 zip((1, 4, 7), (2, 5, 8), (3, 6, 9)) ???
+n = list(zip(x, y, z))
+print(n)
 
-u = zip(*xyz)
-print(u)
+m = list(zip(*n))
+print(m)
 
-t = zip((1, 4, 7), (2, 5, 8), (3, 6, 9))
-print(list(t))
+"""
+	在Python2.7里面实现跟上面同样的功能：
+	代码如下：
+n = zip(x, y, z)
+print(n)
+
+m = zip(*n)
+print(m)
+"""
