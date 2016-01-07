@@ -13,8 +13,8 @@ m = list(zip(*n))
 print(m)
 
 """
-	在Python2.7里面实现跟上面同样的功能：
-	代码如下：
+在Python2.7里面实现跟上面同样的功能：
+代码如下：
 n = zip(x, y, z)
 print(n)
 
