@@ -32,7 +32,6 @@ a = OrderedDict(sorted(shop_dic.items(), key=lambda t: t[1]))   # 价格从低�
 print("Welcome to Q1mi's shopping mall,below are the things we are selling:")
 for i, key in enumerate(a, 1):
 	print("%s. %-20s%10s" % (i, key, a[key]))   # 打印出序号与物品名称及价格
-print(len(a))
 
 # 生成一个选项与物品名称及价格对应的字典
 index_list = []
