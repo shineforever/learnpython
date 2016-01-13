@@ -36,22 +36,19 @@ def get_budget():
 
 
 # 初始化商品目录
-def init_shop_dic(self, dic):
-	self.dic = dic
+def init_shop_dic(dic):
 	print("Welcome to Q1mi's shopping mall,below are the things we are selling:")
 	return OrderedDict(sorted(dic.items(), key=lambda t: t[1]))   # 价格从低到高排序成有序字典
 
 
 # 打印商品列表
-def print_shop_dic(self, dic):
-	self.dic = dic
+def print_shop_dic(dic):
 	for i, key in enumerate(dic, 1):
 		print("%s. %-20s%10s" % (i, key, dic[key]))   # 打印出序号与物品名称及价格
 
 
 # 生成一个选项与物品名称及价格对应的字典
-def get_price_dict(self, dic):
-	self.dic = dic
+def get_price_dict(dic):
 	index_list = []
 	content_list = []
 	for i in range(1, len(dic) + 1):
@@ -62,11 +59,7 @@ def get_price_dict(self, dic):
 
 
 # 结算
-def check_out(self, general_budget, cart_list, ord_dic, remain_budget):
-	self.general_budget = general_budget
-	self.cart_list = cart_list
-	self.ord_dic = ord_dic
-	self.remain_budget = remain_budget
+def check_out(general_budget, cart_list, ord_dic, remain_budget):
 	print("正在结算，请稍后...")
 	print("=" * 75)
 	print("您的预算总额是：%60s" % general_budget)    # 打印用户最开始输入的预算
@@ -107,6 +100,7 @@ def main():
 				print("无效的输入，请重新输入！")
 		elif user_choose.upper() == 'Q':
 			check_out(general_budget, shopping_cart_list, ordered_shop_dic, user_budget)
+			break
 		else:
 			print("无效的输入，请重新输入！")
 
