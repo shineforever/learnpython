@@ -64,7 +64,7 @@ def check_out(general_budget, cart_list, ord_dic, remain_budget):
 	print("=" * 75)
 	print("您的预算总额是：%60s" % general_budget)    # 打印用户最开始输入的预算
 	print("-" * 75)
-	print("您的购物清单如下：")
+	print("购物清单：".center(75))
 	print("-" * 75)
 	shopping_cart_count = Counter(cart_list)   # Counter统计序列中元素出现的次数
 	for key, val in shopping_cart_count.items():    # 打印出用户的购物清单
@@ -73,7 +73,7 @@ def check_out(general_budget, cart_list, ord_dic, remain_budget):
 	print("-" * 75)
 	print("您的余额：%66s" % remain_budget)
 	print("=" * 75)
-	print("谢谢惠顾！")
+	print("谢谢惠顾！".center(75))
 
 
 def main():
