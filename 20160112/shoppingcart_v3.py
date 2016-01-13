@@ -77,32 +77,29 @@ def check_out(general_budget, cart_list, ord_dic, remain_budget):
 
 
 # 选择
-def user_choose(user_budget, ordered_shop_dic, price_dict, general_budget):
-	while user_budget >= 0:    # 当用户的预算大于等于0时，就一直循环直到用户输入Q结算
-		user_choose = input("请输入您的选择，Q结算退出：")
-		if user_choose.isdigit():   # 判断输入是否为数字
-			user_choose = int(user_choose)  # 将用户输入转为int类型
-			if 0 < user_choose <= len(ordered_shop_dic):   # 判断输入是否为有效数字
-				item_price = int(price_dict[user_choose][1])   # 找到用户选择物品的价格
-				if user_budget - item_price >= 0:   # 判断余额是否能购买所选的商品
-					user_budget -= item_price    # 获取余额
-					object_name = price_dict[user_choose][0]   # 定义物品名称
-					shopping_cart_list.append(object_name)  # 将用户选择的物品名称加入购物车列表
-					print("%s已加入购物车，Q结算退出：" % price_dict[user_choose][0])
-					print("您当前余额：%s" % user_budget)
-					print_shop_dic(ordered_shop_dic)
-				else:
-					print("余额不足！")
-					print("您当前余额：%s" % user_budget)
-					print_shop_dic(ordered_shop_dic)
-			else:   # 输入无效的数字打印提示
-				print("无效的输入，请重新输入！")
+def user_choose(user_choose):
+	if user_choose.isdigit():   # 判断输入是否为数字
+		user_choose = int(user_choose)  # 将用户输入转为int类型
+		if 0 < user_choose <= len(ordered_shop_dic):   # 判断输入是否为有效数字
+			item_price = int(price_dict[user_choose][1])   # 找到用户选择物品的价格
+			if user_budget - item_price >= 0:   # 判断余额是否能购买所选的商品
+				user_budget -= item_price    # 获取余额
+				object_name = price_dict[user_choose][0]   # 定义物品名称
+				shopping_cart_list.append(object_name)  # 将用户选择的物品名称加入购物车列表
+				print("%s已加入购物车，Q结算退出：" % price_dict[user_choose][0])
+				print("您当前余额：%s" % user_budget)
 				print_shop_dic(ordered_shop_dic)
-		elif user_choose.upper() == 'Q':
-			check_out(general_budget, shopping_cart_list, ordered_shop_dic, user_budget)
-			break
-		else:
+			else:
+				print("余额不足！")
+				print("您当前余额：%s" % user_budget)
+				print_shop_dic(ordered_shop_dic)
+		else:   # 输入无效的数字打印提示
 			print("无效的输入，请重新输入！")
+			print_shop_dic(ordered_shop_dic)
+	elif user_choose.upper() == 'Q':
+		check_out(general_budget, shopping_cart_list, ordered_shop_dic, user_budget)
+	else:
+		print("无效的输入，请重新输入！")
 
 
 # 主函数
@@ -111,8 +108,9 @@ def main():
 	ordered_shop_dic = init_shop_dic(shop_dic)
 	print_shop_dic(ordered_shop_dic)
 	price_dict = get_price_dict(ordered_shop_dic)
-	user_choose(user_budget, ordered_shop_dic, price_dict, general_budget)
-
+	while user_budget >= 0:    # 当用户的预算大于等于0时，就一直循环直到用户输入Q结算
+		user_choose = input("请输入您的选择，Q结算退出：")
+		user_choose(user_budget, ordered_shop_dic, price_dict, general_budget)
 
 if __name__ == '__main__':
 	main()

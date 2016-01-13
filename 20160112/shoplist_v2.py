@@ -43,8 +43,10 @@ def init_shop_dic(dic):
 
 # 打印商品列表
 def print_shop_dic(dic):
+	print('商品列表'.center(65, '*'))
 	for i, key in enumerate(dic, 1):
 		print("%s. %-20s%10s" % (i, key, dic[key]))   # 打印出序号与物品名称及价格
+	print('*' * 68)
 
 
 # 生成一个选项与物品名称及价格对应的字典
@@ -93,16 +95,20 @@ def main():
 					shopping_cart_list.append(object_name)  # 将用户选择的物品名称加入购物车列表
 					print("%s已加入购物车，Q结算退出：" % price_dict[user_choose][0])
 					print("您当前余额：%s" % user_budget)
+					print_shop_dic(ordered_shop_dic)
 				else:
 					print("余额不足！")
 					print("您当前余额：%s" % user_budget)
+					print_shop_dic(ordered_shop_dic)
 			else:   # 输入无效的数字打印提示
 				print("无效的输入，请重新输入！")
+				print_shop_dic(ordered_shop_dic)
 		elif user_choose.upper() == 'Q':
 			check_out(general_budget, shopping_cart_list, ordered_shop_dic, user_budget)
 			break
 		else:
 			print("无效的输入，请重新输入！")
+			print_shop_dic(ordered_shop_dic)
 
 
 if __name__ == '__main__':
