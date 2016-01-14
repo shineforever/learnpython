@@ -13,8 +13,8 @@
 	用户可以不断的购买商品，程序要实时的把购买的商品添加到购物车，并且从预算金额中扣掉相应商品的价格，
 	可购买的商品总值不能超过预算总值，用户选择退出后，打印他已购商品及所剩金额。
 
-	* version2.0 优化程序布局
-	* 2016.01.12
+	* version3.0 优化程序布局
+	* 2016.01.14
 """
 
 from collections import OrderedDict
@@ -43,10 +43,8 @@ def init_shop_dic(dic):
 
 # 打印商品列表
 def print_shop_dic(dic):
-	print('商品列表'.center(65, '*'))
 	for i, key in enumerate(dic, 1):
 		print("%s. %-20s%10s" % (i, key, dic[key]))   # 打印出序号与物品名称及价格
-	print('*' * 68)
 
 
 # 生成一个选项与物品名称及价格对应的字典
@@ -78,6 +76,33 @@ def check_out(general_budget, cart_list, ord_dic, remain_budget):
 	print("谢谢惠顾！".center(75))
 
 
+# 选择
+def user_choose(user_choose):
+	if user_choose.isdigit():   # 判断输入是否为数字
+		user_choose = int(user_choose)  # 将用户输入转为int类型
+		if 0 < user_choose <= len(ordered_shop_dic):   # 判断输入是否为有效数字
+			item_price = int(price_dict[user_choose][1])   # 找到用户选择物品的价格
+			if user_budget - item_price >= 0:   # 判断余额是否能购买所选的商品
+				user_budget -= item_price    # 获取余额
+				object_name = price_dict[user_choose][0]   # 定义物品名称
+				shopping_cart_list.append(object_name)  # 将用户选择的物品名称加入购物车列表
+				print("%s已加入购物车，Q结算退出：" % price_dict[user_choose][0])
+				print("您当前余额：%s" % user_budget)
+				print_shop_dic(ordered_shop_dic)
+			else:
+				print("余额不足！")
+				print("您当前余额：%s" % user_budget)
+				print_shop_dic(ordered_shop_dic)
+		else:   # 输入无效的数字打印提示
+			print("无效的输入，请重新输入！")
+			print_shop_dic(ordered_shop_dic)
+	elif user_choose.upper() == 'Q':
+		check_out(general_budget, shopping_cart_list, ordered_shop_dic, user_budget)
+	else:
+		print("无效的输入，请重新输入！")
+
+
+# 主函数
 def main():
 	general_budget = user_budget = get_budget()
 	ordered_shop_dic = init_shop_dic(shop_dic)
@@ -85,31 +110,7 @@ def main():
 	price_dict = get_price_dict(ordered_shop_dic)
 	while user_budget >= 0:    # 当用户的预算大于等于0时，就一直循环直到用户输入Q结算
 		user_choose = input("请输入您的选择，Q结算退出：")
-		if user_choose.isdigit():   # 判断输入是否为数字
-			user_choose = int(user_choose)  # 将用户输入转为int类型
-			if 0 < user_choose <= len(ordered_shop_dic):   # 判断输入是否为有效数字
-				item_price = int(price_dict[user_choose][1])   # 找到用户选择物品的价格
-				if user_budget - item_price >= 0:   # 判断余额是否能购买所选的商品
-					user_budget -= item_price    # 获取余额
-					object_name = price_dict[user_choose][0]   # 定义物品名称
-					shopping_cart_list.append(object_name)  # 将用户选择的物品名称加入购物车列表
-					print("%s已加入购物车，Q结算退出：" % price_dict[user_choose][0])
-					print("您当前余额：%s" % user_budget)
-					print_shop_dic(ordered_shop_dic)
-				else:
-					print("余额不足！")
-					print("您当前余额：%s" % user_budget)
-					print_shop_dic(ordered_shop_dic)
-			else:   # 输入无效的数字打印提示
-				print("无效的输入，请重新输入！")
-				print_shop_dic(ordered_shop_dic)
-		elif user_choose.upper() == 'Q':
-			check_out(general_budget, shopping_cart_list, ordered_shop_dic, user_budget)
-			break
-		else:
-			print("无效的输入，请重新输入！")
-			print_shop_dic(ordered_shop_dic)
-
+		user_choose(user_budget, ordered_shop_dic, price_dict, general_budget)
 
 if __name__ == '__main__':
 	main()
