@@ -76,7 +76,7 @@ def check_out(general_budget, cart_list, ord_dic, remain_budget):
 	print("谢谢惠顾！".center(75))
 
 
-# 选择
+# 打印购物车
 def print_shopping_cart(dic):
 	shopping_cart_count = Counter(shopping_cart_list)
 	for key, val in shopping_cart_count.items():
@@ -85,9 +85,10 @@ def print_shopping_cart(dic):
 	print("-" * 75)
 
 
+# 判断选择
 def get_user_input(level):
 	while True:
-		if level == 1:
+		if level == 1:  # 当调用处于购物商城界面时，有以下菜单
 			user_choose = input("请输入您的选择，按P查看购物车，按Q结算退出：").strip()
 			if user_choose.isdigit():
 				user_choose = int(user_choose)
@@ -98,7 +99,7 @@ def get_user_input(level):
 				return 'P'
 			else:
 				print("无效的输入，请重新输入！")
-		elif level == 2:
+		elif level == 2:    # 当调用处于购物车界面时，有以下菜单
 			user_choose = input("请输入您的选择，按B返回购物商城，按Q结算退出：").strip()
 			if user_choose.upper() == 'B':
 				return 'B'
@@ -106,7 +107,7 @@ def get_user_input(level):
 				return 'Q'
 			else:
 				print("无效的输入，请重新输入！")
-		else:
+		else:   # 打印调用时的异常
 			print("调用时出现参数错误！")
 
 
