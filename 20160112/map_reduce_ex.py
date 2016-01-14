@@ -53,4 +53,5 @@ def str2float(s):
 	f2 = reduce(lambda x, y: x*0.1+y, i2)
 	return f1+f2/10
 
-print(str2float('123.456'))
+print('字符串转换成浮点数=>', str2float('123.456'))
+print('字符串转换成浮点数=>', str2float('654.321'))
