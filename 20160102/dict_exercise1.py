@@ -31,6 +31,7 @@ for i in zip(a[::2], a[1::2]):
 	print(i)
 
 
+# 三个一组 返回
 def group_adjacent(x, y):
 	return zip(*([iter(x)] * y))
 
