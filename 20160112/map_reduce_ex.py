@@ -3,7 +3,7 @@
 # __author__ = "Q1mi"
 
 """
-map()和reduce()
+map()、filter()和reduce()
 """
 from functools import reduce
 
@@ -28,6 +28,15 @@ print(l2)
 # 更Pythonic的方法
 l3 = list(map(str.title, l1))
 print(l3)
+
+
+# filter的练习,找出列表中大于50的元素
+l1 = [12, 33, 54, 6, 48, 98]
+l2 = list(filter(lambda t: t > 50, l1))
+print(l2)
+
+
+
 
 """
 Python提供的sum()函数可以接受一个list并求和，请编写一个prod()函数，可以接受一个list并利用reduce()求积
