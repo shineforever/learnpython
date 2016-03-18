@@ -47,8 +47,11 @@ def _sorted(mixins_or_funcs):
 
 class MixInMeta(type):
     # This attribute here won't actually do anything. But, if you need to
+    # 这里的这个属性实际上没什么卵用，但是如果你需要
     # specify an order or a dependency within the mix-ins, please define the
+    # 制定一个命令或者一个从属在这个混合类的话，请定义这个
     # attribute on your own MixIn
+    # 属性在你自己的混合类里。
     _mixin_prio_ = 0
 
     def __new__(mcs, name, bases, attrs):
@@ -1104,6 +1107,7 @@ class ExecutionOptionsMixIn(object):
     _mixin_prio_ = 10
 
     def _mixin_setup(self):
+        # 设置命令行选项
         group = self.execution_group = optparse.OptionGroup(
             self,
             'Execution Options',

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 '''
 This module contains the function calls to execute command line scripts
+这个模块包括函数调用和执行命令行脚本
 '''
 
 from __future__ import absolute_import
@@ -26,10 +27,14 @@ log = logging.getLogger(__name__)
 def _handle_interrupt(exc, original_exc, hardfail=False, trace=''):
     '''
     if hardfailing:
+    如果处理失败
         If we got the original stacktrace, log it
+        如果我们得到了最原始的堆栈轨迹，记日志
         If all cases, raise the original exception
+        抛出原始异常
         but this is logically part the initial
         stack.
+        但是这在逻辑上是最初的部分。
     else just let salt exit gracefully
 
     '''
@@ -44,6 +49,7 @@ def _handle_interrupt(exc, original_exc, hardfail=False, trace=''):
 def salt_master():
     '''
     Start the salt master.
+    启动主服务端
     '''
     import salt.cli.daemons
     master = salt.cli.daemons.Master()
@@ -53,9 +59,11 @@ def salt_master():
 def minion_process(queue):
     '''
     Start a minion process
+    启动一个奴隶进程
     '''
     import salt.cli.daemons
     # salt_minion spawns this function in a new process
+    # 奴隶端产生一个新的进程来运行这个函数
 
     def suicide_when_without_parent(parent_pid):
         '''

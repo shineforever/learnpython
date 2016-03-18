@@ -19,6 +19,7 @@ from salt.exceptions import (
 class SaltCMD(parsers.SaltCMDOptionParser):
     '''
     The execution of a salt command happens here
+    这里发生 salt 命令行的执行
     '''
 
     def run(self):
