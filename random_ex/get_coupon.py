@@ -30,18 +30,21 @@ def get_coupon(total_count, num_count):
 	:return:
 	"""
 	coupon = ""
+	# 先生成一个指定位数的随机字母序列
 	for i in range(total_count):
 		temp1 = chr(random.randint(65, 90))
 		coupon = "{}{}".format(coupon, temp1)
 
 	coupon_list = list(iter(coupon))
+	# 再随机生成指定位数的数字去随机替换上面序列中的字母
 	for j in range(num_count):
 		temp2 = random.randint(0, 9)
 		temp3 = random.randint(0, total_count - 1)
 		coupon_list[temp3] = str(temp2)
+	# 返回最终生成的随机码
 	return "".join(coupon_list)
 
-for t in range(20):
+for t in range(200):
 	a = get_coupon(16, 4)
 	print(a)
 
