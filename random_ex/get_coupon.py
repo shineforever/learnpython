@@ -38,12 +38,13 @@ def get_coupon(total_count, num_count):
 	coupon_list = list(iter(coupon))
 	# 再随机生成指定位数的数字去随机替换上面序列中的字母
 	for j in range(num_count):
-		temp2 = random.randint(0, 9)
-		temp3 = random.randint(0, total_count - 1)
-		coupon_list[temp3] = str(temp2)
+		temp2 = random.randint(0, 9)    # 随机出一个数字
+		temp3 = random.randint(0, total_count - 1)      # 随机一个索引
+		coupon_list[temp3] = str(temp2)     # 用数字去替换索引位的值
 	# 返回最终生成的随机码
 	return "".join(coupon_list)
 
+# 生成两百个随机码
 for t in range(200):
 	a = get_coupon(16, 4)
 	print(a)
