@@ -1,0 +1,1292 @@
+Dec 25 11:43:25 IIS-KP-master Keepalived: Starting Keepalived v1.1.20 (09/23,2014) 
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers: Initializing ipvs 2.6
+Dec 25 11:43:25 IIS-KP-master Keepalived: Starting Healthcheck child process, pid=1850
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.56 added
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink reflector
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink command channel
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp: Registering gratutious ARP shared channel
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp: Initializing ipvs 2.6
+Dec 25 11:43:25 IIS-KP-master Keepalived: Starting VRRP child process, pid=1852
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.56 added
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink reflector
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink command channel
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers: Opening file '/etc/keepalived/keepalived.conf'. 
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp: Opening file '/etc/keepalived/keepalived.conf'. 
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers: Configuration is using : 10771 Bytes
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp: Configuration is using : 36194 Bytes
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp: ------< Global definitions >------
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp:  Router ID = LVS_DEVEL
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp:  Smtp server = 127.0.0.1
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp:  Smtp server connection timeout = 30
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp:  Email notification from = Alexandre.Cassen@firewall.loc
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers: ------< Global definitions >------
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers:  Router ID = LVS_DEVEL
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp:  Email notification = liujian@ait.cn
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers:  Smtp server = 127.0.0.1
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp:  Email notification = liwenzhou@ait.cn
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers:  Smtp server connection timeout = 30
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp: ------< VRRP Topology >------
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers:  Email notification from = Alexandre.Cassen@firewall.loc
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp:  VRRP Instance = VI_1
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers:  Email notification = liujian@ait.cn
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp:    Want State = MASTER
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers:  Email notification = liwenzhou@ait.cn
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp:    Runing on device = eth0
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers: ------< SSL definitions >------
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp:    Virtual Router ID = 27
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers:  Using autogen SSL context
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp:    Priority = 100
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers: ------< LVS Topology >------
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp:    Advert interval = 1sec
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers:  System is compiled with LVS v1.2.1
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp:    Authentication type = SIMPLE_PASSWORD
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers:  VIP = 172.18.27.55, VPORT = 80
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp:    Password = 4321
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers:    delay_loop = 6, lb_algo = wrr
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp:    Virtual IP = 1
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers:    persistence timeout = 50
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp:      172.18.27.55/32 dev eth0 scope global
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers:    protocol = TCP
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp: Using LinkWatch kernel netlink reflector...
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers:    alpha is OFF, omega is OFF
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp: VRRP sockpool: [ifindex(2), proto(112), fd(11,12)]
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers:    quorum = 1, hysteresis = 0
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers:    lb_kind = DR
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers:    RIP = 172.18.27.52, RPORT = 80, WEIGHT = 1
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers: ------< Health checkers >------
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers:  172.18.27.52:80
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers:    Keepalive method = HTTP_GET
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers:    Connection port = 80
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers:    Connection timeout = 3
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers:    Nb get retry = 3
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers:    Delay before retry = 3
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers:    Checked url = /
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers: Using LinkWatch kernel netlink reflector...
+Dec 25 11:43:25 IIS-KP-master Keepalived_healthcheckers: Activating healtchecker for service [172.18.27.52:80]
+Dec 25 11:43:25 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Transition to MASTER STATE
+Dec 25 11:43:26 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Entering MASTER STATE
+Dec 25 11:43:26 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) setting protocol VIPs.
+Dec 25 11:43:26 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Dec 25 11:43:26 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.55 added
+Dec 25 11:43:26 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.55 added
+Dec 25 11:43:31 IIS-KP-master Keepalived_healthcheckers: Netlink: filter function error
+Dec 25 11:43:31 IIS-KP-master Keepalived_vrrp: Netlink: filter function error
+Dec 25 11:43:31 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Dec 25 12:24:11 IIS-KP-master Keepalived_healthcheckers: Timeout WEB read server [172.18.27.52:80].
+Dec 25 12:24:11 IIS-KP-master Keepalived_healthcheckers: Removing service [172.18.27.52:80] from VS [172.18.27.55:80]
+Dec 25 12:24:11 IIS-KP-master Keepalived_healthcheckers: Lost quorum 1-0=1 > 0 for VS [172.18.27.55:80]
+Dec 25 12:24:11 IIS-KP-master Keepalived_healthcheckers: Remote SMTP server [127.0.0.1:25] connected.
+Dec 25 12:24:20 IIS-KP-master Keepalived_healthcheckers: Timeout WEB read server [172.18.27.52:80].
+Dec 25 12:24:29 IIS-KP-master Keepalived_healthcheckers: Timeout WEB read server [172.18.27.52:80].
+Dec 25 12:24:40 IIS-KP-master Keepalived_healthcheckers: SMTP alert successfully sent.
+Dec 25 12:53:05 IIS-KP-master Keepalived: Starting Keepalived v1.1.20 (09/23,2014) 
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers: Initializing ipvs 2.6
+Dec 25 12:53:05 IIS-KP-master Keepalived: Starting Healthcheck child process, pid=1852
+Dec 25 12:53:05 IIS-KP-master Keepalived: Starting VRRP child process, pid=1854
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.56 added
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink reflector
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink command channel
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp: Registering gratutious ARP shared channel
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp: Initializing ipvs 2.6
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.56 added
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink reflector
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink command channel
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers: Opening file '/etc/keepalived/keepalived.conf'. 
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp: Opening file '/etc/keepalived/keepalived.conf'. 
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers: Configuration is using : 10771 Bytes
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp: Configuration is using : 36194 Bytes
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp: ------< Global definitions >------
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp:  Router ID = LVS_DEVEL
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp:  Smtp server = 127.0.0.1
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp:  Smtp server connection timeout = 30
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp:  Email notification from = Alexandre.Cassen@firewall.loc
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp:  Email notification = liujian@ait.cn
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers: ------< Global definitions >------
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp:  Email notification = liwenzhou@ait.cn
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers:  Router ID = LVS_DEVEL
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp: ------< VRRP Topology >------
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers:  Smtp server = 127.0.0.1
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp:  VRRP Instance = VI_1
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers:  Smtp server connection timeout = 30
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp:    Want State = MASTER
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers:  Email notification from = Alexandre.Cassen@firewall.loc
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp:    Runing on device = eth0
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers:  Email notification = liujian@ait.cn
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp:    Virtual Router ID = 27
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers:  Email notification = liwenzhou@ait.cn
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp:    Priority = 100
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers: ------< SSL definitions >------
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp:    Advert interval = 1sec
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers:  Using autogen SSL context
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp:    Authentication type = SIMPLE_PASSWORD
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers: ------< LVS Topology >------
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp:    Password = 4321
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers:  System is compiled with LVS v1.2.1
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp:    Virtual IP = 1
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers:  VIP = 172.18.27.55, VPORT = 80
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp:      172.18.27.55/32 dev eth0 scope global
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers:    delay_loop = 6, lb_algo = wrr
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp: Using LinkWatch kernel netlink reflector...
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers:    persistence timeout = 50
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp: VRRP sockpool: [ifindex(2), proto(112), fd(11,12)]
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers:    protocol = TCP
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers:    alpha is OFF, omega is OFF
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers:    quorum = 1, hysteresis = 0
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers:    lb_kind = DR
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers:    RIP = 172.18.27.52, RPORT = 80, WEIGHT = 1
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers: ------< Health checkers >------
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers:  172.18.27.52:80
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers:    Keepalive method = HTTP_GET
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers:    Connection port = 80
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers:    Connection timeout = 3
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers:    Nb get retry = 3
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers:    Delay before retry = 3
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers:    Checked url = /
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers: Using LinkWatch kernel netlink reflector...
+Dec 25 12:53:05 IIS-KP-master Keepalived_healthcheckers: Activating healtchecker for service [172.18.27.52:80]
+Dec 25 12:53:05 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Transition to MASTER STATE
+Dec 25 12:53:06 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Entering MASTER STATE
+Dec 25 12:53:06 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) setting protocol VIPs.
+Dec 25 12:53:06 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Dec 25 12:53:06 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.55 added
+Dec 25 12:53:06 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.55 added
+Dec 25 12:53:11 IIS-KP-master Keepalived_healthcheckers: Netlink: filter function error
+Dec 25 12:53:11 IIS-KP-master Keepalived_vrrp: Netlink: filter function error
+Dec 25 12:53:11 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Dec 25 14:15:30 IIS-KP-master Keepalived_healthcheckers: Timeout WEB read server [172.18.27.52:80].
+Dec 25 14:15:30 IIS-KP-master Keepalived_healthcheckers: Removing service [172.18.27.52:80] from VS [172.18.27.55:80]
+Dec 25 14:15:30 IIS-KP-master Keepalived_healthcheckers: Lost quorum 1-0=1 > 0 for VS [172.18.27.55:80]
+Dec 25 14:15:30 IIS-KP-master Keepalived_healthcheckers: Remote SMTP server [127.0.0.1:25] connected.
+Dec 25 14:15:39 IIS-KP-master Keepalived_healthcheckers: SMTP alert successfully sent.
+Dec 25 14:36:24 IIS-KP-master Keepalived: Terminating on signal
+Dec 25 14:36:24 IIS-KP-master Keepalived: Stopping Keepalived v1.1.20 (09/23,2014) 
+Dec 25 14:36:24 IIS-KP-master Keepalived_vrrp: Terminating VRRP child process on signal
+Dec 25 14:36:24 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) removing protocol VIPs.
+Dec 25 14:36:24 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.55 removed
+Dec 25 14:36:24 IIS-KP-master Keepalived_healthcheckers: Terminating Healthchecker child process on signal
+Dec 25 14:36:25 IIS-KP-master Keepalived: Starting Keepalived v1.1.20 (09/23,2014) 
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers: Initializing ipvs 2.6
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.56 added
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink reflector
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink command channel
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers: Opening file '/etc/keepalived/keepalived.conf'. 
+Dec 25 14:36:25 IIS-KP-master Keepalived: Starting Healthcheck child process, pid=2756
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.56 added
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink reflector
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink command channel
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp: Registering gratutious ARP shared channel
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp: Initializing ipvs 2.6
+Dec 25 14:36:25 IIS-KP-master Keepalived: Starting VRRP child process, pid=2757
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers: Configuration is using : 10859 Bytes
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers: ------< Global definitions >------
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers:  Router ID = LVS_DEVEL
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers:  Smtp server = 127.0.0.1
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp: Opening file '/etc/keepalived/keepalived.conf'. 
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers:  Smtp server connection timeout = 30
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp: Configuration is using : 36282 Bytes
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers:  Email notification from = Alexandre.Cassen@firewall.loc
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp: ------< Global definitions >------
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers:  Email notification = liujian@ait.cn
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp:  Router ID = LVS_DEVEL
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers:  Email notification = liwenzhou@ait.cn
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp:  Smtp server = 127.0.0.1
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers: ------< SSL definitions >------
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp:  Smtp server connection timeout = 30
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers:  Using autogen SSL context
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp:  Email notification from = Alexandre.Cassen@firewall.loc
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers: ------< LVS Topology >------
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp:  Email notification = liujian@ait.cn
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers:  System is compiled with LVS v1.2.1
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp:  Email notification = liwenzhou@ait.cn
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers:  VIP = 172.18.27.55, VPORT = 80
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp: ------< VRRP Topology >------
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers:    delay_loop = 6, lb_algo = wrr
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp:  VRRP Instance = VI_1
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers:    persistence timeout = 50
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp:    Want State = MASTER
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers:    protocol = TCP
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp:    Runing on device = eth0
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers:    alpha is OFF, omega is OFF
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp:    Virtual Router ID = 27
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers:    quorum = 1, hysteresis = 0
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp:    Priority = 100
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers:    lb_kind = DR
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp:    Advert interval = 1sec
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers:    RIP = 172.18.27.52, RPORT = 80, WEIGHT = 1
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp:    Authentication type = SIMPLE_PASSWORD
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers: ------< Health checkers >------
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp:    Password = 4321
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers:  172.18.27.52:80
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp:    Virtual IP = 1
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers:    Keepalive method = HTTP_GET
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp:      172.18.27.55/32 dev eth0 scope global
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers:    Connection port = 80
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp: Using LinkWatch kernel netlink reflector...
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers:    Connection timeout = 3
+Dec 25 14:36:25 IIS-KP-master Keepalived_vrrp: VRRP sockpool: [ifindex(2), proto(112), fd(10,11)]
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers:    Nb get retry = 3
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers:    Delay before retry = 3
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers:    Checked url = /
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers: Using LinkWatch kernel netlink reflector...
+Dec 25 14:36:25 IIS-KP-master Keepalived_healthcheckers: Activating healtchecker for service [172.18.27.52:80]
+Dec 25 14:36:26 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Transition to MASTER STATE
+Dec 25 14:36:27 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Entering MASTER STATE
+Dec 25 14:36:27 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) setting protocol VIPs.
+Dec 25 14:36:27 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Dec 25 14:36:27 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.55 added
+Dec 25 14:36:27 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.55 added
+Dec 25 14:36:32 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Jan  6 15:32:23 IIS-KP-master Keepalived_healthcheckers: Timeout WEB read server [172.18.27.52:80].
+Jan  6 15:32:23 IIS-KP-master Keepalived_healthcheckers: Removing service [172.18.27.52:80] from VS [172.18.27.55:80]
+Jan  6 15:32:23 IIS-KP-master Keepalived_healthcheckers: Lost quorum 1-0=1 > 0 for VS [172.18.27.55:80]
+Jan  6 15:32:23 IIS-KP-master Keepalived_healthcheckers: Remote SMTP server [127.0.0.1:25] connected.
+Jan  6 15:32:24 IIS-KP-master Keepalived_healthcheckers: SMTP alert successfully sent.
+Jan  6 15:32:32 IIS-KP-master Keepalived_healthcheckers: Timeout WEB read server [172.18.27.52:80].
+Jan  6 15:57:49 IIS-KP-master Keepalived: Starting Keepalived v1.1.20 (09/23,2014) 
+Jan  6 15:57:49 IIS-KP-master Keepalived_healthcheckers: Initializing ipvs 2.6
+Jan  6 15:57:49 IIS-KP-master Keepalived: Starting Healthcheck child process, pid=1851
+Jan  6 15:57:49 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.56 added
+Jan  6 15:57:49 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink reflector
+Jan  6 15:57:49 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink command channel
+Jan  6 15:57:49 IIS-KP-master Keepalived_vrrp: Registering gratutious ARP shared channel
+Jan  6 15:57:49 IIS-KP-master Keepalived_vrrp: Initializing ipvs 2.6
+Jan  6 15:57:49 IIS-KP-master Keepalived: Starting VRRP child process, pid=1853
+Jan  6 15:57:49 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.56 added
+Jan  6 15:57:49 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink reflector
+Jan  6 15:57:49 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink command channel
+Jan  6 15:57:49 IIS-KP-master Keepalived_healthcheckers: Opening file '/etc/keepalived/keepalived.conf'. 
+Jan  6 15:57:49 IIS-KP-master Keepalived_vrrp: Opening file '/etc/keepalived/keepalived.conf'. 
+Jan  6 15:57:49 IIS-KP-master Keepalived_healthcheckers: Configuration is using : 10771 Bytes
+Jan  6 15:57:49 IIS-KP-master Keepalived_vrrp: Configuration is using : 36194 Bytes
+Jan  6 15:57:49 IIS-KP-master Keepalived_vrrp: ------< Global definitions >------
+Jan  6 15:57:49 IIS-KP-master Keepalived_vrrp:  Router ID = LVS_DEVEL
+Jan  6 15:57:49 IIS-KP-master Keepalived_vrrp:  Smtp server = 127.0.0.1
+Jan  6 15:57:49 IIS-KP-master Keepalived_vrrp:  Smtp server connection timeout = 30
+Jan  6 15:57:49 IIS-KP-master Keepalived_vrrp:  Email notification from = Alexandre.Cassen@firewall.loc
+Jan  6 15:57:49 IIS-KP-master Keepalived_vrrp:  Email notification = liujian@ait.cn
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers: ------< Global definitions >------
+Jan  6 15:57:50 IIS-KP-master Keepalived_vrrp:  Email notification = liwenzhou@ait.cn
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers:  Router ID = LVS_DEVEL
+Jan  6 15:57:50 IIS-KP-master Keepalived_vrrp: ------< VRRP Topology >------
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers:  Smtp server = 127.0.0.1
+Jan  6 15:57:50 IIS-KP-master Keepalived_vrrp:  VRRP Instance = VI_1
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers:  Smtp server connection timeout = 30
+Jan  6 15:57:50 IIS-KP-master Keepalived_vrrp:    Want State = MASTER
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers:  Email notification from = Alexandre.Cassen@firewall.loc
+Jan  6 15:57:50 IIS-KP-master Keepalived_vrrp:    Runing on device = eth0
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers:  Email notification = liujian@ait.cn
+Jan  6 15:57:50 IIS-KP-master Keepalived_vrrp:    Virtual Router ID = 27
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers:  Email notification = liwenzhou@ait.cn
+Jan  6 15:57:50 IIS-KP-master Keepalived_vrrp:    Priority = 100
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers: ------< SSL definitions >------
+Jan  6 15:57:50 IIS-KP-master Keepalived_vrrp:    Advert interval = 1sec
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers:  Using autogen SSL context
+Jan  6 15:57:50 IIS-KP-master Keepalived_vrrp:    Authentication type = SIMPLE_PASSWORD
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers: ------< LVS Topology >------
+Jan  6 15:57:50 IIS-KP-master Keepalived_vrrp:    Password = 4321
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers:  System is compiled with LVS v1.2.1
+Jan  6 15:57:50 IIS-KP-master Keepalived_vrrp:    Virtual IP = 1
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers:  VIP = 172.18.27.55, VPORT = 80
+Jan  6 15:57:50 IIS-KP-master Keepalived_vrrp:      172.18.27.55/32 dev eth0 scope global
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers:    delay_loop = 6, lb_algo = wrr
+Jan  6 15:57:50 IIS-KP-master Keepalived_vrrp: Using LinkWatch kernel netlink reflector...
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers:    persistence timeout = 50
+Jan  6 15:57:50 IIS-KP-master Keepalived_vrrp: VRRP sockpool: [ifindex(2), proto(112), fd(11,12)]
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers:    protocol = TCP
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers:    alpha is OFF, omega is OFF
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers:    quorum = 1, hysteresis = 0
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers:    lb_kind = DR
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers:    RIP = 172.18.27.52, RPORT = 80, WEIGHT = 1
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers: ------< Health checkers >------
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers:  172.18.27.52:80
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers:    Keepalive method = HTTP_GET
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers:    Connection port = 80
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers:    Connection timeout = 3
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers:    Nb get retry = 3
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers:    Delay before retry = 3
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers:    Checked url = /
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers: Using LinkWatch kernel netlink reflector...
+Jan  6 15:57:50 IIS-KP-master Keepalived_healthcheckers: Activating healtchecker for service [172.18.27.52:80]
+Jan  6 15:57:50 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Transition to MASTER STATE
+Jan  6 15:57:51 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Entering MASTER STATE
+Jan  6 15:57:51 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) setting protocol VIPs.
+Jan  6 15:57:51 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Jan  6 15:57:51 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.55 added
+Jan  6 15:57:51 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.55 added
+Jan  6 15:57:55 IIS-KP-master Keepalived_healthcheckers: Netlink: filter function error
+Jan  6 15:57:55 IIS-KP-master Keepalived_vrrp: Netlink: filter function error
+Jan  6 15:57:56 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Jan 18 13:07:03 IIS-KP-master Keepalived: Terminating on signal
+Jan 18 13:07:03 IIS-KP-master Keepalived: Stopping Keepalived v1.1.20 (09/23,2014) 
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp: Terminating VRRP child process on signal
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers: Terminating Healthchecker child process on signal
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) removing protocol VIPs.
+Jan 18 13:07:03 IIS-KP-master Keepalived: Starting Keepalived v1.1.20 (09/23,2014) 
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers: Initializing ipvs 2.6
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.56 added
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink reflector
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink command channel
+Jan 18 13:07:03 IIS-KP-master Keepalived: Starting Healthcheck child process, pid=23512
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.56 added
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink reflector
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink command channel
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp: Registering gratutious ARP shared channel
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp: Initializing ipvs 2.6
+Jan 18 13:07:03 IIS-KP-master Keepalived: Starting VRRP child process, pid=23513
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp: Opening file '/etc/keepalived/keepalived.conf'. 
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers: Opening file '/etc/keepalived/keepalived.conf'. 
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers: Configuration is using : 10901 Bytes
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers: ------< Global definitions >------
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers:  Router ID = LVS_ERROR_REPORT
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp: Configuration is using : 36324 Bytes
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers:  Smtp server = 127.0.0.1
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp: ------< Global definitions >------
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers:  Smtp server connection timeout = 30
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp:  Router ID = LVS_ERROR_REPORT
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers:  Email notification from = Alexandre.Cassen@firewall.loc
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp:  Smtp server = 127.0.0.1
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers:  Email notification = liujian@ait.cn
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp:  Smtp server connection timeout = 30
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers:  Email notification = liwenzhou@ait.cn
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp:  Email notification from = Alexandre.Cassen@firewall.loc
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers: ------< SSL definitions >------
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp:  Email notification = liujian@ait.cn
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers:  Using autogen SSL context
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp:  Email notification = liwenzhou@ait.cn
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers: ------< LVS Topology >------
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp: ------< VRRP Topology >------
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers:  System is compiled with LVS v1.2.1
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp:  VRRP Instance = VI_1
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers:  VIP = 172.18.27.55, VPORT = 80
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp:    Want State = MASTER
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers:    delay_loop = 6, lb_algo = wrr
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp:    Runing on device = eth0
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers:    persistence timeout = 50
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp:    Virtual Router ID = 27
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers:    protocol = TCP
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp:    Priority = 100
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers:    alpha is OFF, omega is OFF
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp:    Advert interval = 1sec
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers:    quorum = 1, hysteresis = 0
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp:    Authentication type = SIMPLE_PASSWORD
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers:    lb_kind = DR
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp:    Password = 4321
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers:    RIP = 172.18.27.52, RPORT = 80, WEIGHT = 1
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp:    Virtual IP = 1
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers: ------< Health checkers >------
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp:      172.18.27.55/32 dev eth0 scope global
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers:  172.18.27.52:80
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp: Using LinkWatch kernel netlink reflector...
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers:    Keepalive method = HTTP_GET
+Jan 18 13:07:03 IIS-KP-master Keepalived_vrrp: VRRP sockpool: [ifindex(2), proto(112), fd(10,11)]
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers:    Connection port = 80
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers:    Connection timeout = 3
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers:    Nb get retry = 3
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers:    Delay before retry = 3
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers:    Checked url = /
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers: Using LinkWatch kernel netlink reflector...
+Jan 18 13:07:03 IIS-KP-master Keepalived_healthcheckers: Activating healtchecker for service [172.18.27.52:80]
+Jan 18 13:07:04 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Transition to MASTER STATE
+Jan 18 13:07:05 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Entering MASTER STATE
+Jan 18 13:07:05 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) setting protocol VIPs.
+Jan 18 13:07:05 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.55 added
+Jan 18 13:07:05 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Jan 18 13:07:05 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.55 added
+Jan 18 13:07:10 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Jan 18 13:09:32 IIS-KP-master Keepalived: Terminating on signal
+Jan 18 13:09:32 IIS-KP-master Keepalived: Stopping Keepalived v1.1.20 (09/23,2014) 
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp: Terminating VRRP child process on signal
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers: Terminating Healthchecker child process on signal
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) removing protocol VIPs.
+Jan 18 13:09:32 IIS-KP-master Keepalived: Starting Keepalived v1.1.20 (09/23,2014) 
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers: Initializing ipvs 2.6
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.56 added
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink reflector
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink command channel
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers: Opening file '/etc/keepalived/keepalived.conf'. 
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers: Configuration is using : 10901 Bytes
+Jan 18 13:09:32 IIS-KP-master Keepalived: Starting Healthcheck child process, pid=23533
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.56 added
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink reflector
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink command channel
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp: Registering gratutious ARP shared channel
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp: Initializing ipvs 2.6
+Jan 18 13:09:32 IIS-KP-master Keepalived: Starting VRRP child process, pid=23534
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers: ------< Global definitions >------
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers:  Router ID = LVS_ERROR_REPORT
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp: Opening file '/etc/keepalived/keepalived.conf'. 
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers:  Smtp server = 127.0.0.1
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp: Configuration is using : 36324 Bytes
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers:  Smtp server connection timeout = 30
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp: ------< Global definitions >------
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers:  Email notification from = Alexandre.Cassen@firewall.loc
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp:  Router ID = LVS_ERROR_REPORT
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers:  Email notification = liujian@ait.cn
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp:  Smtp server = 127.0.0.1
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers:  Email notification = liwenzhou@ait.cn
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp:  Smtp server connection timeout = 30
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers: ------< SSL definitions >------
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp:  Email notification from = Alexandre.Cassen@firewall.loc
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers:  Using autogen SSL context
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp:  Email notification = liujian@ait.cn
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers: ------< LVS Topology >------
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp:  Email notification = liwenzhou@ait.cn
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers:  System is compiled with LVS v1.2.1
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp: ------< VRRP Topology >------
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers:  VIP = 172.18.27.55, VPORT = 80
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp:  VRRP Instance = VI_1
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers:    delay_loop = 6, lb_algo = wrr
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp:    Want State = MASTER
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers:    persistence timeout = 30
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp:    Runing on device = eth0
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers:    protocol = TCP
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp:    Virtual Router ID = 27
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers:    alpha is OFF, omega is OFF
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp:    Priority = 100
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers:    quorum = 1, hysteresis = 0
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp:    Advert interval = 1sec
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers:    lb_kind = DR
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp:    Authentication type = SIMPLE_PASSWORD
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers:    RIP = 172.18.27.52, RPORT = 80, WEIGHT = 1
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp:    Password = 4321
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers: ------< Health checkers >------
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp:    Virtual IP = 1
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers:  172.18.27.52:80
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp:      172.18.27.55/32 dev eth0 scope global
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers:    Keepalive method = HTTP_GET
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp: Using LinkWatch kernel netlink reflector...
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers:    Connection port = 80
+Jan 18 13:09:32 IIS-KP-master Keepalived_vrrp: VRRP sockpool: [ifindex(2), proto(112), fd(10,11)]
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers:    Connection timeout = 3
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers:    Nb get retry = 3
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers:    Delay before retry = 3
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers:    Checked url = /
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers: Using LinkWatch kernel netlink reflector...
+Jan 18 13:09:32 IIS-KP-master Keepalived_healthcheckers: Activating healtchecker for service [172.18.27.52:80]
+Jan 18 13:09:33 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Transition to MASTER STATE
+Jan 18 13:09:34 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Entering MASTER STATE
+Jan 18 13:09:34 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) setting protocol VIPs.
+Jan 18 13:09:34 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Jan 18 13:09:34 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.55 added
+Jan 18 13:09:34 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.55 added
+Jan 18 13:09:39 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Jan 18 17:55:02 IIS-KP-master Keepalived_healthcheckers: Timeout WEB read server [172.18.27.52:80].
+Jan 18 17:55:02 IIS-KP-master Keepalived_healthcheckers: Removing service [172.18.27.52:80] from VS [172.18.27.55:80]
+Jan 18 17:55:02 IIS-KP-master Keepalived_healthcheckers: Lost quorum 1-0=1 > 0 for VS [172.18.27.55:80]
+Jan 18 17:55:02 IIS-KP-master Keepalived_healthcheckers: Remote SMTP server [127.0.0.1:25] connected.
+Jan 18 17:55:04 IIS-KP-master Keepalived_healthcheckers: SMTP alert successfully sent.
+Jan 18 17:55:11 IIS-KP-master Keepalived_healthcheckers: Timeout WEB read server [172.18.27.52:80].
+Jan 19 08:29:26 IIS-KP-master Keepalived: Starting Keepalived v1.1.20 (09/23,2014) 
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers: Initializing ipvs 2.6
+Jan 19 08:29:26 IIS-KP-master Keepalived: Starting Healthcheck child process, pid=1850
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.56 added
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink reflector
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink command channel
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp: Registering gratutious ARP shared channel
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp: Initializing ipvs 2.6
+Jan 19 08:29:26 IIS-KP-master Keepalived: Starting VRRP child process, pid=1852
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.56 added
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink reflector
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink command channel
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp: Opening file '/etc/keepalived/keepalived.conf'. 
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers: Opening file '/etc/keepalived/keepalived.conf'. 
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp: Configuration is using : 36236 Bytes
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp: ------< Global definitions >------
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp:  Router ID = LVS_ERROR_REPORT
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp:  Smtp server = 127.0.0.1
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp:  Smtp server connection timeout = 30
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp:  Email notification from = Alexandre.Cassen@firewall.loc
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp:  Email notification = liujian@ait.cn
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers: Configuration is using : 10813 Bytes
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers: ------< Global definitions >------
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers:  Router ID = LVS_ERROR_REPORT
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp:  Email notification = liwenzhou@ait.cn
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers:  Smtp server = 127.0.0.1
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp: ------< VRRP Topology >------
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers:  Smtp server connection timeout = 30
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp:  VRRP Instance = VI_1
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers:  Email notification from = Alexandre.Cassen@firewall.loc
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp:    Want State = MASTER
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers:  Email notification = liujian@ait.cn
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp:    Runing on device = eth0
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers:  Email notification = liwenzhou@ait.cn
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp:    Virtual Router ID = 27
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers: ------< SSL definitions >------
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp:    Priority = 100
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers:  Using autogen SSL context
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp:    Advert interval = 1sec
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers: ------< LVS Topology >------
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp:    Authentication type = SIMPLE_PASSWORD
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers:  System is compiled with LVS v1.2.1
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp:    Password = 4321
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers:  VIP = 172.18.27.55, VPORT = 80
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp:    Virtual IP = 1
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers:    delay_loop = 6, lb_algo = wrr
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp:      172.18.27.55/32 dev eth0 scope global
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers:    persistence timeout = 30
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp: Using LinkWatch kernel netlink reflector...
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers:    protocol = TCP
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp: VRRP sockpool: [ifindex(2), proto(112), fd(11,12)]
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers:    alpha is OFF, omega is OFF
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers:    quorum = 1, hysteresis = 0
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers:    lb_kind = DR
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers:    RIP = 172.18.27.52, RPORT = 80, WEIGHT = 1
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers: ------< Health checkers >------
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers:  172.18.27.52:80
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers:    Keepalive method = HTTP_GET
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers:    Connection port = 80
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers:    Connection timeout = 3
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers:    Nb get retry = 3
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers:    Delay before retry = 3
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers:    Checked url = /
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers: Using LinkWatch kernel netlink reflector...
+Jan 19 08:29:26 IIS-KP-master Keepalived_healthcheckers: Activating healtchecker for service [172.18.27.52:80]
+Jan 19 08:29:26 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Transition to MASTER STATE
+Jan 19 08:29:27 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Entering MASTER STATE
+Jan 19 08:29:27 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) setting protocol VIPs.
+Jan 19 08:29:27 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Jan 19 08:29:27 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.55 added
+Jan 19 08:29:27 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.55 added
+Jan 19 08:29:32 IIS-KP-master Keepalived_healthcheckers: Netlink: filter function error
+Jan 19 08:29:32 IIS-KP-master Keepalived_vrrp: Netlink: filter function error
+Jan 19 08:29:32 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Jan 30 20:28:10 IIS-KP-master Keepalived_healthcheckers: Timeout WEB read server [172.18.27.52:80].
+Jan 30 20:28:10 IIS-KP-master Keepalived_healthcheckers: Removing service [172.18.27.52:80] from VS [172.18.27.55:80]
+Jan 30 20:28:10 IIS-KP-master Keepalived_healthcheckers: Lost quorum 1-0=1 > 0 for VS [172.18.27.55:80]
+Jan 30 20:28:10 IIS-KP-master Keepalived_healthcheckers: Remote SMTP server [127.0.0.1:25] connected.
+Jan 30 20:28:14 IIS-KP-master Keepalived_healthcheckers: SMTP alert successfully sent.
+Jan 30 20:28:19 IIS-KP-master Keepalived_healthcheckers: Timeout WEB read server [172.18.27.52:80].
+Jan 30 20:28:28 IIS-KP-master Keepalived_healthcheckers: Timeout WEB read server [172.18.27.52:80].
+Feb  1 08:17:09 IIS-KP-master Keepalived: Terminating on signal
+Feb  1 08:17:09 IIS-KP-master Keepalived: Stopping Keepalived v1.1.20 (09/23,2014) 
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp: Terminating VRRP child process on signal
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) removing protocol VIPs.
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.55 removed
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers: Terminating Healthchecker child process on signal
+Feb  1 08:17:09 IIS-KP-master Keepalived: Starting Keepalived v1.1.20 (09/23,2014) 
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers: Initializing ipvs 2.6
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.56 added
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink reflector
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink command channel
+Feb  1 08:17:09 IIS-KP-master Keepalived: Starting Healthcheck child process, pid=28678
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.56 added
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink reflector
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink command channel
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp: Registering gratutious ARP shared channel
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp: Initializing ipvs 2.6
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp: Opening file '/etc/keepalived/keepalived.conf'. 
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp: Configuration is using : 36324 Bytes
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp: ------< Global definitions >------
+Feb  1 08:17:09 IIS-KP-master Keepalived: Starting VRRP child process, pid=28680
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers: Opening file '/etc/keepalived/keepalived.conf'. 
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp:  Router ID = LVS_ERROR_REPORT
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers: Configuration is using : 10901 Bytes
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp:  Smtp server = 127.0.0.1
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers: ------< Global definitions >------
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp:  Smtp server connection timeout = 30
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers:  Router ID = LVS_ERROR_REPORT
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp:  Email notification from = Alexandre.Cassen@firewall.loc
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers:  Smtp server = 127.0.0.1
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp:  Email notification = liujian@ait.cn
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers:  Smtp server connection timeout = 30
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp:  Email notification = liwenzhou@ait.cn
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers:  Email notification from = Alexandre.Cassen@firewall.loc
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp: ------< VRRP Topology >------
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers:  Email notification = liujian@ait.cn
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp:  VRRP Instance = VI_1
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers:  Email notification = liwenzhou@ait.cn
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp:    Want State = MASTER
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers: ------< SSL definitions >------
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp:    Runing on device = eth0
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers:  Using autogen SSL context
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp:    Virtual Router ID = 27
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers: ------< LVS Topology >------
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp:    Priority = 100
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers:  System is compiled with LVS v1.2.1
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp:    Advert interval = 1sec
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers:  VIP = 172.18.27.55, VPORT = 80
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp:    Authentication type = SIMPLE_PASSWORD
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers:    delay_loop = 6, lb_algo = wrr
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp:    Password = 4321
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers:    persistence timeout = 30
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp:    Virtual IP = 1
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers:    protocol = TCP
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp:      172.18.27.55/32 dev eth0 scope global
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers:    alpha is OFF, omega is OFF
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp: Using LinkWatch kernel netlink reflector...
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers:    quorum = 1, hysteresis = 0
+Feb  1 08:17:09 IIS-KP-master Keepalived_vrrp: VRRP sockpool: [ifindex(2), proto(112), fd(10,11)]
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers:    lb_kind = DR
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers:    RIP = 172.18.27.52, RPORT = 80, WEIGHT = 1
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers: ------< Health checkers >------
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers:  172.18.27.52:80
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers:    Keepalive method = HTTP_GET
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers:    Connection port = 80
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers:    Connection timeout = 3
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers:    Nb get retry = 3
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers:    Delay before retry = 3
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers:    Checked url = /
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers: Using LinkWatch kernel netlink reflector...
+Feb  1 08:17:09 IIS-KP-master Keepalived_healthcheckers: Activating healtchecker for service [172.18.27.52:80]
+Feb  1 08:17:10 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Transition to MASTER STATE
+Feb  1 08:17:11 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Entering MASTER STATE
+Feb  1 08:17:11 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) setting protocol VIPs.
+Feb  1 08:17:11 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.55 added
+Feb  1 08:17:11 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Feb  1 08:17:11 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.55 added
+Feb  1 08:17:16 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Feb 12 01:01:00 IIS-KP-master Keepalived_healthcheckers: Timeout WEB read server [172.18.27.52:80].
+Feb 12 01:01:00 IIS-KP-master Keepalived_healthcheckers: Removing service [172.18.27.52:80] from VS [172.18.27.55:80]
+Feb 12 01:01:00 IIS-KP-master Keepalived_healthcheckers: Lost quorum 1-0=1 > 0 for VS [172.18.27.55:80]
+Feb 12 01:01:00 IIS-KP-master Keepalived_healthcheckers: Remote SMTP server [127.0.0.1:25] connected.
+Feb 12 01:01:08 IIS-KP-master Keepalived_healthcheckers: SMTP alert successfully sent.
+Feb 12 01:01:09 IIS-KP-master Keepalived_healthcheckers: Timeout WEB read server [172.18.27.52:80].
+Feb 14 08:31:56 IIS-KP-master Keepalived: Starting Keepalived v1.1.20 (09/23,2014) 
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers: Initializing ipvs 2.6
+Feb 14 08:31:56 IIS-KP-master Keepalived: Starting Healthcheck child process, pid=1854
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.56 added
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink reflector
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink command channel
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp: Registering gratutious ARP shared channel
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp: Initializing ipvs 2.6
+Feb 14 08:31:56 IIS-KP-master Keepalived: Starting VRRP child process, pid=1856
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.56 added
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink reflector
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink command channel
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp: Opening file '/etc/keepalived/keepalived.conf'. 
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers: Opening file '/etc/keepalived/keepalived.conf'. 
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp: Configuration is using : 36236 Bytes
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp: ------< Global definitions >------
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp:  Router ID = LVS_ERROR_REPORT
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp:  Smtp server = 127.0.0.1
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp:  Smtp server connection timeout = 30
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp:  Email notification from = Alexandre.Cassen@firewall.loc
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp:  Email notification = liujian@ait.cn
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp:  Email notification = liwenzhou@ait.cn
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers: Configuration is using : 10813 Bytes
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp: ------< VRRP Topology >------
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp:  VRRP Instance = VI_1
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers: ------< Global definitions >------
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp:    Want State = MASTER
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers:  Router ID = LVS_ERROR_REPORT
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp:    Runing on device = eth0
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers:  Smtp server = 127.0.0.1
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp:    Virtual Router ID = 27
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers:  Smtp server connection timeout = 30
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp:    Priority = 100
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers:  Email notification from = Alexandre.Cassen@firewall.loc
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp:    Advert interval = 1sec
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers:  Email notification = liujian@ait.cn
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp:    Authentication type = SIMPLE_PASSWORD
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers:  Email notification = liwenzhou@ait.cn
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp:    Password = 4321
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers: ------< SSL definitions >------
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp:    Virtual IP = 1
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers:  Using autogen SSL context
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp:      172.18.27.55/32 dev eth0 scope global
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers: ------< LVS Topology >------
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp: Using LinkWatch kernel netlink reflector...
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers:  System is compiled with LVS v1.2.1
+Feb 14 08:31:56 IIS-KP-master Keepalived_vrrp: VRRP sockpool: [ifindex(2), proto(112), fd(11,12)]
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers:  VIP = 172.18.27.55, VPORT = 80
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers:    delay_loop = 6, lb_algo = wrr
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers:    persistence timeout = 30
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers:    protocol = TCP
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers:    alpha is OFF, omega is OFF
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers:    quorum = 1, hysteresis = 0
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers:    lb_kind = DR
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers:    RIP = 172.18.27.52, RPORT = 80, WEIGHT = 1
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers: ------< Health checkers >------
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers:  172.18.27.52:80
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers:    Keepalive method = HTTP_GET
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers:    Connection port = 80
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers:    Connection timeout = 3
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers:    Nb get retry = 3
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers:    Delay before retry = 3
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers:    Checked url = /
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers: Using LinkWatch kernel netlink reflector...
+Feb 14 08:31:56 IIS-KP-master Keepalived_healthcheckers: Activating healtchecker for service [172.18.27.52:80]
+Feb 14 08:31:57 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Transition to MASTER STATE
+Feb 14 08:31:58 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Entering MASTER STATE
+Feb 14 08:31:58 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) setting protocol VIPs.
+Feb 14 08:31:58 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Feb 14 08:31:58 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.55 added
+Feb 14 08:31:58 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.55 added
+Feb 14 08:32:02 IIS-KP-master Keepalived_healthcheckers: Netlink: filter function error
+Feb 14 08:32:02 IIS-KP-master Keepalived_vrrp: Netlink: filter function error
+Feb 14 08:32:03 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Feb 16 17:10:13 IIS-KP-master Keepalived_healthcheckers: Timeout WEB read server [172.18.27.52:80].
+Feb 16 17:10:13 IIS-KP-master Keepalived_healthcheckers: Removing service [172.18.27.52:80] from VS [172.18.27.55:80]
+Feb 16 17:10:13 IIS-KP-master Keepalived_healthcheckers: Lost quorum 1-0=1 > 0 for VS [172.18.27.55:80]
+Feb 16 17:10:13 IIS-KP-master Keepalived_healthcheckers: Remote SMTP server [127.0.0.1:25] connected.
+Feb 16 17:10:16 IIS-KP-master Keepalived_healthcheckers: SMTP alert successfully sent.
+Feb 16 17:10:22 IIS-KP-master Keepalived_healthcheckers: Timeout WEB read server [172.18.27.52:80].
+Feb 16 17:11:09 IIS-KP-master Keepalived_healthcheckers: Timeout WEB read server [172.18.27.52:80].
+Feb 16 17:11:24 IIS-KP-master Keepalived_healthcheckers: Timeout WEB read server [172.18.27.52:80].
+Feb 16 17:17:30 IIS-KP-master Keepalived: Starting Keepalived v1.1.20 (09/23,2014) 
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers: Initializing ipvs 2.6
+Feb 16 17:17:30 IIS-KP-master Keepalived: Starting Healthcheck child process, pid=1852
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.56 added
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink reflector
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink command channel
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp: Registering gratutious ARP shared channel
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp: Initializing ipvs 2.6
+Feb 16 17:17:30 IIS-KP-master Keepalived: Starting VRRP child process, pid=1854
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.56 added
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink reflector
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink command channel
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp: Opening file '/etc/keepalived/keepalived.conf'. 
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers: Opening file '/etc/keepalived/keepalived.conf'. 
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp: Configuration is using : 36236 Bytes
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp: ------< Global definitions >------
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp:  Router ID = LVS_ERROR_REPORT
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp:  Smtp server = 127.0.0.1
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp:  Smtp server connection timeout = 30
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp:  Email notification from = Alexandre.Cassen@firewall.loc
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp:  Email notification = liujian@ait.cn
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp:  Email notification = liwenzhou@ait.cn
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers: Configuration is using : 10813 Bytes
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers: ------< Global definitions >------
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers:  Router ID = LVS_ERROR_REPORT
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp: ------< VRRP Topology >------
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers:  Smtp server = 127.0.0.1
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp:  VRRP Instance = VI_1
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers:  Smtp server connection timeout = 30
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp:    Want State = MASTER
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers:  Email notification from = Alexandre.Cassen@firewall.loc
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp:    Runing on device = eth0
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers:  Email notification = liujian@ait.cn
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp:    Virtual Router ID = 27
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers:  Email notification = liwenzhou@ait.cn
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp:    Priority = 100
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers: ------< SSL definitions >------
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp:    Advert interval = 1sec
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers:  Using autogen SSL context
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp:    Authentication type = SIMPLE_PASSWORD
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers: ------< LVS Topology >------
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp:    Password = 4321
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers:  System is compiled with LVS v1.2.1
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp:    Virtual IP = 1
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers:  VIP = 172.18.27.55, VPORT = 80
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp:      172.18.27.55/32 dev eth0 scope global
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers:    delay_loop = 6, lb_algo = wrr
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp: Using LinkWatch kernel netlink reflector...
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers:    persistence timeout = 30
+Feb 16 17:17:30 IIS-KP-master Keepalived_vrrp: VRRP sockpool: [ifindex(2), proto(112), fd(11,12)]
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers:    protocol = TCP
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers:    alpha is OFF, omega is OFF
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers:    quorum = 1, hysteresis = 0
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers:    lb_kind = DR
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers:    RIP = 172.18.27.52, RPORT = 80, WEIGHT = 1
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers: ------< Health checkers >------
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers:  172.18.27.52:80
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers:    Keepalive method = HTTP_GET
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers:    Connection port = 80
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers:    Connection timeout = 3
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers:    Nb get retry = 3
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers:    Delay before retry = 3
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers:    Checked url = /
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers: Using LinkWatch kernel netlink reflector...
+Feb 16 17:17:30 IIS-KP-master Keepalived_healthcheckers: Activating healtchecker for service [172.18.27.52:80]
+Feb 16 17:17:31 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Transition to MASTER STATE
+Feb 16 17:17:32 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Entering MASTER STATE
+Feb 16 17:17:32 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) setting protocol VIPs.
+Feb 16 17:17:32 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Feb 16 17:17:32 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.55 added
+Feb 16 17:17:32 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.55 added
+Feb 16 17:17:36 IIS-KP-master Keepalived_healthcheckers: Netlink: filter function error
+Feb 16 17:17:36 IIS-KP-master Keepalived_vrrp: Netlink: filter function error
+Feb 16 17:17:37 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Feb 24 03:44:13 IIS-KP-master Keepalived_healthcheckers: Timeout WEB read server [172.18.27.52:80].
+Feb 24 03:44:13 IIS-KP-master Keepalived_healthcheckers: Removing service [172.18.27.52:80] from VS [172.18.27.55:80]
+Feb 24 03:44:13 IIS-KP-master Keepalived_healthcheckers: Lost quorum 1-0=1 > 0 for VS [172.18.27.55:80]
+Feb 24 03:44:13 IIS-KP-master Keepalived_healthcheckers: Remote SMTP server [127.0.0.1:25] connected.
+Feb 24 03:44:15 IIS-KP-master Keepalived_healthcheckers: SMTP alert successfully sent.
+Feb 24 03:44:22 IIS-KP-master Keepalived_healthcheckers: Timeout WEB read server [172.18.27.52:80].
+Feb 24 03:44:31 IIS-KP-master Keepalived_healthcheckers: Timeout WEB read server [172.18.27.52:80].
+Feb 24 08:25:34 IIS-KP-master Keepalived: Starting Keepalived v1.1.20 (09/23,2014) 
+Feb 24 08:25:34 IIS-KP-master Keepalived_healthcheckers: Initializing ipvs 2.6
+Feb 24 08:25:34 IIS-KP-master Keepalived: Starting Healthcheck child process, pid=1852
+Feb 24 08:25:34 IIS-KP-master Keepalived: Starting VRRP child process, pid=1854
+Feb 24 08:25:34 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.56 added
+Feb 24 08:25:34 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink reflector
+Feb 24 08:25:34 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink command channel
+Feb 24 08:25:34 IIS-KP-master Keepalived_vrrp: Registering gratutious ARP shared channel
+Feb 24 08:25:34 IIS-KP-master Keepalived_vrrp: Initializing ipvs 2.6
+Feb 24 08:25:34 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.56 added
+Feb 24 08:25:34 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink reflector
+Feb 24 08:25:34 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink command channel
+Feb 24 08:25:34 IIS-KP-master Keepalived_healthcheckers: Opening file '/etc/keepalived/keepalived.conf'. 
+Feb 24 08:25:34 IIS-KP-master Keepalived_vrrp: Opening file '/etc/keepalived/keepalived.conf'. 
+Feb 24 08:25:34 IIS-KP-master Keepalived_healthcheckers: Configuration is using : 10813 Bytes
+Feb 24 08:25:34 IIS-KP-master Keepalived_vrrp: Configuration is using : 36236 Bytes
+Feb 24 08:25:34 IIS-KP-master Keepalived_vrrp: ------< Global definitions >------
+Feb 24 08:25:34 IIS-KP-master Keepalived_vrrp:  Router ID = LVS_ERROR_REPORT
+Feb 24 08:25:34 IIS-KP-master Keepalived_vrrp:  Smtp server = 127.0.0.1
+Feb 24 08:25:34 IIS-KP-master Keepalived_vrrp:  Smtp server connection timeout = 30
+Feb 24 08:25:34 IIS-KP-master Keepalived_vrrp:  Email notification from = Alexandre.Cassen@firewall.loc
+Feb 24 08:25:34 IIS-KP-master Keepalived_vrrp:  Email notification = liujian@ait.cn
+Feb 24 08:25:34 IIS-KP-master Keepalived_healthcheckers: ------< Global definitions >------
+Feb 24 08:25:34 IIS-KP-master Keepalived_vrrp:  Email notification = liwenzhou@ait.cn
+Feb 24 08:25:34 IIS-KP-master Keepalived_healthcheckers:  Router ID = LVS_ERROR_REPORT
+Feb 24 08:25:35 IIS-KP-master Keepalived_vrrp: ------< VRRP Topology >------
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers:  Smtp server = 127.0.0.1
+Feb 24 08:25:35 IIS-KP-master Keepalived_vrrp:  VRRP Instance = VI_1
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers:  Smtp server connection timeout = 30
+Feb 24 08:25:35 IIS-KP-master Keepalived_vrrp:    Want State = MASTER
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers:  Email notification from = Alexandre.Cassen@firewall.loc
+Feb 24 08:25:35 IIS-KP-master Keepalived_vrrp:    Runing on device = eth0
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers:  Email notification = liujian@ait.cn
+Feb 24 08:25:35 IIS-KP-master Keepalived_vrrp:    Virtual Router ID = 27
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers:  Email notification = liwenzhou@ait.cn
+Feb 24 08:25:35 IIS-KP-master Keepalived_vrrp:    Priority = 100
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers: ------< SSL definitions >------
+Feb 24 08:25:35 IIS-KP-master Keepalived_vrrp:    Advert interval = 1sec
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers:  Using autogen SSL context
+Feb 24 08:25:35 IIS-KP-master Keepalived_vrrp:    Authentication type = SIMPLE_PASSWORD
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers: ------< LVS Topology >------
+Feb 24 08:25:35 IIS-KP-master Keepalived_vrrp:    Password = 4321
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers:  System is compiled with LVS v1.2.1
+Feb 24 08:25:35 IIS-KP-master Keepalived_vrrp:    Virtual IP = 1
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers:  VIP = 172.18.27.55, VPORT = 80
+Feb 24 08:25:35 IIS-KP-master Keepalived_vrrp:      172.18.27.55/32 dev eth0 scope global
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers:    delay_loop = 6, lb_algo = wrr
+Feb 24 08:25:35 IIS-KP-master Keepalived_vrrp: Using LinkWatch kernel netlink reflector...
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers:    persistence timeout = 30
+Feb 24 08:25:35 IIS-KP-master Keepalived_vrrp: VRRP sockpool: [ifindex(2), proto(112), fd(11,12)]
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers:    protocol = TCP
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers:    alpha is OFF, omega is OFF
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers:    quorum = 1, hysteresis = 0
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers:    lb_kind = DR
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers:    RIP = 172.18.27.52, RPORT = 80, WEIGHT = 1
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers: ------< Health checkers >------
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers:  172.18.27.52:80
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers:    Keepalive method = HTTP_GET
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers:    Connection port = 80
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers:    Connection timeout = 3
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers:    Nb get retry = 3
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers:    Delay before retry = 3
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers:    Checked url = /
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers: Using LinkWatch kernel netlink reflector...
+Feb 24 08:25:35 IIS-KP-master Keepalived_healthcheckers: Activating healtchecker for service [172.18.27.52:80]
+Feb 24 08:25:35 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Transition to MASTER STATE
+Feb 24 08:25:36 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Entering MASTER STATE
+Feb 24 08:25:36 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) setting protocol VIPs.
+Feb 24 08:25:36 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Feb 24 08:25:36 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.55 added
+Feb 24 08:25:36 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.55 added
+Feb 24 08:25:40 IIS-KP-master Keepalived_healthcheckers: Netlink: filter function error
+Feb 24 08:25:40 IIS-KP-master Keepalived_vrrp: Netlink: filter function error
+Feb 24 08:25:41 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Mar  4 09:53:44 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Received lower prio advert, forcing new election
+Mar  4 09:53:44 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Mar  4 09:53:44 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Received lower prio advert, forcing new election
+Mar  4 09:53:44 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Mar  7 06:05:53 IIS-KP-master Keepalived_healthcheckers: Timeout WEB read server [172.18.27.52:80].
+Mar  7 06:05:53 IIS-KP-master Keepalived_healthcheckers: Removing service [172.18.27.52:80] from VS [172.18.27.55:80]
+Mar  7 06:05:53 IIS-KP-master Keepalived_healthcheckers: Lost quorum 1-0=1 > 0 for VS [172.18.27.55:80]
+Mar  7 06:05:53 IIS-KP-master Keepalived_healthcheckers: Remote SMTP server [127.0.0.1:25] connected.
+Mar  7 06:05:54 IIS-KP-master Keepalived_healthcheckers: SMTP alert successfully sent.
+Mar  7 06:06:02 IIS-KP-master Keepalived_healthcheckers: Timeout WEB read server [172.18.27.52:80].
+Mar  7 08:45:39 IIS-KP-master Keepalived: Starting Keepalived v1.1.20 (09/23,2014) 
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers: Initializing ipvs 2.6
+Mar  7 08:45:39 IIS-KP-master Keepalived: Starting Healthcheck child process, pid=1853
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.56 added
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink reflector
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink command channel
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp: Registering gratutious ARP shared channel
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp: Initializing ipvs 2.6
+Mar  7 08:45:39 IIS-KP-master Keepalived: Starting VRRP child process, pid=1855
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.56 added
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink reflector
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink command channel
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers: Opening file '/etc/keepalived/keepalived.conf'. 
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp: Opening file '/etc/keepalived/keepalived.conf'. 
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers: Configuration is using : 10813 Bytes
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp: Configuration is using : 36236 Bytes
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp: ------< Global definitions >------
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp:  Router ID = LVS_ERROR_REPORT
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp:  Smtp server = 127.0.0.1
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp:  Smtp server connection timeout = 30
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp:  Email notification from = Alexandre.Cassen@firewall.loc
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp:  Email notification = liujian@ait.cn
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers: ------< Global definitions >------
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp:  Email notification = liwenzhou@ait.cn
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers:  Router ID = LVS_ERROR_REPORT
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp: ------< VRRP Topology >------
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers:  Smtp server = 127.0.0.1
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp:  VRRP Instance = VI_1
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers:  Smtp server connection timeout = 30
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp:    Want State = MASTER
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers:  Email notification from = Alexandre.Cassen@firewall.loc
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp:    Runing on device = eth0
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers:  Email notification = liujian@ait.cn
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp:    Virtual Router ID = 27
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers:  Email notification = liwenzhou@ait.cn
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp:    Priority = 100
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers: ------< SSL definitions >------
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp:    Advert interval = 1sec
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers:  Using autogen SSL context
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp:    Authentication type = SIMPLE_PASSWORD
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers: ------< LVS Topology >------
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp:    Password = 4321
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers:  System is compiled with LVS v1.2.1
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp:    Virtual IP = 1
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers:  VIP = 172.18.27.55, VPORT = 80
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp:      172.18.27.55/32 dev eth0 scope global
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers:    delay_loop = 6, lb_algo = wrr
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp: Using LinkWatch kernel netlink reflector...
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers:    persistence timeout = 30
+Mar  7 08:45:39 IIS-KP-master Keepalived_vrrp: VRRP sockpool: [ifindex(2), proto(112), fd(11,12)]
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers:    protocol = TCP
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers:    alpha is OFF, omega is OFF
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers:    quorum = 1, hysteresis = 0
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers:    lb_kind = DR
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers:    RIP = 172.18.27.52, RPORT = 80, WEIGHT = 1
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers: ------< Health checkers >------
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers:  172.18.27.52:80
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers:    Keepalive method = HTTP_GET
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers:    Connection port = 80
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers:    Connection timeout = 3
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers:    Nb get retry = 3
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers:    Delay before retry = 3
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers:    Checked url = /
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers: Using LinkWatch kernel netlink reflector...
+Mar  7 08:45:39 IIS-KP-master Keepalived_healthcheckers: Activating healtchecker for service [172.18.27.52:80]
+Mar  7 08:45:40 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Transition to MASTER STATE
+Mar  7 08:45:41 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Entering MASTER STATE
+Mar  7 08:45:41 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) setting protocol VIPs.
+Mar  7 08:45:41 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Mar  7 08:45:41 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.55 added
+Mar  7 08:45:41 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.55 added
+Mar  7 08:45:45 IIS-KP-master Keepalived_healthcheckers: Netlink: filter function error
+Mar  7 08:45:45 IIS-KP-master Keepalived_vrrp: Netlink: filter function error
+Mar  7 08:45:46 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Mar  7 14:29:47 IIS-KP-master Keepalived: Terminating on signal
+Mar  7 14:29:47 IIS-KP-master Keepalived: Stopping Keepalived v1.1.20 (09/23,2014) 
+Mar  7 14:29:47 IIS-KP-master Keepalived_vrrp: Terminating VRRP child process on signal
+Mar  7 14:29:47 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) removing protocol VIPs.
+Mar  7 14:29:47 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.55 removed
+Mar  7 14:29:47 IIS-KP-master Keepalived_healthcheckers: Terminating Healthchecker child process on signal
+Mar  7 14:29:48 IIS-KP-master Keepalived: Starting Keepalived v1.1.20 (09/23,2014) 
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers: Initializing ipvs 2.6
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.56 added
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink reflector
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink command channel
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers: Opening file '/etc/keepalived/keepalived.conf'. 
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers: Configuration is using : 10901 Bytes
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers: ------< Global definitions >------
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers:  Router ID = LVS_ERROR_REPORT
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers:  Smtp server = 127.0.0.1
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers:  Smtp server connection timeout = 30
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers:  Email notification from = Alexandre.Cassen@firewall.loc
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers:  Email notification = liujian@ait.cn
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers:  Email notification = liwenzhou@ait.cn
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers: ------< SSL definitions >------
+Mar  7 14:29:48 IIS-KP-master Keepalived: Starting Healthcheck child process, pid=3189
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers:  Using autogen SSL context
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.56 added
+Mar  7 14:29:48 IIS-KP-master Keepalived: Starting VRRP child process, pid=3191
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers: ------< LVS Topology >------
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink reflector
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers:  System is compiled with LVS v1.2.1
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink command channel
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers:  VIP = 172.18.27.55, VPORT = 80
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp: Registering gratutious ARP shared channel
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers:    delay_loop = 6, lb_algo = wrr
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp: Initializing ipvs 2.6
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers:    persistence timeout = 50
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp: Opening file '/etc/keepalived/keepalived.conf'. 
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers:    protocol = TCP
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp: Configuration is using : 36324 Bytes
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers:    alpha is OFF, omega is OFF
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp: ------< Global definitions >------
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers:    quorum = 1, hysteresis = 0
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp:  Router ID = LVS_ERROR_REPORT
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers:    lb_kind = DR
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp:  Smtp server = 127.0.0.1
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers:    RIP = 172.18.27.52, RPORT = 80, WEIGHT = 1
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp:  Smtp server connection timeout = 30
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers: ------< Health checkers >------
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp:  Email notification from = Alexandre.Cassen@firewall.loc
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers:  172.18.27.52:80
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp:  Email notification = liujian@ait.cn
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers:    Keepalive method = HTTP_GET
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp:  Email notification = liwenzhou@ait.cn
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers:    Connection port = 80
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp: ------< VRRP Topology >------
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers:    Connection timeout = 3
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp:  VRRP Instance = VI_1
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers:    Nb get retry = 3
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp:    Want State = MASTER
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers:    Delay before retry = 3
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp:    Runing on device = eth0
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers:    Checked url = /
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp:    Virtual Router ID = 27
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers: Using LinkWatch kernel netlink reflector...
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp:    Priority = 100
+Mar  7 14:29:48 IIS-KP-master Keepalived_healthcheckers: Activating healtchecker for service [172.18.27.52:80]
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp:    Advert interval = 1sec
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp:    Authentication type = SIMPLE_PASSWORD
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp:    Password = 4321
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp:    Virtual IP = 1
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp:      172.18.27.55/32 dev eth0 scope global
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp: Using LinkWatch kernel netlink reflector...
+Mar  7 14:29:48 IIS-KP-master Keepalived_vrrp: VRRP sockpool: [ifindex(2), proto(112), fd(10,11)]
+Mar  7 14:29:49 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Transition to MASTER STATE
+Mar  7 14:29:50 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Entering MASTER STATE
+Mar  7 14:29:50 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) setting protocol VIPs.
+Mar  7 14:29:50 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.55 added
+Mar  7 14:29:50 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Mar  7 14:29:50 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.55 added
+Mar  7 14:29:55 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Mar  7 14:46:15 IIS-KP-master Keepalived: Starting Keepalived v1.1.20 (09/23,2014) 
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers: Initializing ipvs 2.6
+Mar  7 14:46:15 IIS-KP-master Keepalived: Starting Healthcheck child process, pid=1852
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.56 added
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink reflector
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink command channel
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp: Registering gratutious ARP shared channel
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp: Initializing ipvs 2.6
+Mar  7 14:46:15 IIS-KP-master Keepalived: Starting VRRP child process, pid=1854
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.56 added
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink reflector
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink command channel
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp: Opening file '/etc/keepalived/keepalived.conf'. 
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers: Opening file '/etc/keepalived/keepalived.conf'. 
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp: Configuration is using : 36236 Bytes
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp: ------< Global definitions >------
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp:  Router ID = LVS_ERROR_REPORT
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp:  Smtp server = 127.0.0.1
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp:  Smtp server connection timeout = 30
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp:  Email notification from = Alexandre.Cassen@firewall.loc
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp:  Email notification = liujian@ait.cn
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp:  Email notification = liwenzhou@ait.cn
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers: Configuration is using : 10813 Bytes
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp: ------< VRRP Topology >------
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers: ------< Global definitions >------
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp:  VRRP Instance = VI_1
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers:  Router ID = LVS_ERROR_REPORT
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp:    Want State = MASTER
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers:  Smtp server = 127.0.0.1
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp:    Runing on device = eth0
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers:  Smtp server connection timeout = 30
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp:    Virtual Router ID = 27
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers:  Email notification from = Alexandre.Cassen@firewall.loc
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp:    Priority = 100
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers:  Email notification = liujian@ait.cn
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp:    Advert interval = 1sec
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers:  Email notification = liwenzhou@ait.cn
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp:    Authentication type = SIMPLE_PASSWORD
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers: ------< SSL definitions >------
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp:    Password = 4321
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers:  Using autogen SSL context
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp:    Virtual IP = 1
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers: ------< LVS Topology >------
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp:      172.18.27.55/32 dev eth0 scope global
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers:  System is compiled with LVS v1.2.1
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp: Using LinkWatch kernel netlink reflector...
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers:  VIP = 172.18.27.55, VPORT = 80
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp: VRRP sockpool: [ifindex(2), proto(112), fd(11,12)]
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers:    delay_loop = 6, lb_algo = wrr
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers:    persistence timeout = 50
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers:    protocol = TCP
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers:    alpha is OFF, omega is OFF
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers:    quorum = 1, hysteresis = 0
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers:    lb_kind = DR
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers:    RIP = 172.18.27.52, RPORT = 80, WEIGHT = 1
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers: ------< Health checkers >------
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers:  172.18.27.52:80
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers:    Keepalive method = HTTP_GET
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers:    Connection port = 80
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers:    Connection timeout = 3
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers:    Nb get retry = 3
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers:    Delay before retry = 3
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers:    Checked url = /
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers: Using LinkWatch kernel netlink reflector...
+Mar  7 14:46:15 IIS-KP-master Keepalived_healthcheckers: Activating healtchecker for service [172.18.27.52:80]
+Mar  7 14:46:15 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Transition to MASTER STATE
+Mar  7 14:46:16 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Entering MASTER STATE
+Mar  7 14:46:16 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) setting protocol VIPs.
+Mar  7 14:46:16 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Mar  7 14:46:16 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.55 added
+Mar  7 14:46:16 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.55 added
+Mar  7 14:46:21 IIS-KP-master Keepalived_healthcheckers: Netlink: filter function error
+Mar  7 14:46:21 IIS-KP-master Keepalived_vrrp: Netlink: filter function error
+Mar  7 14:46:21 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Mar 10 16:48:50 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Received lower prio advert, forcing new election
+Mar 10 16:48:50 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Mar 10 16:48:50 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Received lower prio advert, forcing new election
+Mar 10 16:48:50 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Mar 10 16:53:06 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Received lower prio advert, forcing new election
+Mar 10 16:53:06 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Mar 10 16:53:06 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Received lower prio advert, forcing new election
+Mar 10 16:53:06 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Mar 11 09:16:51 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Received lower prio advert, forcing new election
+Mar 11 09:16:51 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Mar 14 15:42:06 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Received lower prio advert, forcing new election
+Mar 14 15:42:06 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Mar 14 15:42:06 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Received lower prio advert, forcing new election
+Mar 14 15:42:06 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Mar 14 15:43:18 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Received lower prio advert, forcing new election
+Mar 14 15:43:18 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Mar 19 08:41:48 IIS-KP-master Keepalived_healthcheckers: Timeout WEB read server [172.18.27.52:80].
+Mar 19 08:41:48 IIS-KP-master Keepalived_healthcheckers: Removing service [172.18.27.52:80] from VS [172.18.27.55:80]
+Mar 19 08:41:48 IIS-KP-master Keepalived_healthcheckers: Lost quorum 1-0=1 > 0 for VS [172.18.27.55:80]
+Mar 19 08:41:48 IIS-KP-master Keepalived_healthcheckers: Remote SMTP server [127.0.0.1:25] connected.
+Mar 19 08:41:50 IIS-KP-master Keepalived_healthcheckers: SMTP alert successfully sent.
+Mar 19 08:41:57 IIS-KP-master Keepalived_healthcheckers: Timeout WEB read server [172.18.27.52:80].
+Mar 19 08:42:06 IIS-KP-master Keepalived_healthcheckers: Timeout WEB read server [172.18.27.52:80].
+Mar 21 08:42:38 IIS-KP-master Keepalived: Starting Keepalived v1.1.20 (09/23,2014) 
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers: Initializing ipvs 2.6
+Mar 21 08:42:38 IIS-KP-master Keepalived: Starting Healthcheck child process, pid=1856
+Mar 21 08:42:38 IIS-KP-master Keepalived: Starting VRRP child process, pid=1858
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.56 added
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink reflector
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink command channel
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp: Registering gratutious ARP shared channel
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp: Initializing ipvs 2.6
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.56 added
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink reflector
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink command channel
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers: Opening file '/etc/keepalived/keepalived.conf'. 
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp: Opening file '/etc/keepalived/keepalived.conf'. 
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers: Configuration is using : 10813 Bytes
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp: Configuration is using : 36236 Bytes
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp: ------< Global definitions >------
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp:  Router ID = LVS_ERROR_REPORT
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp:  Smtp server = 127.0.0.1
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp:  Smtp server connection timeout = 30
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp:  Email notification from = Alexandre.Cassen@firewall.loc
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp:  Email notification = liujian@ait.cn
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers: ------< Global definitions >------
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp:  Email notification = liwenzhou@ait.cn
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers:  Router ID = LVS_ERROR_REPORT
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp: ------< VRRP Topology >------
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers:  Smtp server = 127.0.0.1
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp:  VRRP Instance = VI_1
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers:  Smtp server connection timeout = 30
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp:    Want State = MASTER
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers:  Email notification from = Alexandre.Cassen@firewall.loc
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp:    Runing on device = eth0
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers:  Email notification = liujian@ait.cn
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp:    Virtual Router ID = 27
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers:  Email notification = liwenzhou@ait.cn
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp:    Priority = 100
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers: ------< SSL definitions >------
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp:    Advert interval = 1sec
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers:  Using autogen SSL context
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp:    Authentication type = SIMPLE_PASSWORD
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers: ------< LVS Topology >------
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp:    Password = 4321
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers:  System is compiled with LVS v1.2.1
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp:    Virtual IP = 1
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers:  VIP = 172.18.27.55, VPORT = 80
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp:      172.18.27.55/32 dev eth0 scope global
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers:    delay_loop = 6, lb_algo = wrr
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp: Using LinkWatch kernel netlink reflector...
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers:    persistence timeout = 50
+Mar 21 08:42:38 IIS-KP-master Keepalived_vrrp: VRRP sockpool: [ifindex(2), proto(112), fd(11,12)]
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers:    protocol = TCP
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers:    alpha is OFF, omega is OFF
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers:    quorum = 1, hysteresis = 0
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers:    lb_kind = DR
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers:    RIP = 172.18.27.52, RPORT = 80, WEIGHT = 1
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers: ------< Health checkers >------
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers:  172.18.27.52:80
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers:    Keepalive method = HTTP_GET
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers:    Connection port = 80
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers:    Connection timeout = 3
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers:    Nb get retry = 3
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers:    Delay before retry = 3
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers:    Checked url = /
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers: Using LinkWatch kernel netlink reflector...
+Mar 21 08:42:38 IIS-KP-master Keepalived_healthcheckers: Activating healtchecker for service [172.18.27.52:80]
+Mar 21 08:42:39 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Transition to MASTER STATE
+Mar 21 08:42:40 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Entering MASTER STATE
+Mar 21 08:42:40 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) setting protocol VIPs.
+Mar 21 08:42:40 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Mar 21 08:42:40 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.55 added
+Mar 21 08:42:40 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.55 added
+Mar 21 08:42:44 IIS-KP-master Keepalived_vrrp: Netlink: filter function error
+Mar 21 08:42:44 IIS-KP-master Keepalived_healthcheckers: Netlink: filter function error
+Mar 21 08:42:45 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Mar 21 09:04:39 IIS-KP-master Keepalived_healthcheckers: Timeout connect, timeout server [172.18.27.52:80].
+Mar 21 09:04:39 IIS-KP-master Keepalived_healthcheckers: Removing service [172.18.27.52:80] from VS [172.18.27.55:80]
+Mar 21 09:04:39 IIS-KP-master Keepalived_healthcheckers: Lost quorum 1-0=1 > 0 for VS [172.18.27.55:80]
+Mar 21 09:04:39 IIS-KP-master Keepalived_healthcheckers: Remote SMTP server [127.0.0.1:25] connected.
+Mar 21 09:04:56 IIS-KP-master Keepalived_healthcheckers: SMTP alert successfully sent.
+Mar 21 09:47:02 IIS-KP-master Keepalived: Starting Keepalived v1.1.20 (09/23,2014) 
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers: Initializing ipvs 2.6
+Mar 21 09:47:02 IIS-KP-master Keepalived: Starting Healthcheck child process, pid=1852
+Mar 21 09:47:02 IIS-KP-master Keepalived: Starting VRRP child process, pid=1854
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.56 added
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink reflector
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp: Registering Kernel netlink command channel
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp: Registering gratutious ARP shared channel
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp: Initializing ipvs 2.6
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.56 added
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink reflector
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers: Registering Kernel netlink command channel
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers: Opening file '/etc/keepalived/keepalived.conf'. 
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp: Opening file '/etc/keepalived/keepalived.conf'. 
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers: Configuration is using : 10813 Bytes
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp: Configuration is using : 36236 Bytes
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp: ------< Global definitions >------
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp:  Router ID = LVS_ERROR_REPORT
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp:  Smtp server = 127.0.0.1
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp:  Smtp server connection timeout = 30
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp:  Email notification from = Alexandre.Cassen@firewall.loc
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp:  Email notification = liujian@ait.cn
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp:  Email notification = liwenzhou@ait.cn
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp: ------< VRRP Topology >------
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp:  VRRP Instance = VI_1
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers: ------< Global definitions >------
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers:  Router ID = LVS_ERROR_REPORT
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp:    Want State = MASTER
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers:  Smtp server = 127.0.0.1
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp:    Runing on device = eth0
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers:  Smtp server connection timeout = 30
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp:    Virtual Router ID = 27
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers:  Email notification from = Alexandre.Cassen@firewall.loc
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp:    Priority = 100
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers:  Email notification = liujian@ait.cn
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp:    Advert interval = 1sec
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers:  Email notification = liwenzhou@ait.cn
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp:    Authentication type = SIMPLE_PASSWORD
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers: ------< SSL definitions >------
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp:    Password = 4321
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers:  Using autogen SSL context
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp:    Virtual IP = 1
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers: ------< LVS Topology >------
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp:      172.18.27.55/32 dev eth0 scope global
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers:  System is compiled with LVS v1.2.1
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp: Using LinkWatch kernel netlink reflector...
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers:  VIP = 172.18.27.55, VPORT = 80
+Mar 21 09:47:02 IIS-KP-master Keepalived_vrrp: VRRP sockpool: [ifindex(2), proto(112), fd(11,12)]
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers:    delay_loop = 6, lb_algo = wrr
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers:    persistence timeout = 50
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers:    protocol = TCP
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers:    alpha is OFF, omega is OFF
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers:    quorum = 1, hysteresis = 0
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers:    lb_kind = DR
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers:    RIP = 172.18.27.52, RPORT = 80, WEIGHT = 1
+Mar 21 09:47:02 IIS-KP-master Keepalived_healthcheckers: ------< Health checkers >------
+Mar 21 09:47:03 IIS-KP-master Keepalived_healthcheckers:  172.18.27.52:80
+Mar 21 09:47:03 IIS-KP-master Keepalived_healthcheckers:    Keepalive method = HTTP_GET
+Mar 21 09:47:03 IIS-KP-master Keepalived_healthcheckers:    Connection port = 80
+Mar 21 09:47:03 IIS-KP-master Keepalived_healthcheckers:    Connection timeout = 3
+Mar 21 09:47:03 IIS-KP-master Keepalived_healthcheckers:    Nb get retry = 3
+Mar 21 09:47:03 IIS-KP-master Keepalived_healthcheckers:    Delay before retry = 3
+Mar 21 09:47:03 IIS-KP-master Keepalived_healthcheckers:    Checked url = /
+Mar 21 09:47:03 IIS-KP-master Keepalived_healthcheckers: Using LinkWatch kernel netlink reflector...
+Mar 21 09:47:03 IIS-KP-master Keepalived_healthcheckers: Activating healtchecker for service [172.18.27.52:80]
+Mar 21 09:47:03 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Transition to MASTER STATE
+Mar 21 09:47:04 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Entering MASTER STATE
+Mar 21 09:47:04 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) setting protocol VIPs.
+Mar 21 09:47:04 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
+Mar 21 09:47:04 IIS-KP-master Keepalived_vrrp: Netlink reflector reports IP 172.18.27.55 added
+Mar 21 09:47:04 IIS-KP-master Keepalived_healthcheckers: Netlink reflector reports IP 172.18.27.55 added
+Mar 21 09:47:08 IIS-KP-master Keepalived_healthcheckers: Netlink: filter function error
+Mar 21 09:47:08 IIS-KP-master Keepalived_vrrp: Netlink: filter function error
+Mar 21 09:47:09 IIS-KP-master Keepalived_vrrp: VRRP_Instance(VI_1) Sending gratuitous ARPs on eth0 for 172.18.27.55
