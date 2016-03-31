@@ -17,7 +17,7 @@ def send(name,
     .. versionadded:: 2014.7.0
 
     Accepts the same arguments as the :py:func:`event.send
-    <salt.modules.event.send>` execution module of the same name.
+    <salt.core.event.send>` execution module of the same name.
 
     Example:
 

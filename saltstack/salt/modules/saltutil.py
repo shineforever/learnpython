@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 '''
 The Saltutil module is used to manage the state of the salt minion itself. It
-is used to manage minion modules as well as automate updates to the salt
+is used to manage minion core as well as automate updates to the salt
 minion.
 
 :depends:   - esky Python module for update functionality
@@ -270,7 +270,7 @@ def sync_beacons(saltenv=None, refresh=True):
 
 def sync_sdb(saltenv=None, refresh=False):
     '''
-    Sync sdb modules from the _sdb directory on the salt master file
+    Sync sdb core from the _sdb directory on the salt master file
     server. This function is environment aware, pass the desired environment
     to grab the contents of the _sdb directory, base is the default
     environment.
@@ -289,7 +289,7 @@ def sync_sdb(saltenv=None, refresh=False):
 
 def sync_modules(saltenv=None, refresh=True):
     '''
-    Sync the modules from the _modules directory on the salt master file
+    Sync the core from the _modules directory on the salt master file
     server. This function is environment aware, pass the desired environment
     to grab the contents of the _modules directory, base is the default
     environment.
@@ -302,7 +302,7 @@ def sync_modules(saltenv=None, refresh=True):
 
         salt '*' saltutil.sync_modules
     '''
-    ret = _sync('modules', saltenv)
+    ret = _sync('core', saltenv)
     if refresh:
         refresh_modules()
     return ret
@@ -387,7 +387,7 @@ def sync_returners(saltenv=None, refresh=True):
 
 def sync_output(saltenv=None, refresh=True):
     '''
-    Sync the output modules from the _output directory on the salt master file
+    Sync the output core from the _output directory on the salt master file
     server. This function is environment aware. Pass the desired environment
     to grab the contents of the _output directory. Base is the default
     environment.
@@ -427,12 +427,12 @@ def sync_utils(saltenv=None, refresh=True):
 
 def sync_all(saltenv=None, refresh=True):
     '''
-    Sync down all of the dynamic modules from the file server for a specific
-    environment. This function synchronizes custom modules, states, beacons,
-    grains, returners, output modules, renderers, and utils.
+    Sync down all of the dynamic core from the file server for a specific
+    environment. This function synchronizes custom core, states, beacons,
+    grains, returners, output core, renderers, and utils.
 
     refresh : True
-        Also refresh the execution modules available to the minion.
+        Also refresh the execution core available to the minion.
 
     CLI Example:
 
@@ -443,7 +443,7 @@ def sync_all(saltenv=None, refresh=True):
     log.debug('Syncing all')
     ret = {}
     ret['beacons'] = sync_beacons(saltenv, False)
-    ret['modules'] = sync_modules(saltenv, False)
+    ret['core'] = sync_modules(saltenv, False)
     ret['states'] = sync_states(saltenv, False)
     ret['sdb'] = sync_sdb(saltenv, False)
     ret['grains'] = sync_grains(saltenv, False)
@@ -910,7 +910,7 @@ class _MMinion(object):
 
 def mmodule(saltenv, fun, *args, **kwargs):
     '''
-    Loads minion modules from an environment so that they can be used in pillars
+    Loads minion core from an environment so that they can be used in pillars
     for that environment
 
     CLI Example:

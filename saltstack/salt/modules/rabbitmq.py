@@ -555,7 +555,7 @@ def list_queues_vhost(vhost, runas=None, *kwargs):
     Returns queue details of specified virtual host. This command will consider
     first parameter as the vhost name and rest will be treated as
     queueinfoitem. For getting details on vhost ``/``, use :mod:`list_queues
-    <salt.modules.rabbitmq.list_queues>` instead).
+    <salt.core.rabbitmq.list_queues>` instead).
 
     CLI Example:
 

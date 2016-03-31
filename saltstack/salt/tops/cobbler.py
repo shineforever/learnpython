@@ -5,7 +5,7 @@ Cobbler Tops
 
 Cobbler Tops is a master tops subsystem used to look up mapping information
 from Cobbler via its API. The same cobbler.* parameters are used for both
-the Cobbler tops and Cobbler pillar modules.
+the Cobbler tops and Cobbler pillar core.
 
 .. code-block:: yaml
 

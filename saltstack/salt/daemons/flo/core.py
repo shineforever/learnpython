@@ -487,15 +487,15 @@ class SaltRaetRoadStackPrinter(ioflo.base.deeding.Deed):
 
 class SaltLoadModules(ioflo.base.deeding.Deed):
     '''
-    Reload the minion modules
+    Reload the minion core
     FloScript:
 
-    do salt load modules at enter
+    do salt load core at enter
 
     '''
     Ioinits = {'opts': '.salt.opts',
                'grains': '.salt.grains',
-               'modules': '.salt.loader.modules',
+               'core': '.salt.loader.core',
                'grain_time': '.salt.var.grain_time',
                'module_refresh': '.salt.var.module_refresh',
                'returners': '.salt.loader.returners'}
@@ -560,7 +560,7 @@ class SaltLoadPillar(ioflo.base.deeding.Deed):
     Ioinits = {'opts': '.salt.opts',
                'pillar': '.salt.pillar',
                'grains': '.salt.grains',
-               'modules': '.salt.loader.modules',
+               'core': '.salt.loader.core',
                'pillar_refresh': '.salt.var.pillar_refresh',
                'road_stack': '.salt.road.manor.stack',
                'master_estate_name': '.salt.track.master_estate_name', }
@@ -618,7 +618,7 @@ class SaltSchedule(ioflo.base.deeding.Deed):
     '''
     Ioinits = {'opts': '.salt.opts',
                'grains': '.salt.grains',
-               'modules': '.salt.loader.modules',
+               'core': '.salt.loader.core',
                'returners': '.salt.loader.returners'}
 
     def postinitio(self):
@@ -1220,7 +1220,7 @@ class SaltRaetSetupBeacon(ioflo.base.deeding.Deed):
     '''
     Ioinits = {'opts': '.salt.opts',
                'beacon': '.salt.beacon',
-               'modules': '.salt.loader.modules'}
+               'core': '.salt.loader.core'}
 
     def action(self):
         '''
@@ -1236,7 +1236,7 @@ class SaltRaetBeacon(ioflo.base.deeding.Deed):
     Run the beacons
     '''
     Ioinits = {'opts': '.salt.opts',
-               'modules': '.salt.loader.modules',
+               'core': '.salt.loader.core',
                'master_events': '.salt.var.master_events',
                'event': '.salt.event.events',
                'beacon': '.salt.beacon'}
@@ -1293,7 +1293,7 @@ class SaltRaetSetupMatcher(ioflo.base.deeding.Deed):
     Make the matcher object
     '''
     Ioinits = {'opts': '.salt.opts',
-               'modules': '.salt.loader.modules',
+               'core': '.salt.loader.core',
                'matcher': '.salt.matcher'}
 
     def action(self):
@@ -1311,7 +1311,7 @@ class SaltRaetThreadShellJobber(ioflo.base.deeding.Deed):
     '''
     Ioinits = {'opts': '.salt.opts',
                'grains': '.salt.grains',
-               'modules': '.salt.modules',
+               'core': '.salt.core',
                'fun': '.salt.var.fun',
                'matcher': '.salt.matcher',
                'threads': '.salt.var.threads',
@@ -1381,7 +1381,7 @@ class SaltRaetNixJobber(ioflo.base.deeding.Deed):
     '''
     Ioinits = {'opts_store': '.salt.opts',
                'grains': '.salt.grains',
-               'modules': '.salt.loader.modules',
+               'core': '.salt.loader.core',
                'returners': '.salt.loader.returners',
                'fun': '.salt.var.fun',
                'matcher': '.salt.matcher',

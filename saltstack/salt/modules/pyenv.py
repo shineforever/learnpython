@@ -187,7 +187,7 @@ def uninstall_python(python, runas=None):
 
     python
         The version of python to uninstall. Should match one of the versions
-        listed by :mod:`pyenv.versions <salt.modules.pyenv.versions>`
+        listed by :mod:`pyenv.versions <salt.core.pyenv.versions>`
 
     CLI Example:
 
@@ -222,7 +222,7 @@ def default(python=None, runas=None):
 
     python=None
         The version to set as the default. Should match one of the versions
-        listed by :mod:`pyenv.versions <salt.modules.pyenv.versions>`. Leave
+        listed by :mod:`pyenv.versions <salt.core.pyenv.versions>`. Leave
         blank to return the current default.
 
     CLI Example:

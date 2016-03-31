@@ -9,7 +9,7 @@ Create and destroy Rackspace queues. Be aware that this interacts with
 Rackspace's services, and so may incur charges.
 
 This module uses ``pyrax``, which can be installed via package, or pip.
-This module is greatly inspired by boto_* modules from SaltStack code source.
+This module is greatly inspired by boto_* core from SaltStack code source.
 
 .. code-block:: yaml
 

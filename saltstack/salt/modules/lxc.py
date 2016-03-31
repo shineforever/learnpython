@@ -562,7 +562,7 @@ def get_container_profile(name=None, **kwargs):
 
     Profiles can be defined in the minion or master config files, or in pillar
     or grains, and are loaded using :mod:`config.get
-    <salt.modules.config.get>`. The key under which LXC profiles must be
+    <salt.core.config.get>`. The key under which LXC profiles must be
     configured is ``lxc.container_profile.profile_name``. An example container
     profile would be as follows:
 
@@ -577,7 +577,7 @@ def get_container_profile(name=None, **kwargs):
 
     Parameters set in a profile can be overridden by passing additional
     container creation arguments (such as the ones passed to :mod:`lxc.create
-    <salt.modules.lxc.create>`) to this function.
+    <salt.core.lxc.create>`) to this function.
 
     A profile can be defined either as the name of the profile, or a dictionary
     of variable names and values. See the :ref:`LXC Tutorial
@@ -607,7 +607,7 @@ def get_network_profile(name=None, **kwargs):
 
     Profiles can be defined in the minion or master config files, or in pillar
     or grains, and are loaded using :mod:`config.get
-    <salt.modules.config.get>`. The key under which LXC profiles must be
+    <salt.core.config.get>`. The key under which LXC profiles must be
     configured is ``lxc.network_profile``. An example network profile would be
     as follows:
 
@@ -1763,7 +1763,7 @@ def create(name,
     profile
         Profile to use in container creation (see
         :mod:`lxc.get_container_profile
-        <salt.modules.lxc.get_container_profile>`). Values in a profile will be
+        <salt.core.lxc.get_container_profile>`). Values in a profile will be
         overridden by the **Container Creation Arguments** listed below.
 
     network_profile
@@ -1787,7 +1787,7 @@ def create(name,
             * **arch** - Architecture of the container
 
             The available images can be listed using the :mod:`lxc.images
-            <salt.modules.lxc.images>` function.
+            <salt.core.lxc.images>` function.
 
     options
         Template-specific options to pass to the lxc-create command. These
@@ -1941,7 +1941,7 @@ def clone(name,
     profile
         Profile to use in container cloning (see
         :mod:`lxc.get_container_profile
-        <salt.modules.lxc.get_container_profile>`). Values in a profile will be
+        <salt.core.lxc.get_container_profile>`). Values in a profile will be
         overridden by the **Container Cloning Arguments** listed below.
 
     **Container Cloning Arguments**
@@ -2068,7 +2068,7 @@ def list_(extra=False, limit=None):
         Also get per-container specific info. This will change the return data.
         Instead of returning a list of containers, a dictionary of containers
         and each container's output from :mod:`lxc.info
-        <salt.modules.lxc.info>`.
+        <salt.core.lxc.info>`.
 
     limit
         Return output matching a specific state (**frozen**, **running**, or
@@ -2258,7 +2258,7 @@ def start(name, **kwargs):
 
     restart : False
         .. deprecated:: 2015.5.0
-            Use :mod:`lxc.restart <salt.modules.lxc.restart>`
+            Use :mod:`lxc.restart <salt.core.lxc.restart>`
 
         Restart the container if it is already running
 
@@ -3373,7 +3373,7 @@ def run_cmd(name,
             keep_env='http_proxy,https_proxy,no_proxy'):
     '''
     .. deprecated:: 2015.5.0
-        Use :mod:`lxc.run <salt.modules.lxc.run>` instead
+        Use :mod:`lxc.run <salt.core.lxc.run>` instead
     '''
     salt.utils.warn_until(
         'Boron',
@@ -3416,7 +3416,7 @@ def run(name,
     '''
     .. versionadded:: 2015.5.0
 
-    Run :mod:`cmd.run <salt.modules.cmdmod.run>` within a container
+    Run :mod:`cmd.run <salt.core.cmdmod.run>` within a container
 
     .. warning::
 
@@ -3429,8 +3429,8 @@ def run(name,
 
         The same error will be displayed in stderr if the command being run
         does not exist. If no output is returned using this function, try using
-        :mod:`lxc.run_stderr <salt.modules.lxc.run_stderr>` or
-        :mod:`lxc.run_all <salt.modules.lxc.run_all>`.
+        :mod:`lxc.run_stderr <salt.core.lxc.run_stderr>` or
+        :mod:`lxc.run_all <salt.core.lxc.run_all>`.
 
     name
         Name of the container in which to run the command
@@ -3497,7 +3497,7 @@ def run_stdout(name,
     '''
     .. versionadded:: 2015.5.0
 
-    Run :mod:`cmd.run_stdout <salt.modules.cmdmod.run_stdout>` within a container
+    Run :mod:`cmd.run_stdout <salt.core.cmdmod.run_stdout>` within a container
 
     .. warning::
 
@@ -3510,8 +3510,8 @@ def run_stdout(name,
 
         The same error will be displayed in stderr if the command being run
         does not exist. If no output is returned using this function, try using
-        :mod:`lxc.run_stderr <salt.modules.lxc.run_stderr>` or
-        :mod:`lxc.run_all <salt.modules.lxc.run_all>`.
+        :mod:`lxc.run_stderr <salt.core.lxc.run_stderr>` or
+        :mod:`lxc.run_all <salt.core.lxc.run_all>`.
 
     name
         Name of the container in which to run the command
@@ -3578,7 +3578,7 @@ def run_stderr(name,
     '''
     .. versionadded:: 2015.5.0
 
-    Run :mod:`cmd.run_stderr <salt.modules.cmdmod.run_stderr>` within a container
+    Run :mod:`cmd.run_stderr <salt.core.cmdmod.run_stderr>` within a container
 
     .. warning::
 
@@ -3657,7 +3657,7 @@ def retcode(name,
     '''
     .. versionadded:: 2015.5.0
 
-    Run :mod:`cmd.retcode <salt.modules.cmdmod.retcode>` within a container
+    Run :mod:`cmd.retcode <salt.core.cmdmod.retcode>` within a container
 
     .. warning::
 
@@ -3670,8 +3670,8 @@ def retcode(name,
 
         The same error will be displayed in stderr if the command being run
         does not exist. If the retcode is nonzero and not what was expected,
-        try using :mod:`lxc.run_stderr <salt.modules.lxc.run_stderr>`
-        or :mod:`lxc.run_all <salt.modules.lxc.run_all>`.
+        try using :mod:`lxc.run_stderr <salt.core.lxc.run_stderr>`
+        or :mod:`lxc.run_all <salt.core.lxc.run_all>`.
 
     name
         Name of the container in which to run the command
@@ -3738,7 +3738,7 @@ def run_all(name,
     '''
     .. versionadded:: 2015.5.0
 
-    Run :mod:`cmd.run_all <salt.modules.cmdmod.run_all>` within a container
+    Run :mod:`cmd.run_all <salt.core.cmdmod.run_all>` within a container
 
     .. warning::
 

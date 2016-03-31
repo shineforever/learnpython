@@ -1274,7 +1274,7 @@ def managed(name,
 
         Operates like ``contents``, but draws from a value stored in pillar,
         using the pillar path syntax used in :mod:`pillar.get
-        <salt.modules.pillar.get>`. This is useful when the pillar value
+        <salt.core.pillar.get>`. This is useful when the pillar value
         contains newlines, as referencing a pillar variable using a jinja/mako
         template can result in YAML formatting issues due to the newlines
         causing indentation mismatches.
@@ -3966,7 +3966,7 @@ def serialize(name,
     dataset_pillar
         Operates like ``dataset``, but draws from a value stored in pillar,
         using the pillar path syntax used in :mod:`pillar.get
-        <salt.modules.pillar.get>`. This is useful when the pillar value
+        <salt.core.pillar.get>`. This is useful when the pillar value
         contains newlines, as referencing a pillar variable using a jinja/mako
         template can result in YAML formatting issues due to the newlines
         causing indentation mismatches.

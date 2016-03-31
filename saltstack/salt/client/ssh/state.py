@@ -32,7 +32,7 @@ class SSHState(salt.state.State):
 
     def load_modules(self, data=None):
         '''
-        Load up the modules for remote compilation via ssh
+        Load up the core for remote compilation via ssh
         '''
         self.functions = self.wrapper
         locals_ = salt.loader.minion_mods(self.opts)

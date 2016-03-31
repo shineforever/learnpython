@@ -8,11 +8,11 @@ Remote package support using ``pkg_add(1)``
     0.17.0, it supported ``pkg_add(1)``, but checked for the existence of a
     pkgng local database and, if found,  would provide some of pkgng's
     functionality. The rewrite of this module has removed all pkgng support,
-    and moved it to the :mod:`pkgng <salt.modules.pkgng>` execution module. For
+    and moved it to the :mod:`pkgng <salt.core.pkgng>` execution module. For
     versions <= 0.17.0, the documentation here should not be considered
     accurate. If your Minion is running one of these versions, then the
     documentation for this module can be viewed using the :mod:`sys.doc
-    <salt.modules.sys.doc>` function:
+    <salt.core.sys.doc>` function:
 
     .. code-block:: bash
 
@@ -30,7 +30,7 @@ Minion config file, in order to use pkgng.
       pkg: pkgng
 
 More information on pkgng support can be found in the documentation for the
-:mod:`pkgng <salt.modules.pkgng>` module.
+:mod:`pkgng <salt.core.pkgng>` module.
 
 This module will respect the ``PACKAGEROOT`` and ``PACKAGESITE`` environment
 variables, if set, but these values can also be overridden in several ways:
@@ -38,7 +38,7 @@ variables, if set, but these values can also be overridden in several ways:
 1. :strong:`Salt configuration parameters.` The configuration parameters
    ``freebsdpkg.PACKAGEROOT`` and ``freebsdpkg.PACKAGESITE`` are recognized.
    These config parameters are looked up using :mod:`config.get
-   <salt.modules.config.get>` and can thus be specified in the Master config
+   <salt.core.config.get>` and can thus be specified in the Master config
    file, Grains, Pillar, or in the Minion config file. Example:
 
    .. code-block:: yaml

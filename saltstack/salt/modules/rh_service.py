@@ -32,7 +32,7 @@ if salt.utils.which('initctl'):
             import _upstart_enable, _upstart_disable, _upstart_is_enabled
     except Exception as exc:
         log.error('Unable to import helper functions from '
-                  'salt.modules.upstart: {0}'.format(exc))
+                  'salt.core.upstart: {0}'.format(exc))
     else:
         HAS_UPSTART = True
 

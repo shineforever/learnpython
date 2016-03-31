@@ -96,7 +96,7 @@ def install(pkg=None,
 
     env
         Environment variables to set when invoking npm. Uses the same ``env``
-        format as the :py:func:`cmd.run <salt.modules.cmdmod.run>` execution
+        format as the :py:func:`cmd.run <salt.core.cmdmod.run>` execution
         function.
 
         .. versionadded:: 2014.7.0
@@ -194,7 +194,7 @@ def uninstall(pkg,
 
     env
         Environment variables to set when invoking npm. Uses the same ``env``
-        format as the :py:func:`cmd.run <salt.modules.cmdmod.run>` execution
+        format as the :py:func:`cmd.run <salt.core.cmdmod.run>` execution
         function.
 
         .. versionadded:: 2015.5.3
@@ -257,7 +257,7 @@ def list_(pkg=None,
 
     env
         Environment variables to set when invoking npm. Uses the same ``env``
-        format as the :py:func:`cmd.run <salt.modules.cmdmod.run>` execution
+        format as the :py:func:`cmd.run <salt.core.cmdmod.run>` execution
         function.
 
         .. versionadded:: 2014.7.0

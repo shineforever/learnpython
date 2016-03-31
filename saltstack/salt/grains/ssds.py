@@ -13,7 +13,7 @@ import logging
 import salt.utils
 
 # Solve the Chicken and egg problem where grains need to run before any
-# of the modules are loaded and are generally available for any usage.
+# of the core are loaded and are generally available for any usage.
 import salt.modules.cmdmod
 
 __salt__ = {

@@ -34,7 +34,7 @@ about this, at least.
 
 .. warning::
     This module should not be used on Red Hat systems. For these,
-    the :mod:`rh_service <salt.modules.rh_service>` module should be
+    the :mod:`rh_service <salt.core.rh_service>` module should be
     used, as it supports the hybrid upstart/sysvinit system used in
     RHEL/CentOS 6.
 '''
@@ -63,7 +63,7 @@ def __virtual__():
     '''
     Only work on Ubuntu
     '''
-    # Disable on these platforms, specific service modules exist:
+    # Disable on these platforms, specific service core exist:
     if _sd_booted(__context__):
         return False
     elif __grains__['os'] in ('Ubuntu', 'Linaro', 'elementary OS'):

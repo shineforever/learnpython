@@ -1580,7 +1580,7 @@ class SaltCMDOptionParser(OptionParser, ConfigDirMixIn, MergeConfigMixIn,
             default=False,
             action='store_true',
             help=('Return the documentation for the specified module or for '
-                  'all modules if none are specified.')
+                  'all core if none are specified.')
         )
         self.add_option(
             '--args-separator',
@@ -2036,7 +2036,7 @@ class SaltCallOptionParser(OptionParser, ConfigDirMixIn, MergeConfigMixIn,
             '-m', '--module-dirs',
             default=[],
             action='append',
-            help=('Specify an additional directory to pull modules from. '
+            help=('Specify an additional directory to pull core from. '
                   'Multiple directories can be provided by passing '
                   '`-m/--module-dirs` multiple times.')
         )
@@ -2046,7 +2046,7 @@ class SaltCallOptionParser(OptionParser, ConfigDirMixIn, MergeConfigMixIn,
             default=False,
             action='store_true',
             help=('Return the documentation for the specified module or for '
-                  'all modules if none are specified.')
+                  'all core if none are specified.')
         )
         self.add_option(
             '--master',

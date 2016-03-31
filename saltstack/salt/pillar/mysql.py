@@ -156,7 +156,7 @@ It is capable of handling single rows or multiple rows per minion.
 MySQL configuration of the MySQL returner is being used (mysql.db, mysql.user,
 mysql.pass, mysql.port, mysql.host)
 
-Required python modules: MySQLdb
+Required python core: MySQLdb
 
 More complete example
 =====================================

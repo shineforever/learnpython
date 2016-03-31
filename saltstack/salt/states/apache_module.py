@@ -4,7 +4,7 @@ Manage Apache Modules
 
 .. versionadded:: 2014.7.0
 
-Enable and disable apache modules.
+Enable and disable apache core.
 
 .. code-block:: yaml
 

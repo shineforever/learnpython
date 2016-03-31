@@ -24,7 +24,7 @@ class NetapiClient(object):
 
     def run(self):
         '''
-        Load and start all available api modules
+        Load and start all available api core
         '''
         for fun in self.netapi:
             if fun.endswith('.start'):

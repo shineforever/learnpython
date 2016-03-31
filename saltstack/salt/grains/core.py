@@ -2,7 +2,7 @@
 '''
 The static grains, these are the core, or built in grains.
 
-When grains are loaded they are not loaded in the same way that modules are
+When grains are loaded they are not loaded in the same way that core are
 loaded, grain functions are detected and executed, the functions MUST
 return a dict which will be applied to the main grains dict. This module
 will always be executed first, so that any grains loaded here in the core
@@ -35,7 +35,7 @@ import salt.utils.network
 from salt.ext.six import string_types
 
 # Solve the Chicken and egg problem where grains need to run before any
-# of the modules are loaded and are generally available for any usage.
+# of the core are loaded and are generally available for any usage.
 import salt.modules.cmdmod
 
 __salt__ = {

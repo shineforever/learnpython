@@ -70,7 +70,7 @@ correctly:
     CREATE INDEX ON salt_returns (fun);
     EOF
 
-Required python modules: psycopg2
+Required python core: psycopg2
 
 To use the postgres returner, append '--return postgres' to the salt command.
 

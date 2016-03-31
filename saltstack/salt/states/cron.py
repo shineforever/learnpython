@@ -175,7 +175,7 @@ def _check_cron_env(user,
     Return the environment changes
     '''
     if value is None:
-        value = ""  # Matching value set in salt.modules.cron._render_tab
+        value = ""  # Matching value set in salt.core.cron._render_tab
     lst = __salt__['cron.list_tab'](user)
     for env in lst['env']:
         if name == env['name']:

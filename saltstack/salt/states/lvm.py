@@ -48,7 +48,7 @@ def pv_present(name, **kwargs):
 
     kwargs
         Any supported options to pvcreate. See
-        :mod:`linux_lvm <salt.modules.linux_lvm>` for more details.
+        :mod:`linux_lvm <salt.core.linux_lvm>` for more details.
     '''
     ret = {'changes': {},
            'comment': '',
@@ -115,7 +115,7 @@ def vg_present(name, devices=None, **kwargs):
 
     kwargs
         Any supported options to vgcreate. See
-        :mod:`linux_lvm <salt.modules.linux_lvm>` for more details.
+        :mod:`linux_lvm <salt.core.linux_lvm>` for more details.
     '''
     ret = {'changes': {},
            'comment': '',
@@ -230,7 +230,7 @@ def lv_present(name,
 
     kwargs
         Any supported options to lvcreate. See
-        :mod:`linux_lvm <salt.modules.linux_lvm>` for more details.
+        :mod:`linux_lvm <salt.core.linux_lvm>` for more details.
     '''
     ret = {'changes': {},
            'comment': '',

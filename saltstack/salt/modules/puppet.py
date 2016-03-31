@@ -149,7 +149,7 @@ def run(*args, **kwargs):
         salt '*' puppet.run tags=basefiles::edit,apache::server
         salt '*' puppet.run agent onetime no-daemonize no-usecacheonfailure no-splay ignorecache
         salt '*' puppet.run debug
-        salt '*' puppet.run apply /a/b/manifest.pp modulepath=/a/b/modules tags=basefiles::edit,apache::server
+        salt '*' puppet.run apply /a/b/manifest.pp modulepath=/a/b/core tags=basefiles::edit,apache::server
     '''
     _check_puppet()
     puppet = _Puppet()
@@ -188,7 +188,7 @@ def noop(*args, **kwargs):
         salt '*' puppet.noop
         salt '*' puppet.noop tags=basefiles::edit,apache::server
         salt '*' puppet.noop debug
-        salt '*' puppet.noop apply /a/b/manifest.pp modulepath=/a/b/modules tags=basefiles::edit,apache::server
+        salt '*' puppet.noop apply /a/b/manifest.pp modulepath=/a/b/core tags=basefiles::edit,apache::server
     '''
     args += ('noop',)
     return run(*args, **kwargs)

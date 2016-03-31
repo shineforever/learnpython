@@ -98,7 +98,7 @@ Use the following mysql database schema:
     KEY `tag` (`tag`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-Required python modules: MySQLdb
+Required python core: MySQLdb
 
 To use the mysql returner, append '--return mysql' to the salt command.
 

@@ -92,40 +92,40 @@ Methods
 _______
 
 - Registry Dialog
-    - :py:func:`login<salt.modules.dockerio.login>`
-    - :py:func:`push<salt.modules.dockerio.push>`
-    - :py:func:`pull<salt.modules.dockerio.pull>`
+    - :py:func:`login<salt.core.dockerio.login>`
+    - :py:func:`push<salt.core.dockerio.push>`
+    - :py:func:`pull<salt.core.dockerio.pull>`
 - Docker Management
-    - :py:func:`version<salt.modules.dockerio.version>`
-    - :py:func:`info<salt.modules.dockerio.info>`
+    - :py:func:`version<salt.core.dockerio.version>`
+    - :py:func:`info<salt.core.dockerio.info>`
 - Image Management
-    - :py:func:`search<salt.modules.dockerio.search>`
-    - :py:func:`inspect_image<salt.modules.dockerio.inspect_image>`
-    - :py:func:`get_images<salt.modules.dockerio.get_images>`
-    - :py:func:`remove_image<salt.modules.dockerio.remove_image>`
-    - :py:func:`import_image<salt.modules.dockerio.import_image>`
-    - :py:func:`build<salt.modules.dockerio.build>`
-    - :py:func:`tag<salt.modules.dockerio.tag>`
-    - :py:func:`save<salt.modules.dockerio.save>`
-    - :py:func:`load<salt.modules.dockerio.load>`
+    - :py:func:`search<salt.core.dockerio.search>`
+    - :py:func:`inspect_image<salt.core.dockerio.inspect_image>`
+    - :py:func:`get_images<salt.core.dockerio.get_images>`
+    - :py:func:`remove_image<salt.core.dockerio.remove_image>`
+    - :py:func:`import_image<salt.core.dockerio.import_image>`
+    - :py:func:`build<salt.core.dockerio.build>`
+    - :py:func:`tag<salt.core.dockerio.tag>`
+    - :py:func:`save<salt.core.dockerio.save>`
+    - :py:func:`load<salt.core.dockerio.load>`
 - Container Management
-    - :py:func:`start<salt.modules.dockerio.start>`
-    - :py:func:`stop<salt.modules.dockerio.stop>`
-    - :py:func:`restart<salt.modules.dockerio.restart>`
-    - :py:func:`kill<salt.modules.dockerio.kill>`
-    - :py:func:`wait<salt.modules.dockerio.wait>`
-    - :py:func:`get_containers<salt.modules.dockerio.get_containers>`
-    - :py:func:`inspect_container<salt.modules.dockerio.inspect_container>`
-    - :py:func:`remove_container<salt.modules.dockerio.remove_container>`
-    - :py:func:`is_running<salt.modules.dockerio.is_running>`
-    - :py:func:`top<salt.modules.dockerio.top>`
-    - :py:func:`port<salt.modules.dockerio.port>`
-    - :py:func:`logs<salt.modules.dockerio.logs>`
-    - :py:func:`diff<salt.modules.dockerio.diff>`
-    - :py:func:`commit<salt.modules.dockerio.commit>`
-    - :py:func:`create_container<salt.modules.dockerio.create_container>`
-    - :py:func:`export<salt.modules.dockerio.export>`
-    - :py:func:`get_container_root<salt.modules.dockerio.get_container_root>`
+    - :py:func:`start<salt.core.dockerio.start>`
+    - :py:func:`stop<salt.core.dockerio.stop>`
+    - :py:func:`restart<salt.core.dockerio.restart>`
+    - :py:func:`kill<salt.core.dockerio.kill>`
+    - :py:func:`wait<salt.core.dockerio.wait>`
+    - :py:func:`get_containers<salt.core.dockerio.get_containers>`
+    - :py:func:`inspect_container<salt.core.dockerio.inspect_container>`
+    - :py:func:`remove_container<salt.core.dockerio.remove_container>`
+    - :py:func:`is_running<salt.core.dockerio.is_running>`
+    - :py:func:`top<salt.core.dockerio.top>`
+    - :py:func:`port<salt.core.dockerio.port>`
+    - :py:func:`logs<salt.core.dockerio.logs>`
+    - :py:func:`diff<salt.core.dockerio.diff>`
+    - :py:func:`commit<salt.core.dockerio.commit>`
+    - :py:func:`create_container<salt.core.dockerio.create_container>`
+    - :py:func:`export<salt.core.dockerio.export>`
+    - :py:func:`get_container_root<salt.core.dockerio.get_container_root>`
 
 Runtime Execution within a specific, already existing/running container
 --------------------------------------------------------------------------
@@ -137,13 +137,13 @@ running container.
 
 These are the available methods:
 
-- :py:func:`retcode<salt.modules.dockerio.retcode>`
-- :py:func:`run<salt.modules.dockerio.run>`
-- :py:func:`run_all<salt.modules.dockerio.run_all>`
-- :py:func:`run_stderr<salt.modules.dockerio.run_stderr>`
-- :py:func:`run_stdout<salt.modules.dockerio.run_stdout>`
-- :py:func:`script<salt.modules.dockerio.script>`
-- :py:func:`script_retcode<salt.modules.dockerio.script_retcode>`
+- :py:func:`retcode<salt.core.dockerio.retcode>`
+- :py:func:`run<salt.core.dockerio.run>`
+- :py:func:`run_all<salt.core.dockerio.run_all>`
+- :py:func:`run_stderr<salt.core.dockerio.run_stderr>`
+- :py:func:`run_stdout<salt.core.dockerio.run_stdout>`
+- :py:func:`script<salt.core.dockerio.script>`
+- :py:func:`script_retcode<salt.core.dockerio.script_retcode>`
 
 '''
 
@@ -621,7 +621,7 @@ def create_container(image,
         salt '*' docker.create_container o/ubuntu volumes="['/s','/m:/f']"
 
     '''
-    log.trace("modules.dockerio.create_container() called for image " + image)
+    log.trace("core.dockerio.create_container() called for image " + image)
     status = base_status.copy()
     client = _get_client()
 
@@ -1916,7 +1916,7 @@ def save(image, filename):
 
 def run(container, cmd):
     '''
-    Wrapper for :py:func:`cmdmod.run<salt.modules.cmdmod.run>` inside a container context
+    Wrapper for :py:func:`cmdmod.run<salt.core.cmdmod.run>` inside a container context
 
     container
         container id (or grain)
@@ -1946,7 +1946,7 @@ def run(container, cmd):
 
 def run_all(container, cmd):
     '''
-    Wrapper for :py:func:`cmdmod.run_all<salt.modules.cmdmod.run_all>` inside a container context
+    Wrapper for :py:func:`cmdmod.run_all<salt.core.cmdmod.run_all>` inside a container context
 
     container
         container id (or grain)
@@ -1977,7 +1977,7 @@ def run_all(container, cmd):
 
 def run_stderr(container, cmd):
     '''
-    Wrapper for :py:func:`cmdmod.run_stderr<salt.modules.cmdmod.run_stderr>` inside a container context
+    Wrapper for :py:func:`cmdmod.run_stderr<salt.core.cmdmod.run_stderr>` inside a container context
 
     container
         container id (or grain)
@@ -2007,7 +2007,7 @@ def run_stderr(container, cmd):
 
 def run_stdout(container, cmd):
     '''
-    Wrapper for :py:func:`cmdmod.run_stdout<salt.modules.cmdmod.run_stdout>` inside a container context
+    Wrapper for :py:func:`cmdmod.run_stdout<salt.core.cmdmod.run_stdout>` inside a container context
 
     container
         container id (or grain)
@@ -2037,7 +2037,7 @@ def run_stdout(container, cmd):
 
 def retcode(container, cmd):
     '''
-    Wrapper for :py:func:`cmdmod.retcode<salt.modules.cmdmod.retcode>` inside a container context
+    Wrapper for :py:func:`cmdmod.retcode<salt.core.cmdmod.retcode>` inside a container context
 
     container
         container id (or grain)
@@ -2184,13 +2184,13 @@ def script(container,
            no_clean=False,
            saltenv='base'):
     '''
-    Wrapper for :py:func:`cmdmod.script<salt.modules.cmdmod.script>` inside a container context
+    Wrapper for :py:func:`cmdmod.script<salt.core.cmdmod.script>` inside a container context
 
     container
         container id (or grain)
 
     additional parameters
-        See :py:func:`cmd.script <salt.modules.cmdmod.script>`
+        See :py:func:`cmd.script <salt.core.cmdmod.script>`
 
     .. warning::
         Be advised that this function allows for raw shell access to the named
@@ -2266,13 +2266,13 @@ def script_retcode(container,
                    no_clean=False,
                    saltenv='base'):
     '''
-    Wrapper for :py:func:`cmdmod.script_retcode<salt.modules.cmdmod.script_retcode>` inside a container context
+    Wrapper for :py:func:`cmdmod.script_retcode<salt.core.cmdmod.script_retcode>` inside a container context
 
     container
         container id (or grain)
 
     additional parameters
-        See :py:func:`cmd.script_retcode <salt.modules.cmdmod.script_retcode>`
+        See :py:func:`cmd.script_retcode <salt.core.cmdmod.script_retcode>`
 
     .. warning::
         Be advised that this function allows for raw shell access to the named

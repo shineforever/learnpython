@@ -74,7 +74,7 @@ and then:
     CREATE INDEX ON salt_returns (fun);
     EOF
 
-Required python modules: psycopg2
+Required python core: psycopg2
 '''
 from __future__ import absolute_import
 # Import python libs

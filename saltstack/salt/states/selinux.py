@@ -17,7 +17,7 @@ booleans can be set.
           - persist: True
 
 .. note::
-    Use of these states require that the :mod:`selinux <salt.modules.selinux>`
+    Use of these states require that the :mod:`selinux <salt.core.selinux>`
     execution module is available.
 '''
 

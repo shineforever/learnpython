@@ -578,7 +578,7 @@ def dns_check(addr, safe=False, ipv6=False):
 
 def required_module_list(docstring=None):
     '''
-    Return a list of python modules required by a salt module that aren't
+    Return a list of python core required by a salt module that aren't
     in stdlib and don't exist on the current pythonpath.
     '''
     if not docstring:
@@ -595,14 +595,14 @@ def required_module_list(docstring=None):
 
 def required_modules_error(name, docstring):
     '''
-    Pretty print error messages in critical salt modules which are
+    Pretty print error messages in critical salt core which are
     missing deps not always in stdlib such as win32api on windows.
     '''
     modules = required_module_list(docstring)
     if not modules:
         return ''
     filename = os.path.basename(name).split('.')[0]
-    msg = '\'{0}\' requires these python modules: {1}'
+    msg = '\'{0}\' requires these python core: {1}'
     return msg.format(filename, ', '.join(modules))
 
 
@@ -620,10 +620,10 @@ def get_accumulator_dir(cachedir):
 
 def check_or_die(command):
     '''
-    Simple convenience function for modules to use for gracefully blowing up
+    Simple convenience function for core to use for gracefully blowing up
     if a required tool is not available in the system path.
 
-    Lazily import `salt.modules.cmdmod` to avoid any sort of circular
+    Lazily import `salt.core.cmdmod` to avoid any sort of circular
     dependencies.
     '''
     if command is None:
@@ -1631,7 +1631,7 @@ def parse_docstring(docstring):
         return ret
     # Try searching for a one-liner instead
     else:
-        txt = 'Required python modules: '
+        txt = 'Required python core: '
         data = docstring.splitlines()
         dep_list = list(x for x in data if x.strip().startswith(txt))
         if not dep_list:

@@ -8,7 +8,7 @@ SQLite sdb Module
 
 This module allows access to sqlite3 using an ``sdb://`` URI
 
-Like all sdb modules, the sqlite3 module requires a configuration profile to
+Like all sdb core, the sqlite3 module requires a configuration profile to
 be configured in either the minion or master configuration file. This profile
 requires very little. For example:
 

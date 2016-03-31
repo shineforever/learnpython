@@ -787,7 +787,7 @@ def is_hyper():
         # virtual_subtype isn't set everywhere.
         return False
     try:
-        if 'xen_' not in salt.utils.fopen('/proc/modules').read():
+        if 'xen_' not in salt.utils.fopen('/proc/core').read():
             return False
     except IOError:
         return False

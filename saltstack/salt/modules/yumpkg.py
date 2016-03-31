@@ -829,7 +829,7 @@ def clean_metadata(**kwargs):
     .. versionadded:: 2014.1.0
 
     Cleans local yum metadata. Functionally identical to :mod:`refresh_db()
-    <salt.modules.yumpkg.refresh_db>`.
+    <salt.core.yumpkg.refresh_db>`.
 
     CLI Example:
 
@@ -1039,7 +1039,7 @@ def install(name=None,
     normalize
         Normalize the package name by removing the architecture.  Default is True.
         This is useful for poorly created packages which might include the
-        architecture as an actual part of the name such as kernel modules
+        architecture as an actual part of the name such as kernel core
         which match a specific kernel version.
 
         .. versionadded:: 2014.7.0
@@ -1292,7 +1292,7 @@ def remove(name=None, pkgs=None, **kwargs):  # pylint: disable=W0613
 def purge(name=None, pkgs=None, **kwargs):  # pylint: disable=W0613
     '''
     Package purges are not supported by yum, this function is identical to
-    :mod:`pkg.remove <salt.modules.yumpkg.remove>`.
+    :mod:`pkg.remove <salt.core.yumpkg.remove>`.
 
     name
         The name of the package to be deleted.
@@ -2058,7 +2058,7 @@ def owner(*paths):
     .. versionadded:: 2014.7.0
 
     Return the name of the package that owns the file. Multiple file paths can
-    be passed. Like :mod:`pkg.version <salt.modules.yumpkg.version`, if a
+    be passed. Like :mod:`pkg.version <salt.core.yumpkg.version`, if a
     single path is passed, a string will be returned, and if multiple paths are
     passed, a dictionary of file/package name pairs will be returned.
 

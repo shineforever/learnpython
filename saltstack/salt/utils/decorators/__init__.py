@@ -60,7 +60,7 @@ class Depends(object):
         class wide depandancy_dict
         '''
         module = inspect.getmodule(inspect.stack()[1][0])
-        # module name is something like salt.loaded.int.modules.test
+        # module name is something like salt.loaded.int.core.test
         kind = module.__name__.rsplit('.', 2)[1]
         for dep in self.dependencies:
             self.dependency_dict[kind][dep].add(
@@ -73,7 +73,7 @@ class Depends(object):
         '''
         This is a class global method to enforce the dependencies that you
         currently know about.
-        It will modify the "functions" dict and remove/replace modules that
+        It will modify the "functions" dict and remove/replace core that
         are missing dependencies.
         '''
         for dependency, dependent_set in cls.dependency_dict[kind].items():

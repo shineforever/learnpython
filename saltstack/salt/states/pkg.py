@@ -527,11 +527,11 @@ def installed(
     :param str version:
         Install a specific version of a package. This option is ignored if
         either "pkgs" or "sources" is used. Currently, this option is supported
-        for the following pkg providers: :mod:`apt <salt.modules.aptpkg>`,
-        :mod:`ebuild <salt.modules.ebuild>`,
-        :mod:`pacman <salt.modules.pacman>`,
-        :mod:`yumpkg <salt.modules.yumpkg>`, and
-        :mod:`zypper <salt.modules.zypper>`. The version number includes the
+        for the following pkg providers: :mod:`apt <salt.core.aptpkg>`,
+        :mod:`ebuild <salt.core.ebuild>`,
+        :mod:`pacman <salt.core.pacman>`,
+        :mod:`yumpkg <salt.core.yumpkg>`, and
+        :mod:`zypper <salt.core.zypper>`. The version number includes the
         release designation where applicable, to allow Salt to target a
         specific release of a given version. When in doubt, using the
         ``pkg.latest_version`` function for an uninstalled package will tell
@@ -544,7 +544,7 @@ def installed(
                 2.2.15-30.el6.centos
 
         Also, while this function is not yet implemented for all pkg frontends,
-        :mod:`pkg.list_repo_pkgs <salt.modules.yumpkg.list_repo_pkgs>` will
+        :mod:`pkg.list_repo_pkgs <salt.core.yumpkg.list_repo_pkgs>` will
         show all versions available in the various repositories for a given
         package, irrespective of whether or not it is installed.
 
@@ -649,10 +649,10 @@ def installed(
                   - baz
                 - hold: True
 
-        ``NOTE:`` For :mod:`apt <salt.modules.aptpkg>`,
-        :mod:`ebuild <salt.modules.ebuild>`,
-        :mod:`pacman <salt.modules.pacman>`, :mod:`yumpkg <salt.modules.yumpkg>`,
-        and :mod:`zypper <salt.modules.zypper>`, version numbers can be specified
+        ``NOTE:`` For :mod:`apt <salt.core.aptpkg>`,
+        :mod:`ebuild <salt.core.ebuild>`,
+        :mod:`pacman <salt.core.pacman>`, :mod:`yumpkg <salt.core.yumpkg>`,
+        and :mod:`zypper <salt.core.zypper>`, version numbers can be specified
         in the ``pkgs`` argument. For example:
 
         .. code-block:: yaml
@@ -664,9 +664,9 @@ def installed(
                   - bar: 1.2.3-4
                   - baz
 
-        Additionally, :mod:`ebuild <salt.modules.ebuild>`,
-        :mod:`pacman <salt.modules.pacman>` and
-        :mod:`zypper <salt.modules.zypper>` support the ``<``, ``<=``, ``>=``, and
+        Additionally, :mod:`ebuild <salt.core.ebuild>`,
+        :mod:`pacman <salt.core.pacman>` and
+        :mod:`zypper <salt.core.zypper>` support the ``<``, ``<=``, ``>=``, and
         ``>`` operators for more control over what versions will be installed. For
 
         Example:
@@ -683,7 +683,7 @@ def installed(
         ``NOTE:`` When using comparison operators, the expression must be enclosed
         in quotes to avoid a YAML render error.
 
-        With :mod:`ebuild <salt.modules.ebuild>` is also possible to specify a
+        With :mod:`ebuild <salt.core.ebuild>` is also possible to specify a
         use flag list and/or if the given packages should be in
         package.accept_keywords file and/or the overlay from which you want the
         package to be installed.
@@ -750,7 +750,7 @@ def installed(
         by the package have been altered. If files have been altered, the reinstall
         option of pkg.install is used to force a reinstall.  Types to ignore can be
         passed to pkg.verify (see example below).  Currently, this option is supported
-        for the following pkg providers: :mod:`yumpkg <salt.modules.yumpkg>`.
+        for the following pkg providers: :mod:`yumpkg <salt.core.yumpkg>`.
 
         Examples:
 
@@ -775,7 +775,7 @@ def installed(
     :param bool normalize:
         Normalize the package name by removing the architecture.  Default is True.
         This is useful for poorly created packages which might include the
-        architecture as an actual part of the name such as kernel modules
+        architecture as an actual part of the name such as kernel core
         which match a specific kernel version.
 
         .. versionadded:: 2014.7.0
@@ -1679,7 +1679,7 @@ def mod_init(low):
     "mod_init" function.
 
     .. seealso::
-       :py:func:`salt.modules.ebuild.ex_mod_init`
+       :py:func:`salt.core.ebuild.ex_mod_init`
 
     '''
     ret = True

@@ -500,7 +500,7 @@ def cache_local_file(path):
 
 def list_states(saltenv='base', env=None):
     '''
-    List all of the available state modules in an environment
+    List all of the available state core in an environment
 
     CLI Example:
 

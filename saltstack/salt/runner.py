@@ -25,7 +25,7 @@ class RunnerClient(mixins.SyncClientMixin, mixins.AsyncClientMixin, object):
     '''
     The interface used by the :command:`salt-run` CLI tool on the Salt Master
 
-    It executes :ref:`runner modules <all-salt.runners>` which run on the Salt
+    It executes :ref:`runner core <all-salt.runners>` which run on the Salt
     Master.
 
     Importing and using ``RunnerClient`` must be done on the same machine as
@@ -33,7 +33,7 @@ class RunnerClient(mixins.SyncClientMixin, mixins.AsyncClientMixin, object):
     Master is running as.
 
     Salt's :conf_master:`external_auth` can be used to authenticate calls. The
-    eauth user must be authorized to execute runner modules: (``@runner``).
+    eauth user must be authorized to execute runner core: (``@runner``).
     Only the :py:meth:`master_call` below supports eauth.
     '''
     client = 'runner'

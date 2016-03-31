@@ -9,7 +9,7 @@ Windows Support
 
 Salt now uses a portable python. As a result the entire pip module is now
 functional on the salt installation itself. You can pip install dependencies
-for your custom modules. You can even upgrade salt itself using pip. For this
+for your custom core. You can even upgrade salt itself using pip. For this
 to work properly, you must specify the Current Working Directory (``cwd``) and
 the Pip Binary (``bin_env``) salt should use.  The variable ``pip_bin`` can be
 either a virtualenv path or the path to the pip binary itself.

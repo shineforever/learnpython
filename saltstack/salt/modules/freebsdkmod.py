@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-Module to manage FreeBSD kernel modules
+Module to manage FreeBSD kernel core
 '''
 from __future__ import absolute_import
 
@@ -30,7 +30,7 @@ def __virtual__():
 
 def _new_mods(pre_mods, post_mods):
     '''
-    Return a list of the new modules, pass an kldstat dict before running
+    Return a list of the new core, pass an kldstat dict before running
     modprobe and one after modprobe has run
     '''
     pre = set()
@@ -44,7 +44,7 @@ def _new_mods(pre_mods, post_mods):
 
 def _rm_mods(pre_mods, post_mods):
     '''
-    Return a list of the new modules, pass an kldstat dict before running
+    Return a list of the new core, pass an kldstat dict before running
     modprobe and one after modprobe has run
     '''
     pre = set()
@@ -65,7 +65,7 @@ def _get_module_name(line):
 
 def _get_persistent_modules():
     '''
-    Returns a list of modules in loader.conf that load on boot.
+    Returns a list of core in loader.conf that load on boot.
     '''
     mods = set()
     with salt.utils.fopen(_LOADER_CONF, 'r') as loader_conf:
@@ -100,7 +100,7 @@ def _remove_persistent_module(mod):
 
 def available():
     '''
-    Return a list of all available kernel modules
+    Return a list of all available kernel core
 
     CLI Example:
 
@@ -133,7 +133,7 @@ def check_available(mod):
 
 def lsmod():
     '''
-    Return a dict containing information about currently loaded modules
+    Return a dict containing information about currently loaded core
 
     CLI Example:
 

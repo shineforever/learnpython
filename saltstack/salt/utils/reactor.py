@@ -194,7 +194,7 @@ class ReactWrap(object):
 
     def local(self, *args, **kwargs):
         '''
-        Wrap LocalClient for running :ref:`execution modules <all-salt.modules>`
+        Wrap LocalClient for running :ref:`execution core <all-salt.core>`
         '''
         if 'local' not in self.client_cache:
             self.client_cache['local'] = salt.client.LocalClient(self.opts['conf_file'])
@@ -209,7 +209,7 @@ class ReactWrap(object):
 
     def runner(self, fun, **kwargs):
         '''
-        Wrap RunnerClient for executing :ref:`runner modules <all-salt.runners>`
+        Wrap RunnerClient for executing :ref:`runner core <all-salt.runners>`
         '''
         if 'runner' not in self.client_cache:
             self.client_cache['runner'] = salt.runner.RunnerClient(self.opts)
@@ -222,7 +222,7 @@ class ReactWrap(object):
 
     def wheel(self, fun, **kwargs):
         '''
-        Wrap Wheel to enable executing :ref:`wheel modules <all-salt.wheel>`
+        Wrap Wheel to enable executing :ref:`wheel core <all-salt.wheel>`
         '''
         if 'wheel' not in self.client_cache:
             self.client_cache['wheel'] = salt.wheel.Wheel(self.opts)
@@ -235,7 +235,7 @@ class ReactWrap(object):
 
     def caller(self, fun, *args, **kwargs):
         '''
-        Wrap Caller to enable executing :ref:`caller modules <all-salt.caller>`
+        Wrap Caller to enable executing :ref:`caller core <all-salt.caller>`
         '''
         log.debug("in caller with fun {0} args {1} kwargs {2}".format(fun, args, kwargs))
         args = kwargs['args']

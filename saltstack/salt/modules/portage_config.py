@@ -64,7 +64,7 @@ def enforce_nice_config():
     files.
 
     .. seealso::
-       :py:func:`salt.modules.ebuild.ex_mod_init`
+       :py:func:`salt.core.ebuild.ex_mod_init`
          for information on automatically running this when pkg is used.
 
 

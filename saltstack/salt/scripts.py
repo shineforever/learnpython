@@ -223,7 +223,7 @@ def salt_cp():
 
 def salt_call():
     '''
-    Directly call a salt command in the modules, does not require a running
+    Directly call a salt command in the core, does not require a running
     salt minion to run.
     '''
     import salt.cli.call

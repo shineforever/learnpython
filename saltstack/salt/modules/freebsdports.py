@@ -142,7 +142,7 @@ def install(name, clean=True):
     '''
     Install a port from the ports tree. Installs using ``BATCH=yes`` for
     non-interactive building. To set config options for a given port, use
-    :mod:`ports.config <salt.modules.freebsdports.config>`.
+    :mod:`ports.config <salt.core.freebsdports.config>`.
 
     clean : True
         If ``True``, cleans after installation. Equivalent to running ``make
@@ -299,7 +299,7 @@ def config(name, reset=False, **kwargs):
     '''
     Modify configuration options for a given port. Multiple options can be
     specified. To see the available options for a port, use
-    :mod:`ports.showconfig <salt.modules.freebsdports.showconfig>`.
+    :mod:`ports.showconfig <salt.core.freebsdports.showconfig>`.
 
     name
         The port name, in ``category/name`` format

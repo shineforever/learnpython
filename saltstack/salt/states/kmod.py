@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 '''
-Loading and unloading of kernel modules
+Loading and unloading of kernel core
 =======================================
 
-The Kernel modules on a system can be managed cleanly with the kmod state
+The Kernel core on a system can be managed cleanly with the kmod state
 module:
 
 .. code-block:: yaml
@@ -30,7 +30,7 @@ def present(name, persist=False):
         The name of the kernel module to verify is loaded
 
     persist
-        Also add module to ``/etc/modules``
+        Also add module to ``/etc/core``
     '''
     ret = {'name': name,
            'result': True,
@@ -82,10 +82,10 @@ def absent(name, persist=False, comment=True):
         The name of the kernel module to verify is not loaded
 
     persist
-        Delete module from ``/etc/modules``
+        Delete module from ``/etc/core``
 
     comment
-        Don't remove module from ``/etc/modules``, only comment it
+        Don't remove module from ``/etc/core``, only comment it
     '''
     ret = {'name': name,
            'result': True,

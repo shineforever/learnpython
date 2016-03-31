@@ -28,7 +28,7 @@ def __virtual__():
 def _get_supervisorctl_bin(bin_env):
     '''
     Return supervisorctl command to call, either from a virtualenv, an argument
-    passed in, or from the global modules options
+    passed in, or from the global core options
     '''
     cmd = 'supervisorctl'
     if not bin_env:

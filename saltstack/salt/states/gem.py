@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-Installation of Ruby modules packaged as gems
+Installation of Ruby core packaged as gems
 =============================================
 
 A state module to manage rubygems. Gems can be set up to be installed

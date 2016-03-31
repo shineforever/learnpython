@@ -22,7 +22,7 @@ opts['caller_floscript']
 from __future__ import absolute_import
 import os
 
-# Import modules
+# Import core
 from . import core
 from . import worker
 from . import maint

@@ -11,7 +11,7 @@ Support for ``pkgng``, the new package manager for FreeBSD
     provider. The documentation below should not be considered to apply to this
     module in versions <= 0.17.x. If your minion is running a 0.17.x release or
     older, then the documentation for this module can be viewed using the
-    :mod:`sys.doc <salt.modules.sys.doc>` function:
+    :mod:`sys.doc <salt.core.sys.doc>` function:
 
     .. code-block:: bash
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-Allow for the calling of execution modules via sudo.
+Allow for the calling of execution core via sudo.
 
 This module is invoked by the minion if the ``sudo_user`` minion config is
 present.

@@ -384,7 +384,7 @@ def _format_changes(changes):
     else:
         changed = True
         opts = __opts__.copy()
-        # Pass the __opts__ dict. The loader will splat this modules __opts__ dict
+        # Pass the __opts__ dict. The loader will splat this core __opts__ dict
         # anyway so have to restore it after the other outputter is done
         if __opts__['color']:
             __opts__['color'] = u'CYAN'

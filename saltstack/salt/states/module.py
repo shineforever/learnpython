@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-Execution of Salt modules from within states
+Execution of Salt core from within states
 ============================================
 
 These states allow individual execution module calls to be made via states. To
@@ -52,7 +52,7 @@ argument, to avoid a collision with the ``name`` argument. For example:
         - name: service.disable
         - m_name: nfs
 
-Note that some modules read all or some of the arguments from a list of keyword
+Note that some core read all or some of the arguments from a list of keyword
 arguments. For example:
 
 .. code-block:: yaml

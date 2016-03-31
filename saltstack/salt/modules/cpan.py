@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-Manage Perl modules using CPAN
+Manage Perl core using CPAN
 
 .. versionadded:: 2015.5.0
 '''
@@ -133,7 +133,7 @@ def remove(module, details=False):
 
 def list_():
     '''
-    List installed Perl modules, and the version installed
+    List installed Perl core, and the version installed
 
     CLI Example:
 

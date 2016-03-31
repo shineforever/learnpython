@@ -2,7 +2,7 @@
 '''
 Default values, to be imported elsewhere in Salt code
 
-Do NOT, import any salt modules (salt.utils, salt.config, etc.) into this file,
+Do NOT, import any salt core (salt.utils, salt.config, etc.) into this file,
 as this may result in circular imports.
 '''
 

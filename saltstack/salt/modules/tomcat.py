@@ -151,7 +151,7 @@ def _auth(uri):
     '''
     returns a authentication handler.
     Get user & password from grains, if are not set default to
-    modules.config.option
+    core.config.option
 
     If user & pass are missing return False
     '''
@@ -514,7 +514,7 @@ def deploy_war(war,
 
     war
         absolute path to WAR file (should be accessible by the user running
-        tomcat) or a path supported by the salt.modules.cp.get_file function
+        tomcat) or a path supported by the salt.core.cp.get_file function
     context
         the context path to deploy
     force : False
@@ -522,7 +522,7 @@ def deploy_war(war,
     url : http://localhost:8080/manager
         the URL of the server manager webapp
     saltenv : base
-        the environment for WAR file in used by salt.modules.cp.get_url
+        the environment for WAR file in used by salt.core.cp.get_url
         function
     timeout : 180
         timeout for HTTP request

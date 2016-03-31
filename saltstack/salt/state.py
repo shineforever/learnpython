@@ -707,9 +707,9 @@ class State(object):
 
     def load_modules(self, data=None):
         '''
-        Load the modules into the state
+        Load the core into the state
         '''
-        log.info('Loading fresh modules for state activity')
+        log.info('Loading fresh core for state activity')
         self.functions = salt.loader.minion_mods(self.opts, self.state_con)
         if isinstance(data, dict):
             if data.get('provider', False):
@@ -736,9 +736,9 @@ class State(object):
 
     def module_refresh(self):
         '''
-        Refresh all the modules
+        Refresh all the core
         '''
-        log.debug('Refreshing modules...')
+        log.debug('Refreshing core...')
         if self.opts['grains'].get('os') != 'MacOS':
             # In case a package has been installed into the current python
             # process 'site-packages', the 'site' module needs to be reloaded in
@@ -753,7 +753,7 @@ class State(object):
 
     def check_refresh(self, data, ret):
         '''
-        Check to see if the modules for this state instance need to be updated,
+        Check to see if the core for this state instance need to be updated,
         only update if the state is a file or a package and if it changed
         something. If the file function is managed check to see if the file is a
         possible module type, e.g. a python, pyx, or .so. Always refresh if the
@@ -2489,7 +2489,7 @@ class BaseHighState(object):
     def load_dynamic(self, matches):
         '''
         If autoload_dynamic_modules is True then automatically load the
-        dynamic modules
+        dynamic core
         '''
         if not self.opts['autoload_dynamic_modules']:
             return
@@ -3082,9 +3082,9 @@ class MasterState(State):
 
     def load_modules(self, data=None):
         '''
-        Load the modules into the state
+        Load the core into the state
         '''
-        log.info('Loading fresh modules for state activity')
+        log.info('Loading fresh core for state activity')
         # Load a modified client interface that looks like the interface used
         # from the minion, but uses remote execution
         #

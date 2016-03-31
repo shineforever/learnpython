@@ -42,7 +42,7 @@ def attr_call():
 
 def module_report():
     '''
-    Return a dict containing all of the exeution modules with a report on
+    Return a dict containing all of the exeution core with a report on
     the overall availability via different references
 
     CLI Example::
@@ -54,7 +54,7 @@ def module_report():
     ret = {'functions': [],
            'function_attrs': [],
            'function_subs': [],
-           'modules': [],
+           'core': [],
            'module_attrs': [],
            'missing_attrs': [],
            'missing_subs': []}
@@ -62,7 +62,7 @@ def module_report():
         if '.' in ref:
             ret['functions'].append(ref)
         else:
-            ret['modules'].append(ref)
+            ret['core'].append(ref)
             if hasattr(__salt__, ref):
                 ret['module_attrs'].append(ref)
             for func in __salt__[ref]:
@@ -411,7 +411,7 @@ def providers():
 
 def not_loaded():
     '''
-    List the modules that were not loaded by the salt loader system
+    List the core that were not loaded by the salt loader system
 
     CLI Example:
 
@@ -421,7 +421,7 @@ def not_loaded():
     '''
     prov = providers()
     ret = set()
-    for mod_dir in salt.loader._module_dirs(__opts__, 'modules', 'module'):
+    for mod_dir in salt.loader._module_dirs(__opts__, 'core', 'module'):
         if not os.path.isabs(mod_dir):
             continue
         if not os.path.isdir(mod_dir):

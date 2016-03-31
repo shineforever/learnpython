@@ -1544,10 +1544,10 @@ def is_kvm_hyper():
         salt '*' virt.is_kvm_hyper
     '''
     try:
-        if 'kvm_' not in salt.utils.fopen('/proc/modules').read():
+        if 'kvm_' not in salt.utils.fopen('/proc/core').read():
             return False
     except IOError:
-        # No /proc/modules? Are we on Windows? Or Solaris?
+        # No /proc/core? Are we on Windows? Or Solaris?
         return False
     return 'libvirtd' in __salt__['cmd.run'](__grains__['ps'])
 
@@ -1569,10 +1569,10 @@ def is_xen_hyper():
         # virtual_subtype isn't set everywhere.
         return False
     try:
-        if 'xen_' not in salt.utils.fopen('/proc/modules').read():
+        if 'xen_' not in salt.utils.fopen('/proc/core').read():
             return False
     except IOError:
-        # No /proc/modules? Are we on Windows? Or Solaris?
+        # No /proc/core? Are we on Windows? Or Solaris?
         return False
     return 'libvirtd' in __salt__['cmd.run'](__grains__['ps'])
 

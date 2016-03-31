@@ -151,7 +151,7 @@ def send(tag,
         event data as ``pillar``. Remember Pillar data is often sensitive data
         so be careful. This is useful for passing ephemeral Pillar values
         through an event. Such as passing the ``pillar={}`` kwarg in
-        :py:func:`state.sls <salt.modules.state.sls>` from the Master, through
+        :py:func:`state.sls <salt.core.state.sls>` from the Master, through
         an event on the Minion, then back to the Master.
     :type with_pillar: Specify ``True`` to include all Pillar values, or
         specify a list of strings of Pillar keys to include. It is a

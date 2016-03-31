@@ -44,7 +44,7 @@ def user_exists(name, password=None, htpasswd_file=None, options='',
         Path to the htpasswd file
 
     options
-        See :mod:`salt.modules.htpasswd.useradd`
+        See :mod:`salt.core.htpasswd.useradd`
 
     force
         Touch the file even if user already created

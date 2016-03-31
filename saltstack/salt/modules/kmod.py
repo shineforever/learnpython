@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-Module to manage Linux kernel modules
+Module to manage Linux kernel core
 '''
 from __future__ import absolute_import
 
@@ -21,7 +21,7 @@ def __virtual__():
 
 def _new_mods(pre_mods, post_mods):
     '''
-    Return a list of the new modules, pass an lsmod dict before running
+    Return a list of the new core, pass an lsmod dict before running
     modprobe and one after modprobe has run
     '''
     pre = set()
@@ -35,7 +35,7 @@ def _new_mods(pre_mods, post_mods):
 
 def _rm_mods(pre_mods, post_mods):
     '''
-    Return a list of the new modules, pass an lsmod dict before running
+    Return a list of the new core, pass an lsmod dict before running
     modprobe and one after modprobe has run
     '''
     pre = set()
@@ -49,17 +49,17 @@ def _rm_mods(pre_mods, post_mods):
 
 def _get_modules_conf():
     '''
-    Return location of modules config file.
-    Default: /etc/modules
+    Return location of core config file.
+    Default: /etc/core
     '''
     if 'systemd' in __grains__:
-        return '/etc/modules-load.d/salt_managed.conf'
-    return '/etc/modules'
+        return '/etc/core-load.d/salt_managed.conf'
+    return '/etc/core'
 
 
 def _strip_module_name(mod):
     '''
-    Return module name and strip configuration. It is possible insert modules
+    Return module name and strip configuration. It is possible insert core
     in this format:
         bonding mode=4 miimon=1000
     This method return only 'bonding'
@@ -111,7 +111,7 @@ def _remove_persistent_module(mod, comment):
 
 def available():
     '''
-    Return a list of all available kernel modules
+    Return a list of all available kernel core
 
     CLI Example:
 
@@ -120,7 +120,7 @@ def available():
         salt '*' kmod.available
     '''
     ret = []
-    mod_dir = os.path.join('/lib/modules/', os.uname()[2])
+    mod_dir = os.path.join('/lib/core/', os.uname()[2])
     for root, dirs, files in os.walk(mod_dir):
         for fn_ in files:
             if '.ko' in fn_:
@@ -143,7 +143,7 @@ def check_available(mod):
 
 def lsmod():
     '''
-    Return a dict containing information about currently loaded modules
+    Return a dict containing information about currently loaded core
 
     CLI Example:
 
@@ -205,7 +205,7 @@ def load(mod, persist=False):
         Name of module to add
 
     persist
-        Write module to /etc/modules to make it load on system reboot
+        Write module to /etc/core to make it load on system reboot
 
     CLI Example:
 
@@ -248,10 +248,10 @@ def remove(mod, persist=False, comment=True):
         Name of module to remove
 
     persist
-        Also remove module from /etc/modules
+        Also remove module from /etc/core
 
     comment
-        If persist is set don't remove line from /etc/modules but only
+        If persist is set don't remove line from /etc/core but only
         comment it
 
     CLI Example:

@@ -138,7 +138,7 @@ def installed(name,
     '''
     Install buildout in a specific directory
 
-    It is a thin wrapper to modules.buildout.buildout
+    It is a thin wrapper to core.buildout.buildout
 
     name
         directory to execute in

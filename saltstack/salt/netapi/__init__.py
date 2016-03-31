@@ -67,7 +67,7 @@ class NetapiClient(object):
 
     def local_async(self, *args, **kwargs):
         '''
-        Run :ref:`execution modules <all-salt.modules>` asynchronously
+        Run :ref:`execution core <all-salt.core>` asynchronously
 
         Wraps :py:meth:`salt.client.LocalClient.run_job`.
 
@@ -78,7 +78,7 @@ class NetapiClient(object):
 
     def local(self, *args, **kwargs):
         '''
-        Run :ref:`execution modules <all-salt.modules>` synchronously
+        Run :ref:`execution core <all-salt.core>` synchronously
 
         See :py:meth:`salt.client.LocalClient.cmd` for all available
         parameters.
@@ -95,7 +95,7 @@ class NetapiClient(object):
 
     def local_batch(self, *args, **kwargs):
         '''
-        Run :ref:`execution modules <all-salt.modules>` against batches of minions
+        Run :ref:`execution core <all-salt.core>` against batches of minions
 
         .. versionadded:: 0.8.4
 
@@ -131,7 +131,7 @@ class NetapiClient(object):
 
     def runner(self, fun, timeout=None, **kwargs):
         '''
-        Run `runner modules <all-salt.runners>` synchronously
+        Run `runner core <all-salt.runners>` synchronously
 
         Wraps :py:meth:`salt.runner.RunnerClient.cmd_sync`.
 
@@ -146,7 +146,7 @@ class NetapiClient(object):
 
     def runner_async(self, fun, **kwargs):
         '''
-        Run `runner modules <all-salt.runners>` asynchronously
+        Run `runner core <all-salt.runners>` asynchronously
 
         Wraps :py:meth:`salt.runner.RunnerClient.cmd_async`.
 
@@ -161,7 +161,7 @@ class NetapiClient(object):
 
     def wheel(self, fun, **kwargs):
         '''
-        Run :ref:`wheel modules <all-salt.wheel>` synchronously
+        Run :ref:`wheel core <all-salt.wheel>` synchronously
 
         Wraps :py:meth:`salt.wheel.WheelClient.master_call`.
 
@@ -176,7 +176,7 @@ class NetapiClient(object):
 
     def wheel_async(self, fun, **kwargs):
         '''
-        Run :ref:`wheel modules <all-salt.wheel>` asynchronously
+        Run :ref:`wheel core <all-salt.wheel>` asynchronously
 
         Wraps :py:meth:`salt.wheel.WheelClient.master_call`.
 

@@ -4,7 +4,7 @@ Management of MySQL grants (user permissions)
 =============================================
 
 :depends:   - MySQLdb Python module
-:configuration: See :py:mod:`salt.modules.mysql` for setup instructions.
+:configuration: See :py:mod:`salt.core.mysql` for setup instructions.
 
 The mysql_grants module is used to grant and revoke MySQL permissions.
 

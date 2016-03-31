@@ -40,7 +40,7 @@ Static DNS and IP addresses can be configured like so:
 
     IP addresses are specified using the format
     ``<ip-address>/<subnet-length>``. Salt provides a convenience function
-    called :mod:`ip.get_subnet_length <salt.modules.win_ip.get_subnet_length>`
+    called :mod:`ip.get_subnet_length <salt.core.win_ip.get_subnet_length>`
     to calculate the subnet length from a netmask.
 
 Optionally, if you are setting a static IP address, you can also specify the

@@ -250,7 +250,7 @@ def uninstall_ruby(ruby, runas=None):
 
     ruby
         The version of ruby to uninstall. Should match one of the versions
-        listed by :mod:`rbenv.versions <salt.modules.rbenv.versions>`
+        listed by :mod:`rbenv.versions <salt.core.rbenv.versions>`
 
     CLI Example:
 
@@ -285,7 +285,7 @@ def default(ruby=None, runas=None):
 
     ruby=None
         The version to set as the default. Should match one of the versions
-        listed by :mod:`rbenv.versions <salt.modules.rbenv.versions>`. Leave
+        listed by :mod:`rbenv.versions <salt.core.rbenv.versions>`. Leave
         blank to return the current default.
 
     CLI Example:

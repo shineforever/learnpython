@@ -41,7 +41,7 @@ def downloaded(name, artifact, target_dir='/tmp', target_file=None):
                 group_id: 'com.company.module'
                 packaging: 'jar'
                 version: '1.0'
-           - target_file: /opt/jboss7/modules/com/company/lib/module.jar
+           - target_file: /opt/jboss7/core/com/company/lib/module.jar
 
     Download artifact to the folder (automatically resolves file name):
 
@@ -56,7 +56,7 @@ def downloaded(name, artifact, target_dir='/tmp', target_file=None):
                 group_id: 'com.company.module'
                 packaging: 'jar'
                 version: '1.0'
-           - target_dir: /opt/jboss7/modules/com/company/lib
+           - target_dir: /opt/jboss7/core/com/company/lib
 
     '''
     log.debug(" ======================== STATE: artifactory.downloaded (name: %s) ", name)

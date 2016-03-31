@@ -106,7 +106,7 @@ Available Functions
 
 .. note::
 
-    The docker modules are named ``dockerio`` because
+    The docker core are named ``dockerio`` because
     the name 'docker' would conflict with the underlying docker-py library.
 
 
@@ -188,11 +188,11 @@ def _invalid(exec_status=None, name='', comment='', changes=None):
 def _parse_volumes(volumes):
     '''
     Parse a given volumes state specification for later use in
-    modules.docker.create_container(). This produces a dict that can be directly
+    core.docker.create_container(). This produces a dict that can be directly
     consumed by the Docker API /containers/create.
 
     Note: this only really exists for backwards-compatibility, and because
-    modules.dockerio.start() currently takes a binds argument.
+    core.dockerio.start() currently takes a binds argument.
 
     volumes
         A structure containing information about the volumes to be included in the
@@ -337,7 +337,7 @@ def pulled(name,
         <http://docs.docker.io/en/latest/reference/commandline/cli/#import>`_).
         NOTE that we added in SaltStack a way to authenticate yourself with the
         Docker Hub Registry by supplying your credentials (username, email &
-        password) using pillars. For more information, see salt.modules.dockerio
+        password) using pillars. For more information, see salt.core.dockerio
         execution module.
 
     name
@@ -389,7 +389,7 @@ def pushed(name, tag='latest', insecure_registry=False):
         NOTE that we added in SaltStack a way to authenticate yourself with the
         Docker Hub Registry by supplying your credentials (username, email
         & password) using pillars. For more information, see
-        salt.modules.dockerio execution module.
+        salt.core.dockerio execution module.
 
     name
         Name of the image
@@ -579,7 +579,7 @@ def installed(name,
     volumes
         List of volumes (see notes for the running function)
 
-    For other parameters, see absolutely first the salt.modules.dockerio
+    For other parameters, see absolutely first the salt.core.dockerio
     execution module and the docker-py python bindings for docker
     documentation
     <https://github.com/dotcloud/docker-py#api>`_ for
@@ -992,7 +992,7 @@ def running(name,
 
             - cpuset: '0-3'
 
-    For other parameters, see salt.modules.dockerio execution module
+    For other parameters, see salt.core.dockerio execution module
     and the docker-py python bindings for docker documentation
     <https://github.com/dotcloud/docker-py#api>`_ for
     `docker.create_container`.

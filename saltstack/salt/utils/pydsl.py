@@ -121,7 +121,7 @@ class Sls(object):
         self.decls = []
         self.options = Options()
         self.funcs = []  # track the ordering of state func declarations
-        self.rendered_sls = rendered_sls  # a set of names of rendered sls modules
+        self.rendered_sls = rendered_sls  # a set of names of rendered sls core
 
         if not HighState.get_active():
             raise PyDslError('PyDSL only works with a running high state!')
@@ -161,7 +161,7 @@ class Sls(object):
             SLS_MATCHES = HIGHSTATE.top_matches(HIGHSTATE.get_top())
 
         highstate = self.included_highstate
-        slsmods = []  # a list of pydsl sls modules rendered.
+        slsmods = []  # a list of pydsl sls core rendered.
         for sls in sls_names:
             r_env = '{0}:{1}'.format(saltenv, sls)
             if r_env not in self.rendered_sls:

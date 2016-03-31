@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-This package contains the loader modules for the salt streams system
+This package contains the loader core for the salt streams system
 '''
 # Import Python libs
 from __future__ import absolute_import

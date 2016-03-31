@@ -2,12 +2,12 @@
 '''
 Fileserver backend which serves files pushed to the Master
 
-The :mod:`cp.push <salt.modules.cp.push>` function allows Minions to push files
+The :mod:`cp.push <salt.core.cp.push>` function allows Minions to push files
 up to the Master. Using this backend, these pushed files are exposed to other
 Minions via the Salt fileserver.
 
 To enable minionfs, :conf_master:`file_recv` needs to be set to ``True`` in
-the master config file (otherwise :mod:`cp.push <salt.modules.cp.push>` will
+the master config file (otherwise :mod:`cp.push <salt.core.cp.push>` will
 not be allowed to push files to the Master), and ``minion`` must be added to
 the :conf_master:`fileserver_backends` list.
 

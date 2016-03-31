@@ -717,7 +717,7 @@ def sed(path,
         negate_match=False):
     '''
     .. deprecated:: 0.17.0
-       Use :py:func:`~salt.modules.file.replace` instead.
+       Use :py:func:`~salt.core.file.replace` instead.
 
     Make a simple edit to a file
 
@@ -845,7 +845,7 @@ def psed(path,
          multi=False):
     '''
     .. deprecated:: 0.17.0
-       Use :py:func:`~salt.modules.file.replace` instead.
+       Use :py:func:`~salt.core.file.replace` instead.
 
     Make a simple edit to a file (pure Python version)
 
@@ -959,7 +959,7 @@ def uncomment(path,
               backup='.bak'):
     '''
     .. deprecated:: 0.17.0
-       Use :py:func:`~salt.modules.file.replace` instead.
+       Use :py:func:`~salt.core.file.replace` instead.
 
     Uncomment specified commented lines in a file
 
@@ -996,7 +996,7 @@ def comment(path,
             backup='.bak'):
     '''
     .. deprecated:: 0.17.0
-       Use :py:func:`~salt.modules.file.replace` instead.
+       Use :py:func:`~salt.core.file.replace` instead.
 
     Comment out specified lines in a file
 
@@ -1023,7 +1023,7 @@ def comment(path,
 
     .. code-block:: bash
 
-        salt '*' file.comment /etc/modules pcspkr
+        salt '*' file.comment /etc/core pcspkr
     '''
     return comment_line(path=path,
                         regex=regex,
@@ -1063,12 +1063,12 @@ def comment_line(path,
     CLI Example:
 
     The following example will comment out the ``pcspkr`` line in the
-    ``/etc/modules`` file using the default ``#`` character and create a backup
-    file named ``modules.bak``
+    ``/etc/core`` file using the default ``#`` character and create a backup
+    file named ``core.bak``
 
     .. code-block:: bash
 
-        salt '*' file.comment_line '/etc/modules' '^pcspkr'
+        salt '*' file.comment_line '/etc/core' '^pcspkr'
 
 
     CLI Example:
@@ -1808,7 +1808,7 @@ def search(path,
 
     Search for occurrences of a pattern in a file
 
-    Params are identical to :py:func:`~salt.modules.file.replace`.
+    Params are identical to :py:func:`~salt.core.file.replace`.
 
     CLI Example:
 
@@ -3067,31 +3067,31 @@ def extract_hash(hash_fn, hash_type='sha256', file_name=''):
     source_sum = None
     partial_id = False
     name_sought = os.path.basename(file_name)
-    log.debug('modules.file.py - extract_hash(): Extracting hash for file '
+    log.debug('core.file.py - extract_hash(): Extracting hash for file '
               'named: {0}'.format(name_sought))
     with salt.utils.fopen(hash_fn, 'r') as hash_fn_fopen:
         for hash_variant in HASHES:
             if hash_type == '' or hash_type == hash_variant[0]:
-                log.debug('modules.file.py - extract_hash(): Will use regex to get'
+                log.debug('core.file.py - extract_hash(): Will use regex to get'
                     ' a purely hexadecimal number of length ({0}), presumably hash'
                     ' type : {1}'.format(hash_variant[1], hash_variant[0]))
                 hash_fn_fopen.seek(0)
                 for line in hash_fn_fopen.read().splitlines():
                     hash_array = re.findall(r'(?i)(?<![a-z0-9])[a-f0-9]{' + str(hash_variant[1]) + '}(?![a-z0-9])', line)
-                    log.debug('modules.file.py - extract_hash(): From "line": {0} '
+                    log.debug('core.file.py - extract_hash(): From "line": {0} '
                               'got : {1}'.format(line, hash_array))
                     if hash_array:
                         if not partial_id:
                             source_sum = {'hsum': hash_array[0], 'hash_type': hash_variant[0]}
                             partial_id = True
 
-                        log.debug('modules.file.py - extract_hash(): Found: {0} '
+                        log.debug('core.file.py - extract_hash(): Found: {0} '
                                   '-- {1}'.format(source_sum['hash_type'],
                                                   source_sum['hsum']))
 
                         if re.search(name_sought, line):
                             source_sum = {'hsum': hash_array[0], 'hash_type': hash_variant[0]}
-                            log.debug('modules.file.py - extract_hash: For {0} -- '
+                            log.debug('core.file.py - extract_hash: For {0} -- '
                                       'returning the {1} hash "{2}".'.format(
                                           name_sought,
                                           source_sum['hash_type'],
@@ -3099,11 +3099,11 @@ def extract_hash(hash_fn, hash_type='sha256', file_name=''):
                             return source_sum
 
     if partial_id:
-        log.debug('modules.file.py - extract_hash: Returning the partially '
+        log.debug('core.file.py - extract_hash: Returning the partially '
                   'identified {0} hash "{1}".'.format(
                        source_sum['hash_type'], source_sum['hsum']))
     else:
-        log.debug('modules.file.py - extract_hash: Returning None.')
+        log.debug('core.file.py - extract_hash: Returning None.')
     return source_sum
 
 
@@ -4407,7 +4407,7 @@ def restore_backup(path, backup_id):
         The path on the minion to check for backups
     backup_id
         The numeric id for the backup you wish to restore, as found using
-        :mod:`file.list_backups <salt.modules.file.list_backups>`
+        :mod:`file.list_backups <salt.core.file.list_backups>`
 
     CLI Example:
 
@@ -4469,7 +4469,7 @@ def delete_backup(path, backup_id):
         The path on the minion to check for backups
     backup_id
         The numeric id for the backup you wish to delete, as found using
-        :mod:`file.list_backups <salt.modules.file.list_backups>`
+        :mod:`file.list_backups <salt.core.file.list_backups>`
 
     CLI Example:
 

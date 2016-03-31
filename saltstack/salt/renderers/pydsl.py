@@ -120,7 +120,7 @@ requisite call is also a :ref:`function-declaration` object, so you
 can chain several requisite calls together.
 
 Arguments to a requisite call can be a list of :ref:`state-declaration` objects
-and/or a set of keyword arguments whose names are state modules and values are
+and/or a set of keyword arguments whose names are state core and values are
 IDs of :ref:`ID-declaration`'s or names of :ref:`name-declaration`'s.
 
 .. code-block:: python
@@ -315,7 +315,7 @@ high state data rendered by `pydsl` to `stateconf`. This example shows that by
 it's possible to ensure that the included sls files can be made to execute before
 or after a state in the including sls file.
 
-Importing custom Python modules
+Importing custom Python core
 -------------------------------
 To use a custom Python module inside a PyDSL state, place the module somewhere that
 it can be loaded by the Salt loader, such as `_modules` in the `/srv/salt` directory.
@@ -323,7 +323,7 @@ it can be loaded by the Salt loader, such as `_modules` in the `/srv/salt` direc
 Then, copy it to any minions as necessary by using `saltutil.sync_modules`.
 
 To import into a PyDSL SLS, one must bypass the Python importer and insert it manually
-by getting a reference from Python's `sys.modules` dictionary.
+by getting a reference from Python's `sys.core` dictionary.
 
 For example:
 
@@ -332,7 +332,7 @@ For example:
     #!pydsl|stateconf -ps
 
     def main():
-        my_mod = sys.modules['salt.loaded.ext.module.my_mod']
+        my_mod = sys.core['salt.loaded.ext.module.my_mod']
 
 '''
 from __future__ import absolute_import

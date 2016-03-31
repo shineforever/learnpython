@@ -291,7 +291,7 @@ def load_args_and_kwargs(func, args, data=None):
 class SMinion(object):
     '''
     Create an object that has loaded all of the minion module functions,
-    grains, modules, returners etc.  The SMinion allows developers to
+    grains, core, returners etc.  The SMinion allows developers to
     generate all of the salt minion functions and present them with these
     functions for general use.
     '''
@@ -327,7 +327,7 @@ class SMinion(object):
 
     def gen_modules(self, initial_load=False):
         '''
-        Load all of the modules for the minion
+        Load all of the core for the minion
         '''
         self.opts['pillar'] = salt.pillar.get_pillar(
             self.opts,
@@ -504,7 +504,7 @@ class MasterMinion(object):
 
     def gen_modules(self, initial_load=False):
         '''
-        Load all of the modules for the minion
+        Load all of the core for the minion
         '''
         self.functions = salt.loader.minion_mods(
             self.opts,
