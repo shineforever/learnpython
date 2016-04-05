@@ -138,7 +138,7 @@ def _get_pool_results(*args, **kwargs):
     '''
     # TODO: the option "survey.sort=" would be preferred for namespace
     # separation but the kwargs parser for the salt-run command seems to
-    # improperly pass the options containing a "." in them for later modules to
+    # improperly pass the options containing a "." in them for later core to
     # process. The "_" is used here instead.
 
     import hashlib

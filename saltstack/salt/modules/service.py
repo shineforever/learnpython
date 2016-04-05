@@ -22,7 +22,7 @@ def __virtual__():
     '''
     Only work on systems which exclusively use sysvinit
     '''
-    # Disable on these platforms, specific service modules exist:
+    # Disable on these platforms, specific service core exist:
     disable = set((
         'RedHat',
         'CentOS',

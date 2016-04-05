@@ -2,7 +2,7 @@
 '''
 Return data to a mongodb server
 
-Required python modules: pymongo
+Required python core: pymongo
 
 
 This returner will send data from the minions to a MongoDB server. To

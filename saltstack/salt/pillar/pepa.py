@@ -138,7 +138,7 @@ fedora_19.yaml
 Nested dictionaries
 ===================
 
-In order to create nested dictionaries as output you can use double dot **".."** as a delimiter. You can change this using "pepa_delimiter" we choose double dot since single dot is already used by key names in some modules, and using ":" requires quoting in the YAML.
+In order to create nested dictionaries as output you can use double dot **".."** as a delimiter. You can change this using "pepa_delimiter" we choose double dot since single dot is already used by key names in some core, and using ":" requires quoting in the YAML.
 
 **Example:**
 
@@ -346,7 +346,7 @@ __opts__ = {
 
 def __virtual__():
     '''
-    Only return if all the modules are available
+    Only return if all the core are available
     '''
     if not HAS_REQUESTS:
         return False

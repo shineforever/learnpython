@@ -47,7 +47,7 @@ DEFAULT_SHELL = salt.grains.extra.shell()['shell']
 
 def __virtual__():
     '''
-    Overwriting the cmd python module makes debugging modules
+    Overwriting the cmd python module makes debugging core
     with pdb a bit harder so lets do it this way instead.
     '''
     return __virtualname__
@@ -1553,7 +1553,7 @@ def run_chroot(root,
     '''
     .. versionadded:: 2014.7.0
 
-    This function runs :mod:`cmd.run_all <salt.modules.cmdmod.run_all>` wrapped
+    This function runs :mod:`cmd.run_all <salt.core.cmdmod.run_all>` wrapped
     within a chroot, with dev and proc mounted in the chroot
 
     stdin : None

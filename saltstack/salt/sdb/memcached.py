@@ -10,7 +10,7 @@ Memcached sdb Module
 This module allows access to memcached using an ``sdb://`` URI. This
 package is located at ``https://pypi.python.org/pypi/python-memcached``.
 
-Like all sdb modules, the memcached module requires a configuration profile to
+Like all sdb core, the memcached module requires a configuration profile to
 be configured in either the minion or master configuration file. This profile
 requires very little. In the example:
 

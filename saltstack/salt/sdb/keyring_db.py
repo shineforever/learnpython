@@ -19,7 +19,7 @@ it will require either that the password is typed in manually (which is
 unreasonable for the salt-minion and salt-master daemons, especially in
 production) or an agent is written for it.
 
-Like all sdb modules, the keyring module requires a configuration profile to
+Like all sdb core, the keyring module requires a configuration profile to
 be configured in either the minion or master configuration file. This profile
 requires very little. In the example:
 

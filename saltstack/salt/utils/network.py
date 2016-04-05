@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-Define some generic socket functions for network modules
+Define some generic socket functions for network core
 '''
 from __future__ import absolute_import
 

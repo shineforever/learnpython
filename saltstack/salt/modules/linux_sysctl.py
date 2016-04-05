@@ -174,7 +174,7 @@ def persist(name, value, config=None):
     '''
     Assign and persist a simple sysctl parameter for this minion. If ``config``
     is not specified, a sensible default will be chosen using
-    :mod:`sysctl.default_config <salt.modules.linux_sysctl.default_config>`.
+    :mod:`sysctl.default_config <salt.core.linux_sysctl.default_config>`.
 
     CLI Example:
 

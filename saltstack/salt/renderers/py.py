@@ -8,7 +8,7 @@ data.
 In this module, a few objects are defined for you, giving access to Salt's
 execution functions, grains, pillar, etc. They are:
 
-- ``__salt__`` - :ref:`Execution functions <all-salt.modules>` (i.e.
+- ``__salt__`` - :ref:`Execution functions <all-salt.core>` (i.e.
   ``__salt__['test.echo']('foo')``)
 - ``__grains__`` - :ref:`Grains <targeting-grains>` (i.e. ``__grains__['os']``)
 - ``__pillar__`` - :ref:`Pillar data <pillar>` (i.e. ``__pillar__['foo']``)

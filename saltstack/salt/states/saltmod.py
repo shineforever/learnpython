@@ -5,7 +5,7 @@ Control the Salt command interface
 
 This state is intended for use from the Salt Master. It provides access to
 sending commands down to minions as well as access to executing master-side
-modules. These state functions wrap Salt's :ref:`Python API <python-api>`.
+core. These state functions wrap Salt's :ref:`Python API <python-api>`.
 
 .. seealso:: More Orchestrate documentation
 

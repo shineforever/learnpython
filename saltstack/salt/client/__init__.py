@@ -95,7 +95,7 @@ class LocalClient(object):
     The interface used by the :command:`salt` CLI tool on the Salt Master
 
     ``LocalClient`` is used to send a command to Salt minions to execute
-    :ref:`execution modules <all-salt.modules>` and return the results to the
+    :ref:`execution core <all-salt.core>` and return the results to the
     Salt Master.
 
     Importing and using ``LocalClient`` must be done on the same machine as the

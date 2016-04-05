@@ -15,10 +15,10 @@ binaries.
 Syslog-ng can be installed via a package manager or from source. In the
 latter case, the syslog-ng and syslog-ng-ctl binaries are not available
 from the PATH, so users should set location of the sbin directory with
-:mod:`syslog_ng.set_binary_path <salt.modules.syslog_ng.set_binary_path>`.
+:mod:`syslog_ng.set_binary_path <salt.core.syslog_ng.set_binary_path>`.
 
 Similarly, users can specify the location of the configuration file with
-:mod:`syslog_ng.set_config_file <salt.modules.syslog_ng.set_config_file>`, then
+:mod:`syslog_ng.set_config_file <salt.core.syslog_ng.set_config_file>`, then
 the module will use it. If it is not set, syslog-ng uses the default
 configuration file.
 
@@ -887,15 +887,15 @@ def version(syslog_ng_sbin_dir=None):
 
 def modules(syslog_ng_sbin_dir=None):
     '''
-    Returns the available modules. If syslog_ng_sbin_dir is specified, it
+    Returns the available core. If syslog_ng_sbin_dir is specified, it
     is added to the PATH during the execution of the command syslog-ng.
 
     CLI Example:
 
     .. code-block:: bash
 
-        salt '*' syslog_ng.modules
-        salt '*' syslog_ng.modules /home/user/install/syslog-ng/sbin
+        salt '*' syslog_ng.core
+        salt '*' syslog_ng.core /home/user/install/syslog-ng/sbin
     '''
     try:
         ret = _run_command_in_extended_path(syslog_ng_sbin_dir, "syslog-ng", ("-V",))
@@ -910,7 +910,7 @@ def modules(syslog_ng_sbin_dir=None):
         if line.startswith("Available-Modules"):
             label, installed_modules = line.split()
             return _format_return_data(ret["retcode"], stdout=installed_modules)
-    return _format_return_data(-1, stderr="Unable to find the modules.")
+    return _format_return_data(-1, stderr="Unable to find the core.")
 
 
 def stats(syslog_ng_sbin_dir=None):
@@ -967,7 +967,7 @@ def stop(name=None):
     Kills syslog-ng. This function is intended to be used from the state module.
 
     Users shouldn't use this function, if the service module is available on
-    their system.  If :mod:`syslog_ng.set_config_file <salt.modules.syslog_ng.set_binary_path>`
+    their system.  If :mod:`syslog_ng.set_config_file <salt.core.syslog_ng.set_binary_path>`
     is called before, this function will use the set binary path.
 
     CLI Example:
@@ -1019,7 +1019,7 @@ def start(name=None,
     is intended to be used from the state module.
 
     Users shouldn't use this function, if the service module is available on
-    their system.  If :mod:`syslog_ng.set_config_file <salt.modules.syslog_ng.set_binary_path>`,
+    their system.  If :mod:`syslog_ng.set_config_file <salt.core.syslog_ng.set_binary_path>`,
     is called before, this function will use the set binary path.
 
     CLI Example:
@@ -1079,7 +1079,7 @@ def reload_(name):
     '''
     Reloads syslog-ng. This function is intended to be used from states.
 
-    If :mod:`syslog_ng.set_config_file <salt.modules.syslog_ng.set_binary_path>`,
+    If :mod:`syslog_ng.set_config_file <salt.core.syslog_ng.set_binary_path>`,
     is called before, this function will use the set binary path.
 
     CLI Example:
@@ -1114,7 +1114,7 @@ def write_config(config, newlines=2):
     Writes the given parameter config into the config file. This function is
     intended to be used from states.
 
-    If :mod:`syslog_ng.set_config_file <salt.modules.syslog_ng.set_config_file>`,
+    If :mod:`syslog_ng.set_config_file <salt.core.syslog_ng.set_config_file>`,
     is called before, this function will use the set config file.
 
     CLI Example:
@@ -1156,7 +1156,7 @@ def write_version(name):
     Removes the previous configuration file, then creates a new one and writes the name line.
     This function is intended to be used from states.
 
-    If :mod:`syslog_ng.set_config_file <salt.modules.syslog_ng.set_config_file>`,
+    If :mod:`syslog_ng.set_config_file <salt.core.syslog_ng.set_config_file>`,
     is called before, this function will use the set config file.
 
     CLI Example:

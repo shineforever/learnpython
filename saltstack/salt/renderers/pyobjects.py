@@ -296,7 +296,7 @@ def load_states():
     lazy_funcs = salt.loader.minion_mods(__opts__)
     lazy_states = salt.loader.states(__opts__, lazy_funcs)
 
-    # TODO: some way to lazily do this? This requires loading *all* state modules
+    # TODO: some way to lazily do this? This requires loading *all* state core
     for key, func in lazy_states.iteritems():
         mod_name, func_name = key.split('.', 1)
         if mod_name not in states:

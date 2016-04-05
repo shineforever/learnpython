@@ -13,9 +13,9 @@ providers, each of which have their own ways of using it.
 
 The OpenStack Nova module for Salt Cloud was bootstrapped from the OpenStack
 module for Salt Cloud, which uses a libcloud-based connection. The Nova module
-is designed to use the nova and glance modules already built into Salt.
+is designed to use the nova and glance core already built into Salt.
 
-These modules use the Python novaclient and glanceclient libraries,
+These core use the Python novaclient and glanceclient libraries,
 respectively. In order to use this module, the proper salt configuration must
 also be in place.  This can be specified in the master config, the minion
 config, a set of grains or a set of pillars.

@@ -62,7 +62,7 @@ def run_command(jboss_config, command, fail_on_error=True):
 
     .. code-block:: bash
 
-        salt '*' jboss7_cli.run_command '{"cli_path": "integration.modules.sysmod.SysModuleTest.test_valid_docs", "controller": "10.11.12.13:9999", "cli_user": "jbossadm", "cli_password": "jbossadm"}' my_command
+        salt '*' jboss7_cli.run_command '{"cli_path": "integration.core.sysmod.SysModuleTest.test_valid_docs", "controller": "10.11.12.13:9999", "cli_user": "jbossadm", "cli_password": "jbossadm"}' my_command
     '''
     cli_command_result = __call_cli(jboss_config, command)
 
@@ -96,7 +96,7 @@ def run_operation(jboss_config, operation, fail_on_error=True, retries=1):
 
     .. code-block:: bash
 
-        salt '*' jboss7_cli.run_operation '{"cli_path": "integration.modules.sysmod.SysModuleTest.test_valid_docs", "controller": "10.11.12.13:9999", "cli_user": "jbossadm", "cli_password": "jbossadm"}' my_operation
+        salt '*' jboss7_cli.run_operation '{"cli_path": "integration.core.sysmod.SysModuleTest.test_valid_docs", "controller": "10.11.12.13:9999", "cli_user": "jbossadm", "cli_password": "jbossadm"}' my_operation
     '''
     cli_command_result = __call_cli(jboss_config, operation, retries)
 

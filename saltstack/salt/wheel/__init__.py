@@ -17,9 +17,9 @@ from salt.utils.error import raise_error
 
 class WheelClient(mixins.SyncClientMixin, mixins.AsyncClientMixin, object):
     '''
-    An interface to Salt's wheel modules
+    An interface to Salt's wheel core
 
-    :ref:`Wheel modules <all-salt.wheel>` interact with various parts of the
+    :ref:`Wheel core <all-salt.wheel>` interact with various parts of the
     Salt Master.
 
     Importing and using ``WheelClient`` must be done on the same machine as the

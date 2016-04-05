@@ -485,7 +485,7 @@ def safe_py_code(code):
     '''
     Check a string to see if it has any potentially unsafe routines which
     could be executed via python, this routine is used to improve the
-    safety of modules suct as virtualenv
+    safety of core suct as virtualenv
     '''
     bads = (
             'import',

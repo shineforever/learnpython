@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 '''
 The caller module is used as a front-end to manage direct calls to the salt
-minion modules.
+minion core.
 '''
 
 # Import python libs
@@ -76,7 +76,7 @@ class Caller(object):
 
 class ZeroMQCaller(object):
     '''
-    Object to wrap the calling of local salt modules for the salt-call command
+    Object to wrap the calling of local salt core for the salt-call command
     '''
     def __init__(self, opts):
         '''
@@ -210,7 +210,7 @@ class ZeroMQCaller(object):
 
     def print_docs(self):
         '''
-        Pick up the documentation for all of the modules and print it out.
+        Pick up the documentation for all of the core and print it out.
         '''
         docs = {}
         for name, func in self.minion.functions.items():
@@ -252,7 +252,7 @@ class ZeroMQCaller(object):
 
 class RAETCaller(ZeroMQCaller):
     '''
-    Object to wrap the calling of local salt modules for the salt-call command
+    Object to wrap the calling of local salt core for the salt-call command
     when transport is raet
 
     There are two operation modes.

@@ -98,13 +98,13 @@ def unpack_thin(thin_path):
 
 
 def need_ext():
-    """Signal that external modules need to be deployed."""
+    """Signal that external core need to be deployed."""
     sys.stdout.write("{0}\next_mods\n".format(OPTIONS.delimiter))
     sys.exit(EX_MOD_DEPLOY)
 
 
 def unpack_ext(ext_path):
-    """Unpack the external modules."""
+    """Unpack the external core."""
     modcache = os.path.join(
             OPTIONS.saltdir,
             'running_data',

@@ -106,13 +106,13 @@ def fullversion():
 
 def modules():
     '''
-    Return list of static and shared modules (``apachectl -M``)
+    Return list of static and shared core (``apachectl -M``)
 
     CLI Example:
 
     .. code-block:: bash
 
-        salt '*' apache.modules
+        salt '*' apache.core
     '''
     cmd = '{0} -M'.format(_detect_os())
     ret = {}
@@ -132,7 +132,7 @@ def modules():
 
 def servermods():
     '''
-    Return list of modules compiled into the server (``apachectl -l``)
+    Return list of core compiled into the server (``apachectl -l``)
 
     CLI Example:
 

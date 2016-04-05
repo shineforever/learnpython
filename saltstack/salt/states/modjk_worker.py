@@ -16,7 +16,7 @@ Mandatory Settings:
   peer publishing permissions)
 
 - The modjk load balancer must be configured as stated in the :strong:`modjk`
-  execution module :mod:`documentation <salt.modules.modjk>`
+  execution module :mod:`documentation <salt.core.modjk>`
 '''
 
 

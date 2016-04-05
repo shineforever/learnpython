@@ -2,7 +2,7 @@
 '''
 Return data to the host operating system's syslog facility
 
-Required python modules: syslog, json
+Required python core: syslog, json
 
 The syslog returner simply reuses the operating system's syslog
 facility to log return data

@@ -380,7 +380,7 @@ class Client(object):
 
     def list_states(self, saltenv):
         '''
-        Return a list of all available sls modules on the master for a given
+        Return a list of all available sls core on the master for a given
         environment
         '''
 

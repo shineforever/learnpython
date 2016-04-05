@@ -52,7 +52,7 @@ class MasterPillarUtil(object):
     supplied by the minion. **
 
     Example use case:
-        For runner modules that need access minion pillar data,
+        For runner core that need access minion pillar data,
         MasterPillarUtil.get_minion_pillar should be used instead
         of getting the pillar data by executing the "pillar" module
         on the minions:
@@ -256,7 +256,7 @@ class MasterPillarUtil(object):
         cached minion data on the master, or by compiling the minion's
         pillar data on the master.
 
-        For runner modules that need access minion pillar data, this
+        For runner core that need access minion pillar data, this
         function should be used instead of getting the pillar data by
         executing the pillar module on the minions.
 

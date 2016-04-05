@@ -225,7 +225,7 @@ def install_rbenv(name, user=None):
     '''
     Install rbenv if not installed. Allows you to require rbenv be installed
     prior to installing the plugins. Useful if you want to install rbenv
-    plugins via the git or file modules and need them installed before
+    plugins via the git or file core and need them installed before
     installing any rubies.
 
     Use the rbenv.root configuration option to set the path for rbenv if you

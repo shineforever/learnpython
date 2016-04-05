@@ -318,11 +318,11 @@ def grant_access_to_shared_folders_to(name, users=None):
                     "group '{0}' not found. Check your installation and fix "
                     "it. You can uninstall VirtualBox Guest Additions with "
                     "the help of command :py:func:`vbox_guest.additions_remove "
-                    "<salt.modules.vbox_guest.additions_remove> (it has "
+                    "<salt.core.vbox_guest.additions_remove> (it has "
                     "`force` argument to fix complex situations; use "
                     "it with care) and then install it again. You can do "
                     "it with the help of :py:func:`vbox_guest.additions_install "
-                    "<salt.modules.vbox_guest.additions_install>`."
+                    "<salt.core.vbox_guest.additions_install>`."
                     "".format(_shared_folders_group))
         else:
             return ("Cannot replace members of the '{0}' group."

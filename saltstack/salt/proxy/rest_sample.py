@@ -28,7 +28,7 @@ log = logging.getLogger(__file__)
 # entry when the module is loaded.
 def __virtual__():
     '''
-    Only return if all the modules are available
+    Only return if all the core are available
     '''
     log.debug('rest_sample proxy __virtual__() called...')
     return True

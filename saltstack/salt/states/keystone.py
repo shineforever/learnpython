@@ -4,7 +4,7 @@ Management of Keystone users
 ============================
 
 :depends:   - keystoneclient Python module
-:configuration: See :py:mod:`salt.modules.keystone` for setup instructions.
+:configuration: See :py:mod:`salt.core.keystone` for setup instructions.
 
 .. code-block:: yaml
 

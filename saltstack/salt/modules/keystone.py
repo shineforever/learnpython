@@ -79,7 +79,7 @@ __opts__ = {}
 
 def auth(profile=None, **connection_args):
     '''
-    Set up keystone credentials. Only intended to be used within Keystone-enabled modules.
+    Set up keystone credentials. Only intended to be used within Keystone-enabled core.
 
     CLI Example:
 

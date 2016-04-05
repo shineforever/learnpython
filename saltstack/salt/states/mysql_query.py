@@ -6,7 +6,7 @@ Execution of MySQL queries
 .. versionadded:: 2014.7.0
 
 :depends:   - MySQLdb Python module
-:configuration: See :py:mod:`salt.modules.mysql` for setup instructions.
+:configuration: See :py:mod:`salt.core.mysql` for setup instructions.
 
 The mysql_query module is used to execute queries on MySQL databases.
 Its output may be stored in a file or in a grain.

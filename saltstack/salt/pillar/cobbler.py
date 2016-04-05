@@ -7,7 +7,7 @@ Configuring the Cobbler ext_pillar
 ==================================
 
 The same cobbler.* parameters are used for both the Cobbler tops and Cobbler pillar
-modules.
+core.
 
 .. code-block:: yaml
 

@@ -3,7 +3,7 @@
 Module for handling OpenStack Swift calls
 Author: Anthony Stanton <anthony.stanton@gmail.com>
 
-Inspired by the S3 and Nova modules
+Inspired by the S3 and Nova core
 
 :depends:   - swiftclient Python module
 :configuration: This module is not usable until the user, tenant, auth URL, and password or auth_key

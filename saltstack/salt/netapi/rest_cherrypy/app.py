@@ -38,7 +38,7 @@ A REST API for Salt
     authentication credentials will be sent over the wire.
 
     A self-signed certificate can be generated using the
-    :py:func:`~salt.modules.tls.create_self_signed_cert` execution function.
+    :py:func:`~salt.core.tls.create_self_signed_cert` execution function.
     Running this function requires pyOpenSSL and the ``salt-call`` script is
     available in the ``salt-minion`` package.
 
@@ -185,7 +185,7 @@ corresponds to the return for each command in the response.
 
 Lowstate, broadly, is a dictionary of values that are mapped to a function
 call. This pattern is used pervasively throughout Salt. The functions called
-from netapi modules are described in :ref:`Client Interfaces <netapi-clients>`.
+from netapi core are described in :ref:`Client Interfaces <netapi-clients>`.
 
 The following example (in JSON format) causes Salt to execute two commands, a
 command sent to minions as well as a runner function on the master::

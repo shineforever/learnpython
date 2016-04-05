@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-File server pluggable modules and generic backend functions
+File server pluggable core and generic backend functions
 '''
 from __future__ import absolute_import
 

@@ -184,7 +184,7 @@ def replace(key,
     '''
     Replace a key on the memcached server. This only succeeds if the key
     already exists. This is the opposite of :mod:`memcached.add
-    <salt.modules.memcached.add>`
+    <salt.core.memcached.add>`
 
     CLI Example:
 

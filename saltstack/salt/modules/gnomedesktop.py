@@ -26,7 +26,7 @@ __func_alias__ = {
 
 def __virtual__():
     '''
-    Only load if the Gio and Glib modules are available
+    Only load if the Gio and Glib core are available
     '''
     if HAS_GLIB:
         return __virtualname__

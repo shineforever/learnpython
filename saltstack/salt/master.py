@@ -969,7 +969,7 @@ class AESFuncs(object):
         perms = []
         for match in self.opts['peer']:
             if re.match(match, clear_load['id']):
-                # This is the list of funcs/modules!
+                # This is the list of funcs/core!
                 if isinstance(self.opts['peer'][match], list):
                     perms.extend(self.opts['peer'][match])
         if ',' in clear_load['fun']:
@@ -2178,7 +2178,7 @@ class ClearFuncs(object):
                 break
 
         # check if the cmd is blacklisted
-        for module_re in self.opts['client_acl_blacklist'].get('modules', []):
+        for module_re in self.opts['client_acl_blacklist'].get('core', []):
             # if this is a regular command, its a single function
             if isinstance(clear_load['fun'], str):
                 funs_to_check = [clear_load['fun']]

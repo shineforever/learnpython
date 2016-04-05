@@ -274,7 +274,7 @@ class ProcessManager(object):
 
     def run(self):
         '''
-        Load and start all available api modules
+        Load and start all available api core
         '''
         salt.utils.appendproctitle(self.name)
 

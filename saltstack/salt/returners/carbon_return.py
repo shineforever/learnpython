@@ -23,7 +23,7 @@ the pickle protocol, set ``carbon.mode`` to ``pickle``:
 
     carbon.mode: pickle
 
-You can also specify the pattern used for the metric base path (except for virt modules metrics):
+You can also specify the pattern used for the metric base path (except for virt core metrics):
     carbon.metric_base_pattern: carbon.[minion_id].[module].[function]
 
 These tokens can used :

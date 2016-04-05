@@ -5,7 +5,7 @@ Rackspace Cloud Module
 
 The Rackspace cloud module. This module uses the preferred means to set up a
 libcloud based cloud module and should be used as the general template for
-setting up additional libcloud based modules.
+setting up additional libcloud based core.
 
 :depends: libcloud >= 0.13.2
 

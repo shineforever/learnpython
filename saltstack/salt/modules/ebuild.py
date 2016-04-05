@@ -187,7 +187,7 @@ def ex_mod_init(low):
 
        ``ebuild.ex_mod_init`` uses ``portage_config.enforce_nice_config`` to do
        the lifting.
-       :py:func:`salt.modules.portage_config.enforce_nice_config`
+       :py:func:`salt.core.portage_config.enforce_nice_config`
 
     CLI Example:
 
@@ -518,7 +518,7 @@ def install(name=None,
         {'<package>': {'old': '<old-version>',
                        'new': '<new-version>'}}
     '''
-    log.debug('Called modules.pkg.install: {0}'.format(
+    log.debug('Called core.pkg.install: {0}'.format(
         {
             'name': name,
             'refresh': refresh,

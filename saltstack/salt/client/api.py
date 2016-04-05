@@ -136,7 +136,7 @@ class APIClient(object):
 
     def minion_async(self, **kwargs):
         '''
-        Wrap LocalClient for running :ref:`execution modules <all-salt.modules>`
+        Wrap LocalClient for running :ref:`execution core <all-salt.core>`
         and immediately return the job ID. The results of the job can then be
         retrieved at a later time.
 
@@ -146,7 +146,7 @@ class APIClient(object):
 
     def minion_sync(self, **kwargs):
         '''
-        Wrap LocalClient for running :ref:`execution modules <all-salt.modules>`
+        Wrap LocalClient for running :ref:`execution core <all-salt.core>`
 
         .. seealso:: :ref:`python-api`
         '''
@@ -154,7 +154,7 @@ class APIClient(object):
 
     def runner_async(self, **kwargs):
         '''
-        Wrap RunnerClient for executing :ref:`runner modules <all-salt.runners>`
+        Wrap RunnerClient for executing :ref:`runner core <all-salt.runners>`
         Expects that one of the kwargs is key 'fun' whose value is the namestring
         of the function to call
         '''
@@ -164,7 +164,7 @@ class APIClient(object):
 
     def wheel_sync(self, **kwargs):
         '''
-        Wrap Wheel to enable executing :ref:`wheel modules <all-salt.wheel>`
+        Wrap Wheel to enable executing :ref:`wheel core <all-salt.wheel>`
         Expects that one of the kwargs is key 'fun' whose value is the namestring
         of the function to call
         '''

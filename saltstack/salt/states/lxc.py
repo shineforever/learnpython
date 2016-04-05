@@ -82,7 +82,7 @@ def present(name,
             * **arch** - Architecture of the container
 
             The available images can be listed using the :mod:`lxc.images
-            <salt.modules.lxc.images>` function.
+            <salt.core.lxc.images>` function.
 
     options
         .. versionadded:: 2015.5.0
@@ -649,7 +649,7 @@ def set_pass(name, **kwargs):  # pylint: disable=W0613
 
     This state function has been disabled, as it did not conform to design
     guidelines. Specifically, due to the fact that :mod:`lxc.set_password
-    <salt.modules.lxc.set_password>` uses ``chpasswd(8)`` to set the password,
+    <salt.core.lxc.set_password>` uses ``chpasswd(8)`` to set the password,
     there was no method to make this action idempotent (in other words, the
     password would be changed every time). This makes this state redundant,
     since the following state will do the same thing:

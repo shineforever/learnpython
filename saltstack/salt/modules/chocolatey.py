@@ -428,7 +428,7 @@ def install_missing(name, version=None, source=None):
 
     .. versionchanged:: 2014.7.0
         If the minion has Chocolatey >= 0.9.8.24 installed, this function calls
-        :mod:`chocolatey.install <salt.modules.chocolatey.install>` instead, as
+        :mod:`chocolatey.install <salt.core.chocolatey.install>` instead, as
         ``installmissing`` is deprecated as of that version and will be removed
         in Chocolatey 1.0.
 

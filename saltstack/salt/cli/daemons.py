@@ -38,7 +38,7 @@ warnings.filterwarnings(
 import salt.log.setup
 
 
-# the try block below bypasses an issue at build time so that modules don't
+# the try block below bypasses an issue at build time so that core don't
 # cause the build to fail
 from salt.utils import migrations
 from salt.utils import kinds

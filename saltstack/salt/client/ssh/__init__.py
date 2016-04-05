@@ -1149,7 +1149,7 @@ def mod_data(fsclient):
     '''
     # TODO, change out for a fileserver backend
     sync_refs = [
-            'modules',
+            'core',
             'states',
             'grains',
             'renderers',

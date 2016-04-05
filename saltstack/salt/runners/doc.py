@@ -24,7 +24,7 @@ def __virtual__():
 
 def runner():
     '''
-    Return all inline documentation for runner modules
+    Return all inline documentation for runner core
 
     CLI Example:
 
@@ -39,7 +39,7 @@ def runner():
 
 def wheel():
     '''
-    Return all inline documentation for wheel modules
+    Return all inline documentation for wheel core
 
     CLI Example:
 

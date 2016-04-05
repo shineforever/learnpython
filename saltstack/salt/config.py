@@ -2163,7 +2163,7 @@ def apply_master_config(overrides=None, defaults=None):
             opts['file_ignore_glob'] = [opts['file_ignore_glob']]
 
     # Let's make sure `worker_threads` does not drop bellow 3 which has proven
-    # to make `salt.modules.publish` not work under the test-suite.
+    # to make `salt.core.publish` not work under the test-suite.
     if opts['worker_threads'] < 3 and opts.get('peer', None):
         log.warning(
             'The \'worker_threads\' setting on {0!r} cannot be lower than 3. '

@@ -104,7 +104,7 @@ Use the following Pg database schema:
     CREATE INDEX idx_salt_events_data ON salt_events
         USING gin (data) with (fastupdate=on);
 
-Required python modules: Psycopg2
+Required python core: Psycopg2
 
 To use this returner, append '--return pgjsonb' to the salt command.
 

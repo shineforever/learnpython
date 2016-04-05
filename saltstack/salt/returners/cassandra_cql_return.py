@@ -6,7 +6,7 @@ Return data to a cassandra server
 
 :maintainer:    Corin Kochenower<ckochenower@saltstack.com>
 :maturity:      new as of 2015.2
-:depends:       salt.modules.cassandra_cql
+:depends:       salt.core.cassandra_cql
 :depends:       DataStax Python Driver for Apache Cassandra
                 https://github.com/datastax/python-driver
                 pip install cassandra-driver
@@ -77,7 +77,7 @@ Use the following cassandra database schema::
     CREATE INDEX tag ON salt.salt_events (tag);
 
 
-Required python modules: cassandra-driver
+Required python core: cassandra-driver
 
   To use the cassandra returner, append '--return cassandra' to the salt command. ex:
 
@@ -135,7 +135,7 @@ log = logging.getLogger(__name__)
 # returners/cassandra_return module, which utilizes nodetool. This module
 # cross-calls the modules/cassandra_cql execution module, which uses the
 # DataStax Python Driver for Apache Cassandra. Namespacing allows both the
-# modules/cassandra_cql and returners/cassandra_cql modules to use the
+# core/cassandra_cql and returners/cassandra_cql core to use the
 # virtualname 'cassandra_cql'.
 __virtualname__ = 'cassandra_cql'
 

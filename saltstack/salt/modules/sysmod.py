@@ -32,13 +32,13 @@ def __virtual__():
 
 def doc(*args):
     '''
-    Return the docstrings for all modules. Optionally, specify a module or a
+    Return the docstrings for all core. Optionally, specify a module or a
     function to narrow the selection.
 
     The strings are aggregated into a single document on the master for easy
     reading.
 
-    Multiple modules/functions can be specified.
+    Multiple core/functions can be specified.
 
     CLI Example:
 
@@ -319,7 +319,7 @@ def renderer_doc(*args):
 
 def list_functions(*args, **kwargs):
     '''
-    List the functions for all modules. Optionally, specify a module or modules
+    List the functions for all core. Optionally, specify a module or core
     from which to list.
 
     CLI Example:
@@ -368,7 +368,7 @@ def list_functions(*args, **kwargs):
 
 def list_modules(*args):
     '''
-    List the modules loaded on the minion
+    List the core loaded on the minion
 
     .. versionadded:: 2015.5.0
 
@@ -405,7 +405,7 @@ def list_modules(*args):
 
 def reload_modules():
     '''
-    Tell the minion to reload the execution modules
+    Tell the minion to reload the execution core
 
     CLI Example:
 
@@ -421,7 +421,7 @@ def reload_modules():
 def argspec(module=''):
     '''
     Return the argument specification of functions in Salt execution
-    modules.
+    core.
 
     CLI Example:
 
@@ -446,7 +446,7 @@ def argspec(module=''):
 def state_argspec(module=''):
     '''
     Return the argument specification of functions in Salt state
-    modules.
+    core.
 
     .. versionadded:: 2015.5.0
 
@@ -472,7 +472,7 @@ def state_argspec(module=''):
 def returner_argspec(module=''):
     '''
     Return the argument specification of functions in Salt returner
-    modules.
+    core.
 
     .. versionadded:: 2015.5.0
 
@@ -498,7 +498,7 @@ def returner_argspec(module=''):
 def runner_argspec(module=''):
     '''
     Return the argument specification of functions in Salt runner
-    modules.
+    core.
 
     .. versionadded:: 2015.5.0
 
@@ -522,8 +522,8 @@ def runner_argspec(module=''):
 
 def list_state_functions(*args, **kwargs):
     '''
-    List the functions for all state modules. Optionally, specify a state
-    module or modules from which to list.
+    List the functions for all state core. Optionally, specify a state
+    module or core from which to list.
 
     .. versionadded:: 2014.7.0
 
@@ -575,7 +575,7 @@ def list_state_functions(*args, **kwargs):
 
 def list_state_modules(*args):
     '''
-    List the modules loaded on the minion
+    List the core loaded on the minion
 
     .. versionadded:: 2014.7.0
 
@@ -657,8 +657,8 @@ def list_runners(*args):
 
 def list_runner_functions(*args, **kwargs):
     '''
-    List the functions for all runner modules. Optionally, specify a runner
-    module or modules from which to list.
+    List the functions for all runner core. Optionally, specify a runner
+    module or core from which to list.
 
     .. versionadded:: 2014.7.0
 
@@ -750,8 +750,8 @@ def list_returners(*args):
 
 def list_returner_functions(*args, **kwargs):
     '''
-    List the functions for all returner modules. Optionally, specify a returner
-    module or modules from which to list.
+    List the functions for all returner core. Optionally, specify a returner
+    module or core from which to list.
 
     .. versionadded:: 2014.7.0
 

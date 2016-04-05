@@ -57,7 +57,7 @@ class AuthenticationError(SaltException):
 
 class CommandNotFoundError(SaltException):
     '''
-    Used in modules or grains when a required binary is not available
+    Used in core or grains when a required binary is not available
     '''
 
 
@@ -94,14 +94,14 @@ class FileserverConfigError(SaltException):
 
 class SaltInvocationError(SaltException, TypeError):
     '''
-    Used when the wrong number of arguments are sent to modules or invalid
+    Used when the wrong number of arguments are sent to core or invalid
     arguments are specified on the command line
     '''
 
 
 class PkgParseError(SaltException):
     '''
-    Used when of the pkg modules cannot correctly parse the output from
+    Used when of the pkg core cannot correctly parse the output from
     the CLI tool (pacman, yum, apt, aptitude, etc)
     '''
 

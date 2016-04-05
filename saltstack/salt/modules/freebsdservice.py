@@ -27,7 +27,7 @@ def __virtual__():
     '''
     Only work on FreeBSD
     '''
-    # Disable on these platforms, specific service modules exist:
+    # Disable on these platforms, specific service core exist:
     if __grains__['os'] == 'FreeBSD':
         return __virtualname__
     return False

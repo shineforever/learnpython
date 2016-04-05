@@ -20,7 +20,7 @@ configuration at:
       provider: softlayer_hw
 
 The SoftLayer Python Library needs to be installed in order to use the
-SoftLayer salt.cloud modules. See: https://pypi.python.org/pypi/SoftLayer
+SoftLayer salt.cloud core. See: https://pypi.python.org/pypi/SoftLayer
 
 :depends: softlayer
 '''

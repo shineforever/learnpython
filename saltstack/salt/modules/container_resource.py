@@ -3,8 +3,8 @@
 Common resources for LXC and systemd-nspawn containers
 
 These functions are not designed to be called directly, but instead from the
-:mod:`lxc <salt.modules.lxc>` and the (future) :mod:`nspawn
-<salt.modules.nspawn>` execution modules.
+:mod:`lxc <salt.core.lxc>` and the (future) :mod:`nspawn
+<salt.core.nspawn>` execution core.
 '''
 
 # Import python libs
@@ -33,7 +33,7 @@ def run(name,
     Common logic for running shell commands in containers
 
     Requires the full command to be passed to :mod:`cmd.run
-    <salt.modules.cmdmod.run>`/:mod:`cmd.run_all <salt.modules.cmdmod.run_all>`
+    <salt.core.cmdmod.run>`/:mod:`cmd.run_all <salt.core.cmdmod.run_all>`
     '''
     valid_output = ('stdout', 'stderr', 'retcode', 'all')
     if output is None:

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 '''
 The top level interface used to translate configuration data back to the
-correct cloud modules
+correct cloud core
 '''
 
 from __future__ import absolute_import
@@ -1241,7 +1241,7 @@ class Cloud(object):
                 output = self.clouds[func](vm_)
             if output is not False and 'sync_after_install' in self.opts:
                 if self.opts['sync_after_install'] not in (
-                        'all', 'modules', 'states', 'grains'):
+                        'all', 'core', 'states', 'grains'):
                     log.error('Bad option for sync_after_install')
                     return output
 
@@ -1251,7 +1251,7 @@ class Cloud(object):
                 ret = client.cmd(vm_['name'], 'saltutil.sync_{0}'.format(
                     self.opts['sync_after_install']
                 ))
-                log.info('Synchronized the following dynamic modules:')
+                log.info('Synchronized the following dynamic core:')
                 log.info('  {0}'.format(ret))
         except KeyError as exc:
             log.exception(

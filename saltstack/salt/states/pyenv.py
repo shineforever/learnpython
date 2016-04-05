@@ -197,7 +197,7 @@ def install_pyenv(name, user=None):
     '''
     Install pyenv if not installed. Allows you to require pyenv be installed
     prior to installing the plugins. Useful if you want to install pyenv
-    plugins via the git or file modules and need them installed before
+    plugins via the git or file core and need them installed before
     installing any rubies.
 
     Use the pyenv.root configuration option to set the path for pyenv if you

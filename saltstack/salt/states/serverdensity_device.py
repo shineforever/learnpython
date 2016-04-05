@@ -92,7 +92,7 @@ def monitored(name, group=None, salt_name=True, salt_params=True, **params):
     salt_params
         If ``True`` (default), needed config parameters will be sourced from
         grains and from :mod:`status.all_status
-        <salt.modules.status.all_status>`.
+        <salt.core.status.all_status>`.
 
     params
         Add parameters that you want to appear in the Server Density dashboard.

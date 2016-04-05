@@ -70,7 +70,7 @@ def exec_action(module, action, module_parameter=None, action_parameter=None, st
 
 def get_modules():
     '''
-    List available ``eselect`` modules.
+    List available ``eselect`` core.
 
     CLI Example:
 
@@ -79,7 +79,7 @@ def get_modules():
         salt '*' eselect.get_modules
     '''
     modules = []
-    module_list = exec_action('modules', 'list', action_parameter='--only-names')
+    module_list = exec_action('core', 'list', action_parameter='--only-names')
     if not module_list:
         return None
 
@@ -184,7 +184,7 @@ def set_target(module, target, module_parameter=None, action_parameter=None):
     else:
         action_parameter = target
 
-    # get list of available modules
+    # get list of available core
     if module not in get_modules():
         log.error('Module {0} not available'.format(module))
         return False

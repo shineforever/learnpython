@@ -4,7 +4,7 @@ Management of MySQL databases (schemas)
 =======================================
 
 :depends:   - MySQLdb Python module
-:configuration: See :py:mod:`salt.modules.mysql` for setup instructions.
+:configuration: See :py:mod:`salt.core.mysql` for setup instructions.
 
 The mysql_database module is used to create and manage MySQL databases.
 Databases can be set as either absent or present.

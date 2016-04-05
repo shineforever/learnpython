@@ -242,9 +242,9 @@ def zip_(zip_file, sources, template=None, cwd=None, runas=None):
     .. versionchanged:: 2015.5.0
         This function was rewritten to use Python's native zip file support.
         The old functionality has been preserved in the new function
-        :mod:`archive.cmd_zip <salt.modules.archive.cmd_zip>`. For versions
+        :mod:`archive.cmd_zip <salt.core.archive.cmd_zip>`. For versions
         2014.7.x and earlier, see the :mod:`archive.cmd_zip
-        <salt.modules.archive.cmd_zip>` documentation.
+        <salt.core.archive.cmd_zip>` documentation.
 
     zip_file
         Path of zip file to be created
@@ -456,9 +456,9 @@ def unzip(zip_file, dest, excludes=None, template=None, runas=None):
     .. versionchanged:: 2015.5.0
         This function was rewritten to use Python's native zip file support.
         The old functionality has been preserved in the new function
-        :mod:`archive.cmd_unzip <salt.modules.archive.cmd_unzip>`. For versions
+        :mod:`archive.cmd_unzip <salt.core.archive.cmd_unzip>`. For versions
         2014.7.x and earlier, see the :mod:`archive.cmd_zip
-        <salt.modules.archive.cmd_zip>` documentation.
+        <salt.core.archive.cmd_zip>` documentation.
 
     zip_file
         Path of zip file to be unpacked

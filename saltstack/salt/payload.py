@@ -45,7 +45,7 @@ except ImportError:
         #       and write to the logfile when this error is hit also
         LOG_FORMAT = '[%(levelname)-8s] %(message)s'
         salt.log.setup_console_logger(log_format=LOG_FORMAT)
-        log.fatal('Unable to import msgpack or msgpack_pure python modules')
+        log.fatal('Unable to import msgpack or msgpack_pure python core')
         # Don't exit if msgpack is not available, this is to make local mode
         # work without msgpack
         #sys.exit(salt.defaults.exitcodes.EX_GENERIC)

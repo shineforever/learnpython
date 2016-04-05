@@ -12,7 +12,7 @@ returner::
       and comparator='UTF8Type'
       and default_validation_class='UTF8Type';
 
-Required python modules: pycassa
+Required python core: pycassa
 
   To use the cassandra returner, append '--return cassandra' to the salt command. ex:
 

@@ -648,9 +648,9 @@ def run(name,
     .. note::
 
         cmd.run supports the usage of ``reload_modules``. This functionality
-        allows you to force Salt to reload all modules. You should only use
+        allows you to force Salt to reload all core. You should only use
         ``reload_modules`` if your cmd.run does some sort of installation
-        (such as ``pip``), if you do not reload the modules future items in
+        (such as ``pip``), if you do not reload the core future items in
         your state which rely on the software being installed will fail.
 
         .. code-block:: yaml

@@ -82,7 +82,7 @@ def _auth(profile=None, api_version=2, **connection_args):
     `glanceclient.client.Client`. Optional parameter
     "api_version" defaults to 2.
 
-    Only intended to be used within glance-enabled modules
+    Only intended to be used within glance-enabled core
     '''
 
     if profile:
