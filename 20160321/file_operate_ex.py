@@ -17,30 +17,30 @@
 多线程并发去取、去匹配
 """
 
-f = file("keepalived.log", "r")
-times = 0
-while True:
-    count = 0
-    search = raw_input("please enter the one you want:")
+with open("keepalived.log", "r") as f:
+	times = 0
+	while True:
+		count = 0
+		search = input("please enter the one you want:")
 
-    print("\033[42;1mTimes:<{}>   Wanted:<{}>.\033[0m".format(times, search))
+		print("\033[42;1mTimes:<{}>   Wanted:<{}>.\033[0m".format(times, search))
 
-    for i in f.readlines():
-        if search in i:
-            # print("Find it!")
-            count += 1
-            with file("record.txt", "ab") as f2:
-                for row in i:
-                    f2.write(row)
-        # else:
-            # print("Can't find.")
-    else:
-        times += 1
-        # 文件循环完了，把指针移回到开始处，以便下次循环
-        f.seek(0)
-    f2 = file("record.txt", "r")
-    for t in f2.readlines():
-        print t
+		for i in f.readlines():
+			if search in i:
+				# print("Find it!")
+				count += 1
+				with open("record.txt", "a") as f2:
+					for row in i:
+						f2.write(row)
+			# else:
+		        # print("Can't find.")
+		else:
+			times += 1
+			# 文件循环完了，把指针移回到开始处，以便下次循环
+			f.seek(0)
+		with open("record.txt", "r") as f2:
+			for t in f2.readlines():
+				print(t)
 
-    print count
-    print("=" * 60)
+		print(count)
+		print("=" * 60)
