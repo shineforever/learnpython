@@ -129,7 +129,7 @@ def create(vm_):
     conn = get_conn()
     kwargs = {
         'name': vm_['name'],
-        'image': get_image(conn, vm_),
+        'images': get_image(conn, vm_),
         'size': get_size(conn, vm_)
     }
 
@@ -138,7 +138,7 @@ def create(vm_):
         'requesting instance',
         'salt/cloud/{0}/requesting'.format(vm_['name']),
         {'kwargs': {'name': kwargs['name'],
-                    'image': kwargs['image'].name,
+                    'images': kwargs['images'].name,
                     'size': kwargs['size'].name}},
         transport=__opts__['transport']
     )

@@ -256,7 +256,7 @@ def list_nodes(conn=None, call=None):
     nodes = list_nodes_full(conn, call)
     for node in nodes:
         ret[node] = {}
-        for prop in ('id', 'image', 'size', 'state', 'private_ips',
+        for prop in ('id', 'images', 'size', 'state', 'private_ips',
                      'public_ips'):
             ret[node][prop] = nodes[node][prop]
     return ret
@@ -303,7 +303,7 @@ def list_nodes_full(conn=None, call=None):
                     else:
                         ret[role]['private_ips'].append(ip_address)
                 ret[role]['size'] = role_instances[role]['instance_size']
-                ret[role]['image'] = roles[role]['role_info']['os_virtual_hard_disk']['source_image_name']
+                ret[role]['images'] = roles[role]['role_info']['os_virtual_hard_disk']['source_image_name']
     return ret
 
 
@@ -519,7 +519,7 @@ def create(vm_):
     media_link = vm_['media_link']
     # TODO: Probably better to use more than just the name in the media_link
     media_link += '/{0}.vhd'.format(vm_['name'])
-    os_hd = azure.servicemanagement.OSVirtualHardDisk(vm_['image'], media_link)
+    os_hd = azure.servicemanagement.OSVirtualHardDisk(vm_['images'], media_link)
 
     vm_kwargs = {
         'service_name': service_name,
@@ -834,20 +834,20 @@ def create_attach_volumes(name, kwargs, call=None, wait_to_finish=True):
     # Add Data Disk operation.
     #    Option 1 - Attach an empty data disk to
     # the role by specifying the disk label and location of the disk
-    # image. Do not include the DiskName and SourceMediaLink elements in
+    # images. Do not include the DiskName and SourceMediaLink elements in
     # the request body. Include the MediaLink element and reference a
     # blob that is in the same geographical region as the role. You can
     # also omit the MediaLink element. In this usage, Azure will create
     # the data disk in the storage account configured as default for the
     # role.
-    #    Option 2 - Attach an existing data disk that is in the image
+    #    Option 2 - Attach an existing data disk that is in the images
     # repository. Do not include the DiskName and SourceMediaLink
     # elements in the request body. Specify the data disk to use by
     # including the DiskName element. Note: If included the in the
     # response body, the MediaLink and LogicalDiskSizeInGB elements are
     # ignored.
     #    Option 3 - Specify the location of a blob in your storage
-    # account that contain a disk image to use. Include the
+    # account that contain a disk images to use. Include the
     # SourceMediaLink element. Note: If the MediaLink element
     # isincluded, it is ignored.  (see
     # http://msdn.microsoft.com/en-us/library/windowsazure/jj157199.aspx
@@ -925,20 +925,20 @@ def create_attach_volumes(name, kwargs, call=None, wait_to_finish=True):
     # Add Data Disk operation.
     #    Option 1 - Attach an empty data disk to
     # the role by specifying the disk label and location of the disk
-    # image. Do not include the DiskName and SourceMediaLink elements in
+    # images. Do not include the DiskName and SourceMediaLink elements in
     # the request body. Include the MediaLink element and reference a
     # blob that is in the same geographical region as the role. You can
     # also omit the MediaLink element. In this usage, Azure will create
     # the data disk in the storage account configured as default for the
     # role.
-    #    Option 2 - Attach an existing data disk that is in the image
+    #    Option 2 - Attach an existing data disk that is in the images
     # repository. Do not include the DiskName and SourceMediaLink
     # elements in the request body. Specify the data disk to use by
     # including the DiskName element. Note: If included the in the
     # response body, the MediaLink and LogicalDiskSizeInGB elements are
     # ignored.
     #    Option 3 - Specify the location of a blob in your storage
-    # account that contain a disk image to use. Include the
+    # account that contain a disk images to use. Include the
     # SourceMediaLink element. Note: If the MediaLink element
     # isincluded, it is ignored.  (see
     # http://msdn.microsoft.com/en-us/library/windowsazure/jj157199.aspx

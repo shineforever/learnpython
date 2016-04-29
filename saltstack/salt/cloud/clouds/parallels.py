@@ -116,7 +116,7 @@ def list_nodes(call=None):
 
         ret[name] = {
             'id': node['id'],
-            'image': node['platform']['template-info']['name'],
+            'images': node['platform']['template-info']['name'],
             'state': node['state'],
         }
         if 'private-ip' in node['network']:
@@ -144,7 +144,7 @@ def list_nodes_full(call=None):
         node = show_instance(name, call='action')
 
         ret[name] = node
-        ret[name]['image'] = node['platform']['template-info']['name']
+        ret[name]['images'] = node['platform']['template-info']['name']
         if 'private-ip' in node['network']:
             ret[name]['private_ips'] = [
                 node['network']['private-ip']['address']
@@ -168,16 +168,16 @@ def list_nodes_select(call=None):
 
 def get_image(vm_):
     '''
-    Return the image object to use
+    Return the images object to use
     '''
     images = avail_images()
     vm_image = config.get_cloud_config_value(
-        'image', vm_, __opts__, search_global=False
+        'images', vm_, __opts__, search_global=False
     )
     for image in images:
         if str(vm_image) in (images[image]['name'], images[image]['id']):
             return images[image]['id']
-    raise SaltCloudNotFound('The specified image could not be found.')
+    raise SaltCloudNotFound('The specified images could not be found.')
 
 
 def create_node(vm_):
@@ -231,11 +231,11 @@ def create_node(vm_):
         'disk_size', vm_, __opts__, default='10', search_global=False
     )
 
-    # Attributes for the image
+    # Attributes for the images
     vm_image = config.get_cloud_config_value(
-        'image', vm_, __opts__, search_global=False
+        'images', vm_, __opts__, search_global=False
     )
-    image = show_image({'image': vm_image}, call='function')
+    image = show_image({'images': vm_image}, call='function')
     platform = ET.SubElement(content, 'platform')
     template = ET.SubElement(platform, 'template-info')
     template.attrib['name'] = vm_image
@@ -556,14 +556,14 @@ def script(vm_):
 
 def show_image(kwargs, call=None):
     '''
-    Show the details from Parallels concerning an image
+    Show the details from Parallels concerning an images
     '''
     if call != 'function':
         raise SaltCloudSystemExit(
             'The show_image function must be called with -f or --function.'
         )
 
-    items = query(action='template', command=kwargs['image'])
+    items = query(action='template', command=kwargs['images'])
     if 'error' in items:
         return items['error']
 

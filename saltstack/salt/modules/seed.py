@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-Virtual machine image management tools
+Virtual machine images management tools
 '''
 
 from __future__ import absolute_import
@@ -87,7 +87,7 @@ def _umount(mpt, ftype):
 def apply_(path, id_=None, config=None, approve_key=True, install=True,
            prep_install=False):
     '''
-    Seed a location (disk image, directory, or block device) with the
+    Seed a location (disk images, directory, or block device) with the
     minion config, approve the minion's key, and/or install salt-minion.
 
     CLI Example:
@@ -99,7 +99,7 @@ def apply_(path, id_=None, config=None, approve_key=True, install=True,
                 [install=(true|false)]
 
     path
-        Full path to the directory, device, or disk image  on the target
+        Full path to the directory, device, or disk images  on the target
         minion's file system.
 
     id
@@ -141,7 +141,7 @@ def apply_(path, id_=None, config=None, approve_key=True, install=True,
     if _check_install(mpt):
         # salt-minion is already installed, just move the config and keys
         # into place
-        log.info('salt-minion pre-installed on image, '
+        log.info('salt-minion pre-installed on images, '
                  'configuring as {0}'.format(id_))
         minion_config = salt.config.minion_config(cfg_files['config'])
         pki_dir = minion_config['pki_dir']

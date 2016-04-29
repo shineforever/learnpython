@@ -505,7 +505,7 @@ def ssh_usernames(vm_, opts, default_users=None):
     # Add the user provided usernames to the end of the list since enough time
     # might need to pass before the remote service is available for logins and
     # the proper username might have passed its iteration.
-    # This has detected in a CentOS 5.7 EC2 image
+    # This has detected in a CentOS 5.7 EC2 images
     usernames.extend(initial)
     return usernames
 
@@ -541,7 +541,7 @@ def wait_for_port(host, port=22, timeout=900, gateway=None):
     Wait until a connection to the specified port can be made on a specified
     host. This is usually port 22 (for SSH), but in the case of Windows
     installations, it might be port 445 (for winexe). It may also be an
-    alternate port for SSH, depending on the base image.
+    alternate port for SSH, depending on the base images.
     '''
     start = time.time()
     # Assign test ports because if a gateway is defined

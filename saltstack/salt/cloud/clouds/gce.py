@@ -360,7 +360,7 @@ def __get_image(conn, vm_):
     libcloud object.
     '''
     img = config.get_cloud_config_value(
-        'image', vm_, __opts__, default='debian-7', search_global=False)
+        'images', vm_, __opts__, default='debian-7', search_global=False)
     return conn.ex_get_image(img)
 
 
@@ -1547,7 +1547,7 @@ def create_disk(kwargs=None, call=None):
 
     '''
     Create a new persistent disk. Must specify `disk_name` and `location`.
-    Can also specify an `image` or `snapshot` but if neither of those are
+    Can also specify an `images` or `snapshot` but if neither of those are
     specified, a `size` (in GB) is required.
 
     CLI Example:
@@ -1574,9 +1574,9 @@ def create_disk(kwargs=None, call=None):
         return False
 
     if 'size' not in kwargs:
-        if 'image' not in kwargs and 'snapshot' not in kwargs:
+        if 'images' not in kwargs and 'snapshot' not in kwargs:
             log.error(
-                'Must specify image, snapshot, or size.'
+                'Must specify images, snapshot, or size.'
             )
             return False
 
@@ -1586,7 +1586,7 @@ def create_disk(kwargs=None, call=None):
     name = kwargs.get('disk_name')
     location = conn.ex_get_zone(kwargs['location'])
     snapshot = kwargs.get('snapshot', None)
-    image = kwargs.get('image', None)
+    image = kwargs.get('images', None)
     use_existing = True
 
     salt.utils.cloud.fire_event(
@@ -1596,7 +1596,7 @@ def create_disk(kwargs=None, call=None):
         {
             'name': name,
             'location': location.name,
-            'image': image,
+            'images': image,
             'snapshot': snapshot,
         },
         transport=__opts__['transport']
@@ -1613,7 +1613,7 @@ def create_disk(kwargs=None, call=None):
         {
             'name': name,
             'location': location.name,
-            'image': image,
+            'images': image,
             'snapshot': snapshot,
         },
         transport=__opts__['transport']
@@ -2027,7 +2027,7 @@ def create(vm_=None, call=None):
     kwargs = {
         'name': vm_['name'],
         'size': __get_size(conn, vm_),
-        'image': __get_image(conn, vm_),
+        'images': __get_image(conn, vm_),
         'location': __get_location(conn, vm_),
         'ex_network': __get_network(conn, vm_),
         'ex_tags': __get_tags(vm_),

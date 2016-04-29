@@ -87,7 +87,7 @@ A REST API for Salt
 
         Reports are available via the :py:class:`Stats` URL.
     static
-        A filesystem path to static HTML/JavaScript/CSS/image assets.
+        A filesystem path to static HTML/JavaScript/CSS/images assets.
     static_path : ``/static``
         The URL prefix to use when serving static assets out of the directory
         specified in the ``static`` setting.

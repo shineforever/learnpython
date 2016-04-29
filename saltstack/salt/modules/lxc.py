@@ -276,7 +276,7 @@ def cloud_init_interface(name, vm_=None, **kwargs):
     from_container
         which container we use as a template
         when running lxc.clone
-    image
+    images
         which template do we use when we
         are using lxc.create. This is the default
         mode unless you specify something in from_container
@@ -357,7 +357,7 @@ def cloud_init_interface(name, vm_=None, **kwargs):
     default_template = ''
     if __grains__.get('os', '') in ['Ubuntu']:
         default_template = 'ubuntu'
-    image = _cloud_get('image')
+    image = _cloud_get('images')
     if not image:
         _cloud_get('template', default_template)
     backing = _cloud_get('backing', 'dir')
@@ -1052,11 +1052,11 @@ def _get_base(**kwargs):
         return kw_overrides_match
 
     template = select('template')
-    image = select('image')
+    image = select('images')
     vgname = select('vgname')
     # remove the above three variables from kwargs, if they exist, to avoid
     # duplicates if create() is invoked below.
-    for param in ('image', 'vgname', 'template'):
+    for param in ('images', 'vgname', 'template'):
         kwargs.pop(param, None)
 
     if image:
@@ -1123,7 +1123,7 @@ def init(name,
     name
         Name of the container
 
-    image
+    images
         A tar archive to use as the rootfs for the container. Conflicts with
         the ``template`` argument.
 
@@ -1775,7 +1775,7 @@ def create(name,
 
     template
         The template to use. For example, ``ubuntu`` or ``fedora``. Conflicts
-        with the ``image`` argument.
+        with the ``images`` argument.
 
         .. note::
 
@@ -1798,7 +1798,7 @@ def create(name,
 
             options='{"dist": "centos", "release": "6", "arch": "amd64"}'
 
-    image
+    images
         A tar archive to use as the rootfs for the container. Conflicts with
         the ``template`` argument.
 
@@ -1847,16 +1847,16 @@ def create(name,
     tvg = select('vgname')
     vgname = tvg if tvg else __salt__['config.get']('lxc.vgname')
 
-    # The 'template' and 'image' params conflict
+    # The 'template' and 'images' params conflict
     template = select('template')
-    image = select('image')
+    image = select('images')
     if template and image:
         raise SaltInvocationError(
-            'Only one of \'template\' and \'image\' is permitted'
+            'Only one of \'template\' and \'images\' is permitted'
         )
     elif not any((template, image, profile)):
         raise SaltInvocationError(
-            'At least one of \'template\', \'image\', and \'profile\' is '
+            'At least one of \'template\', \'images\', and \'profile\' is '
             'required'
         )
 

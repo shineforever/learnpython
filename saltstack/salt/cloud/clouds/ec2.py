@@ -1529,7 +1529,7 @@ def request_instance(vm_=None, call=None):
         # Normal instances should have no prefix.
         spot_prefix = ''
 
-    image_id = vm_['image']
+    image_id = vm_['images']
     params[spot_prefix + 'ImageId'] = image_id
 
     userdata_file = config.get_cloud_config_value(
@@ -1661,7 +1661,7 @@ def request_instance(vm_=None, call=None):
         # as Ubuntu and CentOS (and most likely other OSs)
         # use different device identifiers
 
-        log.info('Attempting to look up root device name for image id {0} on '
+        log.info('Attempting to look up root device name for images id {0} on '
                  'VM {1}'.format(image_id, vm_['name']))
 
         rd_params = {
@@ -1679,7 +1679,7 @@ def request_instance(vm_=None, call=None):
             log.debug('EC2 Response: {0!r}'.format(rd_data))
         except Exception as exc:
             log.error(
-                'Error getting root device name for image id {0} for '
+                'Error getting root device name for images id {0} for '
                 'VM {1}: \n{2}'.format(image_id, vm_['name'], exc),
                 # Show the traceback if the debug logging level is enabled
                 exc_info_on_loglevel=logging.DEBUG
@@ -1689,7 +1689,7 @@ def request_instance(vm_=None, call=None):
         # make sure we have a response
         if not rd_data:
             err_msg = 'There was an error querying EC2 for the root device ' \
-                      'of image id {0}. Empty response.'.format(image_id)
+                      'of images id {0}. Empty response.'.format(image_id)
             raise SaltCloudSystemExit(err_msg)
 
         # pull the root device name from the result and use it when
@@ -2907,7 +2907,7 @@ def show_image(kwargs, call=None):
             'The show_image action must be called with -f or --function.'
         )
 
-    params = {'ImageId.1': kwargs['image'],
+    params = {'ImageId.1': kwargs['images'],
               'Action': 'DescribeImages'}
     result = aws.query(params,
                        setname='tagSet',
@@ -3174,7 +3174,7 @@ def list_nodes(call=None):
     for node in nodes:
         ret[node] = {
             'id': nodes[node]['id'],
-            'image': nodes[node]['image'],
+            'images': nodes[node]['images'],
             'size': nodes[node]['size'],
             'state': nodes[node]['state'],
             'private_ips': nodes[node]['private_ips'],

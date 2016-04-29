@@ -48,7 +48,7 @@ class NovaServer(object):
         '''
         self.name = name
         self.id = server['id']
-        self.image = server['image']['id']
+        self.image = server['images']['id']
         self.size = server['flavor']['id']
         self.state = server['state']
         self._uuid = None
@@ -241,7 +241,7 @@ class SaltNova(OpenStackComputeShell):
         Boot a cloud server.
         '''
         nt_ks = self.compute_conn
-        for key in ('name', 'flavor', 'image'):
+        for key in ('name', 'flavor', 'images'):
             if key in kwargs:
                 del kwargs[key]
         response = nt_ks.servers.create(
@@ -566,7 +566,7 @@ class SaltNova(OpenStackComputeShell):
 
     def image_show(self, image_id):
         '''
-        Show image details and metadata
+        Show images details and metadata
         '''
         nt_ks = self.compute_conn
         image = nt_ks.images.get(image_id)
@@ -625,7 +625,7 @@ class SaltNova(OpenStackComputeShell):
                        name=None,
                        **kwargs):  # pylint: disable=C0103
         '''
-        Set image metadata
+        Set images metadata
         '''
         nt_ks = self.compute_conn
         if name:
@@ -633,7 +633,7 @@ class SaltNova(OpenStackComputeShell):
                 if image.name == name:
                     image_id = image.id  # pylint: disable=C0103
         if not image_id:
-            return {'Error': 'A valid image name or id was not specified'}
+            return {'Error': 'A valid images name or id was not specified'}
         nt_ks.images.set_meta(image_id, kwargs)
         return {image_id: kwargs}
 
@@ -642,7 +642,7 @@ class SaltNova(OpenStackComputeShell):
                           name=None,
                           keys=None):
         '''
-        Delete image metadata
+        Delete images metadata
         '''
         nt_ks = self.compute_conn
         if name:
@@ -651,7 +651,7 @@ class SaltNova(OpenStackComputeShell):
                     image_id = image.id  # pylint: disable=C0103
         pairs = keys.split(',')
         if not image_id:
-            return {'Error': 'A valid image name or id was not specified'}
+            return {'Error': 'A valid images name or id was not specified'}
         nt_ks.images.delete_meta(image_id, pairs)
         return {image_id: 'Deleted: {0}'.format(pairs)}
 
@@ -670,7 +670,7 @@ class SaltNova(OpenStackComputeShell):
                 'accessIPv6': item.accessIPv6,
                 'flavor': {'id': item.flavor['id'],
                            'links': item.flavor['links']},
-                'image': {'id': item.image['id'],
+                'images': {'id': item.image['id'],
                           'links': item.image['links']},
                 }
         return ret
@@ -693,7 +693,7 @@ class SaltNova(OpenStackComputeShell):
                            'links': item.flavor['links']},
                 'hostId': item.hostId,
                 'id': item.id,
-                'image': {'id': item.image['id'],
+                'images': {'id': item.image['id'],
                           'links': item.image['links']},
                 'key_name': item.key_name,
                 'links': item.links,
@@ -913,16 +913,16 @@ class SaltNova(OpenStackComputeShell):
 #get-vnc-console     Get a vnc console to a server.
 #host-action         Perform a power action on a host.
 #host-update         Update host settings.
-#image-create        Create a new image by taking a snapshot of a running
+#images-create        Create a new images by taking a snapshot of a running
 #                    server.
-#image-delete        Delete an image.
+#images-delete        Delete an images.
 #live-migration      Migrates a running instance to a new machine.
 #meta                Set or Delete metadata on a server.
 #migrate             Migrate a server.
 #pause               Pause a server.
 #rate-limits         Print a list of rate limits for a user
 #reboot              Reboot a server.
-#rebuild             Shutdown, re-image, and re-boot a server.
+#rebuild             Shutdown, re-images, and re-boot a server.
 #remove-fixed-ip     Remove an IP address from a server.
 #remove-floating-ip  Remove a floating IP address from a server.
 #rename              Rename a server.

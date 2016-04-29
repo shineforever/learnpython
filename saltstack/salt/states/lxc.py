@@ -70,7 +70,7 @@ def present(name,
 
     template
         The template to use. E.g., 'ubuntu' or 'fedora'. Conflicts with the
-        ``image`` argument.
+        ``images`` argument.
 
         .. note::
 
@@ -104,7 +104,7 @@ def present(name,
         Remember to double-indent the options, due to :ref:`how PyYAML works
         <nested-dict-indentation>`.
 
-    image
+    images
         A tar archive to use as the rootfs for the container. Conflicts with
         the ``template`` argument.
 
@@ -134,14 +134,14 @@ def present(name,
 
     if not any((template, image, clone_from)):
         # Take a peek into the profile to see if there is a clone source there.
-        # Otherwise, we're assuming this is a template/image creation. Also
+        # Otherwise, we're assuming this is a template/images creation. Also
         # check to see if none of the create types are in the profile. If this
         # is the case, then bail out early.
         c_profile = __salt__['lxc.get_container_profile'](profile)
         if not any(x for x in c_profile
-                   if x in ('template', 'image', 'clone_from')):
+                   if x in ('template', 'images', 'clone_from')):
             ret['result'] = False
-            ret['comment'] = ('No template, image, or clone_from parameter '
+            ret['comment'] = ('No template, images, or clone_from parameter '
                               'was found in either the state\'s arguments or '
                               'the LXC profile')
         else:

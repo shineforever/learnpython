@@ -152,7 +152,7 @@ def avail_images(kwargs=None, call=None):
 
 def avail_sizes(call=None):
     '''
-    Return a list of the image sizes that are on the provider
+    Return a list of the images sizes that are on the provider
     '''
     if call == 'action':
         raise SaltCloudSystemExit(
@@ -306,7 +306,7 @@ def list_nodes_full(call=None):
         ret[instanceId] = {
             'id': items['InstanceId'],
             'name': items['InstanceName'],
-            'image': items['ImageId'],
+            'images': items['ImageId'],
             'size': 'TODO',
             'state': items['Status']
         }
@@ -369,20 +369,20 @@ def list_securitygroup(call=None):
 
 def get_image(vm_):
     '''
-    Return the image object to use
+    Return the images object to use
     '''
     images = avail_images()
     vm_image = str(config.get_cloud_config_value(
-        'image', vm_, __opts__, search_global=False
+        'images', vm_, __opts__, search_global=False
     ))
 
     if not vm_image:
-        raise SaltCloudNotFound('No image specified for this VM.')
+        raise SaltCloudNotFound('No images specified for this VM.')
 
     if vm_image and str(vm_image) in images:
         return images[vm_image]['ImageId']
     raise SaltCloudNotFound(
-        'The specified image, {0!r}, could not be found.'.format(vm_image)
+        'The specified images, {0!r}, could not be found.'.format(vm_image)
     )
 
 
@@ -868,7 +868,7 @@ def _get_node(name):
 
 def show_image(kwargs, call=None):
     '''
-    Show the details from aliyun image
+    Show the details from aliyun images
     '''
     if call != 'function':
         raise SaltCloudSystemExit(
@@ -886,18 +886,18 @@ def show_image(kwargs, call=None):
     params = {
         'Action': 'DescribeImages',
         'RegionId': location,
-        'ImageId': kwargs['image']
+        'ImageId': kwargs['images']
     }
 
     ret = {}
     items = query(params=params)
-    # DescribeImages so far support input multi-image. And
-    # if not found certain image, the response will include
-    # blank image list other than 'not found' error message
+    # DescribeImages so far support input multi-images. And
+    # if not found certain images, the response will include
+    # blank images list other than 'not found' error message
     if 'Code' in items or len(items['Images']['Image']) == 0:
-        raise SaltCloudNotFound('The specified image could not be found.')
+        raise SaltCloudNotFound('The specified images could not be found.')
 
-    log.debug('Total {0} image found in Region {1}'.format(
+    log.debug('Total {0} images found in Region {1}'.format(
         items['TotalCount'], location)
     )
 

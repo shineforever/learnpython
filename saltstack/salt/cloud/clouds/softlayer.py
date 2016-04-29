@@ -246,8 +246,8 @@ def create(vm_):
         'hourlyBillingFlag': vm_['hourly_billing'],
     }
 
-    if 'image' in vm_:
-        kwargs['operatingSystemReferenceCode'] = vm_['image']
+    if 'images' in vm_:
+        kwargs['operatingSystemReferenceCode'] = vm_['images']
         kwargs['blockDevices'] = [{
             'device': '0',
             'diskImage': {'capacity': vm_['disk_size']},

@@ -130,7 +130,7 @@ def avail_images(call=None):
 
 def avail_sizes(call=None):
     '''
-    Return a list of the image sizes that are on the provider
+    Return a list of the images sizes that are on the provider
     '''
     if call == 'action':
         raise SaltCloudSystemExit(
@@ -166,7 +166,7 @@ def list_nodes(call=None):
         for node in items['droplets']:
             ret[node['name']] = {
                 'id': node['id'],
-                'image': node['image']['name'],
+                'images': node['images']['name'],
                 'networks': str(node['networks']),
                 'size': node['size_slug'],
                 'state': str(node['status']),
@@ -221,11 +221,11 @@ def list_nodes_select(call=None):
 
 def get_image(vm_):
     '''
-    Return the image object to use
+    Return the images object to use
     '''
     images = avail_images()
     vm_image = config.get_cloud_config_value(
-        'image', vm_, __opts__, search_global=False
+        'images', vm_, __opts__, search_global=False
     )
     for image in images:
         if vm_image in (images[image]['name'], images[image]['slug'], images[image]['id']):
@@ -233,7 +233,7 @@ def get_image(vm_):
                 return images[image]['slug']
             return int(images[image]['id'])
     raise SaltCloudNotFound(
-        'The specified image, {0!r}, could not be found.'.format(vm_image)
+        'The specified images, {0!r}, could not be found.'.format(vm_image)
     )
 
 
@@ -301,7 +301,7 @@ def create(vm_):
     kwargs = {
         'name': vm_['name'],
         'size': get_size(vm_),
-        'image': get_image(vm_),
+        'images': get_image(vm_),
         'region': get_location(vm_),
     }
 

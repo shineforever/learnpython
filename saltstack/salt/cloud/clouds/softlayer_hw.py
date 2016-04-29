@@ -424,7 +424,7 @@ def create(vm_):
             # HDD Ex: 19: 250GB SATA II
             {'id': vm_['hdd']},
             # Image Ex: 13963: CentOS 6.0 - Minimal Install (64 bit)
-            {'id': vm_['image']},
+            {'id': vm_['images']},
 
             # The following items are currently required
             # Reboot / Remote Console

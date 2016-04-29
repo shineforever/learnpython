@@ -157,7 +157,7 @@ def _auth(profile=None, api_version=2, **connection_args):
 def image_create(name, location, profile=None, visibility='public',
             container_format='bare', disk_format='raw'):
     '''
-    Create an image (glance image-create)
+    Create an images (glance images-create)
 
     CLI Example:
 
@@ -168,7 +168,7 @@ def image_create(name, location, profile=None, visibility='public',
                  copy_from=http://berrange.fedorapeople.org/\
                     images/2012-02-29/f16-x86_64-openstack-sda.qcow2
 
-    For all possible values, run ``glance help image-create`` on the minion.
+    For all possible values, run ``glance help images-create`` on the minion.
     '''
     # valid options for "visibility":
     v_list = ['public', 'private']
@@ -196,7 +196,7 @@ def image_create(name, location, profile=None, visibility='public',
 
 def image_delete(id=None, name=None, profile=None):  # pylint: disable=C0103
     '''
-    Delete an image (glance image-delete)
+    Delete an images (glance images-delete)
 
     CLI Examples:
 
@@ -213,9 +213,9 @@ def image_delete(id=None, name=None, profile=None):  # pylint: disable=C0103
                 id = image.id  # pylint: disable=C0103
                 continue
     if not id:
-        return {'Error': 'Unable to resolve image id'}
+        return {'Error': 'Unable to resolve images id'}
     g_client.images.delete(id)
-    ret = 'Deleted image with ID {0}'.format(id)
+    ret = 'Deleted images with ID {0}'.format(id)
     if name:
         ret += ' ({0})'.format(name)
     return ret
@@ -223,7 +223,7 @@ def image_delete(id=None, name=None, profile=None):  # pylint: disable=C0103
 
 def image_show(id=None, name=None, profile=None):  # pylint: disable=C0103
     '''
-    Return details about a specific image (glance image-show)
+    Return details about a specific images (glance images-show)
 
     CLI Example:
 
@@ -239,16 +239,16 @@ def image_show(id=None, name=None, profile=None):  # pylint: disable=C0103
                 id = image.id  # pylint: disable=C0103
                 continue
     if not id:
-        return {'Error': 'Unable to resolve image id'}
+        return {'Error': 'Unable to resolve images id'}
     image = g_client.images.get(id)
     pformat = pprint.PrettyPrinter(indent=4).pformat
-    log.debug('Properties of image {0}:\n{1}'.format(
+    log.debug('Properties of images {0}:\n{1}'.format(
         image.name, pformat(image)))
     # TODO: Get rid of the wrapping dict, see #24568
     ret[image.name] = {}
     schema = image_schema(profile=profile)
     if len(schema.keys()) == 1:
-        schema = schema['image']
+        schema = schema['images']
     for key in schema.keys():
         if key in image:
             ret[image.name][key] = image[key]
@@ -257,7 +257,7 @@ def image_show(id=None, name=None, profile=None):  # pylint: disable=C0103
 
 def image_list(id=None, profile=None):  # pylint: disable=C0103
     '''
-    Return a list of available images (glance image-list)
+    Return a list of available images (glance images-list)
 
     CLI Example:
 
@@ -294,16 +294,16 @@ def image_list(id=None, profile=None):  # pylint: disable=C0103
 
 def image_schema(profile=None):
     '''
-    Returns names and descriptions of the schema "image"'s
+    Returns names and descriptions of the schema "images"'s
     properties for this profile's instance of glance
     '''
-    return schema_get('image', profile)
+    return schema_get('images', profile)
 
 
 def schema_get(name, profile=None):
     '''
     Known valid names of schemas are:
-      - image
+      - images
       - images
       - member
       - members
@@ -342,8 +342,8 @@ def _item_list(profile=None):
 #The following is a list of functions that need to be incorporated in the
 #glance module. This list should be updated as functions are added.
 
-#image-download      Download a specific image.
-#image-update        Update a specific image.
-#member-create       Share a specific image with a tenant.
-#member-delete       Remove a shared image from a tenant.
-#member-list         Describe sharing permissions by image or tenant.
+#images-download      Download a specific images.
+#images-update        Update a specific images.
+#member-create       Share a specific images with a tenant.
+#member-delete       Remove a shared images from a tenant.
+#member-list         Describe sharing permissions by images or tenant.

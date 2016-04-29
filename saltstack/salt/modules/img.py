@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-Virtual machine image management tools
+Virtual machine images management tools
 '''
 from __future__ import absolute_import
 
@@ -16,7 +16,7 @@ log = logging.getLogger(__name__)
 
 def mount_image(location):
     '''
-    Mount the named image and return the mount point
+    Mount the named images and return the mount point
 
     CLI Example:
 
@@ -41,7 +41,7 @@ mnt_image = mount_image
 
 def umount_image(mnt):
     '''
-    Unmount an image mountpoint
+    Unmount an images mountpoint
 
     CLI Example:
 
@@ -58,7 +58,7 @@ def umount_image(mnt):
 
 #def get_image(name):
 #    '''
-#    Download a vm image from a remote source and add it to the image cache
+#    Download a vm images from a remote source and add it to the images cache
 #    system
 #    '''
 #    cache_dir = os.path.join(__salt__['config.option']('img.cache'), 'src')
@@ -72,16 +72,16 @@ def umount_image(mnt):
 def bootstrap(location, size, fmt):
     '''
     HIGHLY EXPERIMENTAL
-    Bootstrap a virtual machine image
+    Bootstrap a virtual machine images
 
     location:
-        The location to create the image
+        The location to create the images
 
     size:
-        The size of the image to create in megabytes
+        The size of the images to create in megabytes
 
     fmt:
-        The image format, raw or qcow2
+        The images format, raw or qcow2
 
     CLI Example:
 

@@ -141,7 +141,7 @@ def avail_images(call=None):
 
 def avail_sizes(call=None):
     '''
-    Return a list of the image sizes that are on the provider
+    Return a list of the images sizes that are on the provider
     '''
     if call == 'action':
         raise SaltCloudSystemExit(
@@ -215,17 +215,17 @@ def list_nodes_select(call=None):
 
 def get_image(vm_):
     '''
-    Return the image object to use
+    Return the images object to use
     '''
     images = avail_images()
     vm_image = str(config.get_cloud_config_value(
-        'image', vm_, __opts__, search_global=False
+        'images', vm_, __opts__, search_global=False
     ))
     for image in images:
         if vm_image in (images[image]['name'], images[image]['id']):
             return images[image]['id']
     raise SaltCloudNotFound(
-        'The specified image, {0!r}, could not be found.'.format(vm_image)
+        'The specified images, {0!r}, could not be found.'.format(vm_image)
     )
 
 

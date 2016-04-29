@@ -223,11 +223,11 @@ def avail_locations(conn=None, call=None):
 
 def get_image(conn, vm_):
     '''
-    Return the image object to use
+    Return the images object to use
     '''
     image_list = conn.image_list()
 
-    vm_image = config.get_cloud_config_value('image', vm_, __opts__).encode(
+    vm_image = config.get_cloud_config_value('images', vm_, __opts__).encode(
         'ascii', 'salt-cloud-force-ascii'
     )
 
@@ -240,7 +240,7 @@ def get_image(conn, vm_):
         return image['id']
     except novaclient.exceptions.NotFound as exc:
         raise SaltCloudNotFound(
-            'The specified image, {0!r}, could not be found: {1}'.format(
+            'The specified images, {0!r}, could not be found: {1}'.format(
                 vm_image,
                 str(exc)
             )
@@ -439,8 +439,8 @@ def request_instance(vm_=None, call=None):
     except Exception as exc:
         raise SaltCloudSystemExit(
             'Error creating {0} on OPENSTACK\n\n'
-            'Could not find image {1}: {2}\n'.format(
-                vm_['name'], vm_['image'], exc
+            'Could not find images {1}: {2}\n'.format(
+                vm_['name'], vm_['images'], exc
             )
         )
 
@@ -515,7 +515,7 @@ def request_instance(vm_=None, call=None):
         'requesting instance',
         'salt/cloud/{0}/requesting'.format(vm_['name']),
         {'kwargs': {'name': kwargs['name'],
-                    'image': kwargs['image_id'],
+                    'images': kwargs['image_id'],
                     'size': kwargs['flavor_id']}},
         transport=__opts__['transport']
     )
@@ -824,7 +824,7 @@ def list_nodes(call=None, **kwargs):
 
         ret[server] = {
             'id': server_tmp['id'],
-            'image': server_tmp['image']['id'],
+            'images': server_tmp['images']['id'],
             'size': server_tmp['flavor']['id'],
             'state': server_tmp['state'],
             'private_ips': private,

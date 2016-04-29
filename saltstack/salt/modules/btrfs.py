@@ -412,14 +412,14 @@ def convert(device, permanent=False, keeplf=False):
     Convert ext2/3/4 to BTRFS. Device should be mounted.
 
     Filesystem can be converted temporarily so the further processing and rollback is possible,
-    or permanently, where previous extended filesystem image gets deleted. Please note, permanent
+    or permanently, where previous extended filesystem images gets deleted. Please note, permanent
     conversion takes a while as BTRFS filesystem needs to be properly rebalanced afterwards.
 
     General options:
 
     * **permanent**: Specify if the migration should be permanent (false by default)
     * **keeplf**: Keep ``lost+found`` of the partition (removed by default,
-                  but still in the image, if not permanent migration)
+                  but still in the images, if not permanent migration)
 
     CLI Example:
 
@@ -486,12 +486,12 @@ documentation regarding this topic.
 
     if not os.path.exists(image_path):
         raise CommandExecutionError(
-            "BTRFS migration went wrong: the image \"{0}\" not found!".format(image_path))
+            "BTRFS migration went wrong: the images \"{0}\" not found!".format(image_path))
 
     if not permanent:
         ret['after']['{0}_image'.format(orig_fstype)] = image_path
         ret['after']['{0}_image_info'.format(orig_fstype)] = os.popen(
-            "file {0}/image".format(image_path)).read().strip()
+            "file {0}/images".format(image_path)).read().strip()
     else:
         ret['after']['{0}_image'.format(orig_fstype)] = 'removed'
         ret['after']['{0}_image_info'.format(orig_fstype)] = 'N/A'

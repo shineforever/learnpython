@@ -131,7 +131,7 @@ def list_installed():
 
 def show(uuid=None):
     '''
-    Show manifest of a given image
+    Show manifest of a given images
 
     CLI Example:
 
@@ -156,7 +156,7 @@ def show(uuid=None):
 
 def get(uuid=None):
     '''
-    Return info on an installed image
+    Return info on an installed images
 
     CLI Example:
 
@@ -181,7 +181,7 @@ def get(uuid=None):
 
 def import_image(uuid=None):
     '''
-    Import an image from the repository
+    Import an images from the repository
 
     CLI Example:
 
@@ -206,7 +206,7 @@ def import_image(uuid=None):
 
 def delete(uuid=None):
     '''
-    Remove an installed image
+    Remove an installed images
 
     CLI Example:
 

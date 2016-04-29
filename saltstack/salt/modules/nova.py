@@ -114,7 +114,7 @@ def boot(name, flavor_id=0, image_id=0, profile=None, timeout=300):
         Unique integer ID for the flavor
 
     image_id
-        Unique integer ID for the image
+        Unique integer ID for the images
 
     timeout
         How long to wait, after creating the instance, for the provider to
@@ -495,8 +495,8 @@ def keypair_delete(name, profile=None):
 
 def image_list(name=None, profile=None):
     '''
-    Return a list of available images (nova images-list + nova image-show)
-    If a name is provided, only that image will be displayed.
+    Return a list of available images (nova images-list + nova images-show)
+    If a name is provided, only that images will be displayed.
 
     CLI Examples:
 
@@ -514,7 +514,7 @@ def image_meta_set(image_id=None,
                    profile=None,
                    **kwargs):  # pylint: disable=C0103
     '''
-    Sets a key=value pair in the metadata for an image (nova image-meta set)
+    Sets a key=value pair in the metadata for an images (nova images-meta set)
 
     CLI Examples:
 
@@ -537,8 +537,8 @@ def image_meta_delete(image_id=None,     # pylint: disable=C0103
                       keys=None,
                       profile=None):
     '''
-    Delete a key=value pair from the metadata for an image
-    (nova image-meta set)
+    Delete a key=value pair from the metadata for an images
+    (nova images-meta set)
 
     CLI Examples:
 
@@ -723,16 +723,16 @@ def server_by_name(name, profile=None):
 #get-vnc-console     Get a vnc console to a server.
 #host-action         Perform a power action on a host.
 #host-update         Update host settings.
-#image-create        Create a new image by taking a snapshot of a running
+#images-create        Create a new images by taking a snapshot of a running
 #                    server.
-#image-delete        Delete an image.
+#images-delete        Delete an images.
 #live-migration      Migrates a running instance to a new machine.
 #meta                Set or Delete metadata on a server.
 #migrate             Migrate a server.
 #pause               Pause a server.
 #rate-limits         Print a list of rate limits for a user
 #reboot              Reboot a server.
-#rebuild             Shutdown, re-image, and re-boot a server.
+#rebuild             Shutdown, re-images, and re-boot a server.
 #remove-fixed-ip     Remove an IP address from a server.
 #remove-floating-ip  Remove a floating IP address from a server.
 #rename              Rename a server.

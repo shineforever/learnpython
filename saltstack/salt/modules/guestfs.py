@@ -26,7 +26,7 @@ def __virtual__():
 
 def mount(location, access='rw'):
     '''
-    Mount an image
+    Mount an images
 
     CLI Example:
 

@@ -34,16 +34,16 @@ def __virtual__():
 
 def connect(image):
     '''
-    Activate nbd for an image file.
+    Activate nbd for an images file.
 
     CLI Example:
 
     .. code-block:: bash
 
-        salt '*' qemu_nbd.connect /tmp/image.raw
+        salt '*' qemu_nbd.connect /tmp/images.raw
     '''
     if not os.path.isfile(image):
-        log.warning('Could not connect image: '
+        log.warning('Could not connect images: '
                     '{0} does not exist'.format(image))
         return ''
 
@@ -63,7 +63,7 @@ def connect(image):
                 if not __salt__['cmd.retcode']('{0} {1}'.format(fdisk, nbd)):
                     break
             return nbd
-    log.warning('Could not connect image: '
+    log.warning('Could not connect images: '
                 '{0}'.format(image))
     return ''
 
@@ -100,13 +100,13 @@ def mount(nbd):
 
 def init(image):
     '''
-    Mount the named image via qemu-nbd and return the mounted roots
+    Mount the named images via qemu-nbd and return the mounted roots
 
     CLI Example:
 
     .. code-block:: bash
 
-        salt '*' qemu_nbd.init /srv/image.qcow2
+        salt '*' qemu_nbd.init /srv/images.qcow2
     '''
     nbd = connect(image)
     if not nbd:
@@ -117,7 +117,7 @@ def init(image):
 def clear(mnt):
     '''
     Pass in the mnt dict returned from nbd_mount to unmount and disconnect
-    the image from nbd. If all of the partitions are unmounted return an
+    the images from nbd. If all of the partitions are unmounted return an
     empty dict, otherwise return a dict containing the still mounted
     partitions
 

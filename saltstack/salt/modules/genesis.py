@@ -46,26 +46,26 @@ def bootstrap(platform,
               repo_url=None,
               static_qemu=None):
     '''
-    Create an image for a specific platform.
+    Create an images for a specific platform.
 
     Please note that this function *MUST* be run as root, as images that are
     created make files belonging to root.
 
     platform
-        Which platform to use to create the image. Currently supported platforms
+        Which platform to use to create the images. Currently supported platforms
         are rpm, deb and pacman.
 
     root
-        Local path to create the root of the image filesystem.
+        Local path to create the root of the images filesystem.
 
     img_format
-        Which format to create the image in. By default, just copies files into
+        Which format to create the images in. By default, just copies files into
         a directory on the local filesystem (``dir``). Future support will exist
         for ``sparse``.
 
     fs_format
         When using a non-``dir`` img_format, which filesystem to format the
-        image to. By default, ``ext2``.
+        images to. By default, ``ext2``.
 
     arch
         Architecture to install packages for, if supported by the underlying
@@ -85,7 +85,7 @@ def bootstrap(platform,
         (e.x.: /usr/bin/qemu-amd64-static)
 
     pkg_confs
-        The location of the conf files to copy into the image, to point the
+        The location of the conf files to copy into the images, to point the
         installer to the right repos and configuration.
 
     CLI Examples:
@@ -121,14 +121,14 @@ def bootstrap(platform,
 
 def _bootstrap_yum(root, pkg_confs='/etc/yum*'):
     '''
-    Bootstrap an image using the yum tools
+    Bootstrap an images using the yum tools
 
     root
-        The root of the image to install to. Will be created as a directory if
+        The root of the images to install to. Will be created as a directory if
         if does not exist. (e.x.: /root/arch)
 
     pkg_confs
-        The location of the conf files to copy into the image, to point yum
+        The location of the conf files to copy into the images, to point yum
         to the right repos and configuration.
 
     TODO: Set up a pre-install overlay, to copy files into /etc/ and so on,
@@ -151,14 +151,14 @@ def _bootstrap_deb(
         static_qemu=None
     ):
     '''
-    Bootstrap an image using the Debian tools
+    Bootstrap an images using the Debian tools
 
     root
-        The root of the image to install to. Will be created as a directory if
+        The root of the images to install to. Will be created as a directory if
         if does not exist. (e.x.: /root/wheezy)
 
     arch
-        Architecture of the target image. (e.x.: amd64)
+        Architecture of the target images. (e.x.: amd64)
 
     flavor
         Flavor of Debian to install. (e.x.: wheezy)
@@ -208,14 +208,14 @@ def _bootstrap_deb(
 
 def _bootstrap_pacman(root, pkg_confs='/etc/pacman*'):
     '''
-    Bootstrap an image using the pacman tools
+    Bootstrap an images using the pacman tools
 
     root
-        The root of the image to install to. Will be created as a directory if
+        The root of the images to install to. Will be created as a directory if
         if does not exist. (e.x.: /root/arch)
 
     pkg_confs
-        The location of the conf files to copy into the image, to point pacman
+        The location of the conf files to copy into the images, to point pacman
         to the right repos and configuration.
     '''
     _make_nodes(root)
@@ -296,7 +296,7 @@ def pack(name, root, path=None, pack_format='tar', compress='bzip2'):
 
 def unpack(name, dest=None, path=None, pack_format='tar', compress='bz2'):
     '''
-    Unpack an image into a directory structure
+    Unpack an images into a directory structure
 
     CLI Example:
 
@@ -310,7 +310,7 @@ def unpack(name, dest=None, path=None, pack_format='tar', compress='bz2'):
 
 def _tar(name, root, path=None, compress='bzip2'):
     '''
-    Pack up image in a tar format
+    Pack up images in a tar format
     '''
     if path is None:
         path = os.path.join(salt.syspaths.BASE_FILE_ROOTS_DIR, 'img')

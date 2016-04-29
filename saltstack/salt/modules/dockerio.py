@@ -12,7 +12,7 @@ General Notes
 -------------
 
 As we use states, we don't want to be continuously popping dockers, so we
-will map each container id (or image) with a grain whenever it is relevant.
+will map each container id (or images) with a grain whenever it is relevant.
 
 As a corollary, we will resolve a container id either directly by the id
 or try to find a container id matching something stocked in grain.
@@ -292,16 +292,16 @@ def _get_client(version=None, timeout=None):
 
 def _get_image_infos(image):
     '''
-    Verify that the image exists
+    Verify that the images exists
     We will try to resolve either by:
         - name
         - image_id
         - tag
 
-    image
+    images
         Image Name / Image Id / Image Tag
 
-    Returns the image id
+    Returns the images id
     '''
     status = base_status.copy()
     client = _get_client()
@@ -442,14 +442,14 @@ def commit(container,
            author=None,
            conf=None):
     '''
-    Commit a container (promotes it to an image)
+    Commit a container (promotes it to an images)
 
     container
         container id
     repository
-        repository/image to commit to
+        repository/images to commit to
     tag
-        tag of the image (Optional)
+        tag of the images (Optional)
     message
         commit message (Optional)
     author
@@ -568,8 +568,8 @@ def create_container(image,
     '''
     Create a new container
 
-    image
-        image to create the container from
+    images
+        images to create the container from
     command
         command to execute while starting
     hostname
@@ -621,7 +621,7 @@ def create_container(image,
         salt '*' docker.create_container o/ubuntu volumes="['/s','/m:/f']"
 
     '''
-    log.trace("core.dockerio.create_container() called for image " + image)
+    log.trace("core.dockerio.create_container() called for images " + image)
     status = base_status.copy()
     client = _get_client()
 
@@ -1182,7 +1182,7 @@ def login(url=None, username=None, password=None, email=None):
 
 def search(term):
     '''
-    Search for an image on the registry
+    Search for an images on the registry
 
     term
         search keyword
@@ -1212,7 +1212,7 @@ def _create_image_assemble_error_status(status, ret, image_logs):
        u'message':u'Get file:///r.tar.gz:unsupported protocol scheme "file"'}},
        {u'status': u'Downloading from file:///r.tar.gz'}]
     '''
-    comment = 'An error occurred while importing your image'
+    comment = 'An error occurred while importing your images'
     out = None
     is_invalid = True
     status['out'] = ''
@@ -1248,7 +1248,7 @@ def _create_image_assemble_error_status(status, ret, image_logs):
 
 def import_image(src, repo, tag=None):
     '''
-    Import content from a local tarball or a URL to a docker image
+    Import content from a local tarball or a URL to a docker images
 
     src
         content to import (URL or absolute path to a tarball)
@@ -1257,7 +1257,7 @@ def import_image(src, repo, tag=None):
         repository to import to
 
     tag
-        set tag of the image (Optional)
+        set tag of the images (Optional)
 
     CLI Example:
 
@@ -1287,10 +1287,10 @@ def import_image(src, repo, tag=None):
 
 def tag(image, repository, tag=None, force=False):
     '''
-    Tag an image into a repository
+    Tag an images into a repository
 
-    image
-        name of image
+    images
+        name of images
 
     repository
         name of repository
@@ -1305,7 +1305,7 @@ def tag(image, repository, tag=None, force=False):
 
     .. code-block:: bash
 
-        salt '*' docker.tag <image> <repository> [tag] [force=True|False]
+        salt '*' docker.tag <images> <repository> [tag] [force=True|False]
     '''
     client = _get_client()
     status = base_status.copy()
@@ -1315,7 +1315,7 @@ def tag(image, repository, tag=None, force=False):
     except Exception:
         _invalid(status,
                  out=traceback.format_exc(),
-                 comment='Cant tag image {0} {1}{2}'.format(
+                 comment='Cant tag images {0} {1}{2}'.format(
                      image, repository,
                      tag and (':' + tag) or '').strip())
         return status
@@ -1338,7 +1338,7 @@ def get_images(name=None, quiet=False, all=True):
         repository name
 
     quiet
-        only show image id, Default is ``False``
+        only show images id, Default is ``False``
 
     all
         show all images, Default is ``True``
@@ -1386,19 +1386,19 @@ def build(path=None,
           rm=True,
           timeout=None):
     '''
-    Build a docker image from a dockerfile or an URL
+    Build a docker images from a dockerfile or an URL
 
     path
         url/branch/docker_dir or path on the filesystem to the dockerfile
 
     tag
-        tag of the image
+        tag of the images
 
     quiet
         quiet mode, Default is ``False``
 
     nocache
-        do not use docker image cache, Default is ``False``
+        do not use docker images cache, Default is ``False``
 
     rm
         remove intermediate commits, Default is ``True``
@@ -1443,7 +1443,7 @@ def build(path=None,
         except Exception:
             _invalid(status,
                      out=traceback.format_exc(),
-                     comment='Unexpected error while building an image')
+                     comment='Unexpected error while building an images')
             return status
 
     return status
@@ -1451,16 +1451,16 @@ def build(path=None,
 
 def remove_image(image):
     '''
-    Remove an image from a system.
+    Remove an images from a system.
 
-    image
-        name of image
+    images
+        name of images
 
     CLI Example:
 
     .. code-block:: bash
 
-        salt '*' docker.remove_image <image>
+        salt '*' docker.remove_image <images>
     '''
     client = _get_client()
     status = base_status.copy()
@@ -1494,17 +1494,17 @@ def remove_image(image):
 
 def inspect_image(image):
     '''
-    Inspect the status of an image and return relative data. This is similar to
+    Inspect the status of an images and return relative data. This is similar to
     ``docker inspect`` command but only for images
 
-    image
-        name of the image
+    images
+        name of the images
 
     CLI Example:
 
     .. code-block:: bash
 
-        salt '*' docker.inspect_image <image>
+        salt '*' docker.inspect_image <images>
     '''
     status = base_status.copy()
     try:
@@ -1525,7 +1525,7 @@ def inspect_image(image):
 
 def _parse_image_multilogs_string(ret):
     '''
-    Parse image log strings into grokable data
+    Parse images log strings into grokable data
     '''
     image_logs, infos = [], None
     if ret and ret.strip().startswith('{') and ret.strip().endswith('}'):
@@ -1547,7 +1547,7 @@ def _parse_image_multilogs_string(ret):
                 buf = ''
         image_logs.reverse()
 
-        # Valid statest when pulling an image from the docker registry
+        # Valid statest when pulling an images from the docker registry
         valid_states = [
             'Download complete',
             'Already exists',
@@ -1568,7 +1568,7 @@ def _pull_assemble_error_status(status, ret, logs):
     Given input in this form::
 
         u'{"status":"Pulling repository foo/ubuntubox"}:
-        "image (latest) from foo/  ...
+        "images (latest) from foo/  ...
          rogress":"complete","id":"2c80228370c9"}'
 
     construct something like that (load JSON data is possible)::
@@ -1576,7 +1576,7 @@ def _pull_assemble_error_status(status, ret, logs):
         [u'{"status":"Pulling repository foo/ubuntubox"',
          {"status":"Download","progress":"complete","id":"2c80228370c9"}]
     '''
-    comment = 'An error occurred pulling your image'
+    comment = 'An error occurred pulling your images'
     out = ''
     try:
         out = '\n' + ret
@@ -1603,7 +1603,7 @@ def _pull_assemble_error_status(status, ret, logs):
 
 def pull(repo, tag=None, insecure_registry=False):
     '''
-    Pulls an image from any registry. See documentation at top of this page to
+    Pulls an images from any registry. See documentation at top of this page to
     configure authenticated access
 
     repo
@@ -1659,7 +1659,7 @@ def _push_assemble_error_status(status, ret, logs):
     Given input in this form::
 
         u'{"status":"Pulling repository foo/ubuntubox"}:
-        "image (latest) from foo/  ...
+        "images (latest) from foo/  ...
          rogress":"complete","id":"2c80228370c9"}'
 
     construct something like that (load json data is possible)::
@@ -1667,7 +1667,7 @@ def _push_assemble_error_status(status, ret, logs):
         [u'{"status":"Pulling repository foo/ubuntubox"',
          {"status":"Download","progress":"complete","id":"2c80228370c9"}]
     '''
-    comment = 'An error occurred pushing your image'
+    comment = 'An error occurred pushing your images'
     status['out'] = ''
     try:
         status['out'] += '\n' + ret
@@ -1698,7 +1698,7 @@ def _push_assemble_error_status(status, ret, logs):
 
 def push(repo, tag=None, quiet=False, insecure_registry=False):
     '''
-    Pushes an image to any registry. See documentation at top of this page to
+    Pushes an images to any registry. See documentation at top of this page to
     configure authenticated access
 
     repo
@@ -1842,7 +1842,7 @@ def load(imagepath):
 
     .. code-block:: bash
 
-        salt '*' docker.load /path/to/image
+        salt '*' docker.load /path/to/images
     '''
 
     status = base_status.copy()
@@ -1853,7 +1853,7 @@ def load(imagepath):
             if isinstance(ret, dict) and ('retcode' in ret) and (ret['retcode'] != 0):
                 return _invalid(status, id_=None,
                                 out=ret,
-                                comment='Command to load image {0} failed.'.format(imagepath))
+                                comment='Command to load images {0} failed.'.format(imagepath))
 
             _valid(status, id_=None, out=ret, comment='Image load success')
         except Exception:
@@ -1872,20 +1872,20 @@ def save(image, filename):
     '''
     .. versionadded:: 2015.5.0
 
-    Save the specified image to filename from docker
-    e.g. `docker save image > filename`
+    Save the specified images to filename from docker
+    e.g. `docker save images > filename`
 
-    image
-        name of image
+    images
+        name of images
 
     filename
-        The filename of the saved docker image
+        The filename of the saved docker images
 
     CLI Example:
 
     .. code-block:: bash
 
-        salt '*' docker.save arch_image /path/to/save/image
+        salt '*' docker.save arch_image /path/to/save/images
     '''
     status = base_status.copy()
     ok = False
@@ -1894,7 +1894,7 @@ def save(image, filename):
         ok = True
     except Exception:
         _invalid(status, id_=image,
-                 comment="docker image {0} could not be found.".format(image),
+                 comment="docker images {0} could not be found.".format(image),
                  out=traceback.format_exc())
 
     if ok:
@@ -1905,7 +1905,7 @@ def save(image, filename):
                 return _invalid(status,
                                 id_=image,
                                 out=ret,
-                                comment='Command to save image {0} to {1} failed.'.format(image, filename))
+                                comment='Command to save images {0} to {1} failed.'.format(image, filename))
 
             _valid(status, id_=image, out=ret, comment='Image save success')
         except Exception:

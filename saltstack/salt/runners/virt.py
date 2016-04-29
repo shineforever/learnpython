@@ -180,8 +180,8 @@ def init(
         The amount of memory to allocate tot his virtual machine. The number
         is interpreted in megabytes.
 
-    image
-        The network location of the virtual machine image, commonly a location
+    images
+        The network location of the virtual machine images, commonly a location
         on the salt fileserver, but http, https and ftp can also be used.
 
     hyper

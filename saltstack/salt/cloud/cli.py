@@ -256,7 +256,7 @@ class SaltCloud(parsers.SaltCloudParser):
             if args:
                 self.error(
                     'Any arguments passed to --function need to be passed '
-                    'as kwargs. Ex: image=ami-54cf5c3d. Remaining '
+                    'as kwargs. Ex: images=ami-54cf5c3d. Remaining '
                     'arguments: {0}'.format(args)
                 )
             try:

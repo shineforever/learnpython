@@ -268,11 +268,11 @@ def get_location(conn, vm_):
 
 def get_image(conn, vm_):
     '''
-    Return the image object to use
+    Return the images object to use
     '''
     images = conn.list_images()
 
-    vm_image = config.get_cloud_config_value('image', vm_, __opts__).encode(
+    vm_image = config.get_cloud_config_value('images', vm_, __opts__).encode(
         'ascii', 'salt-cloud-force-ascii'
     )
 
@@ -291,7 +291,7 @@ def get_image(conn, vm_):
             return img
 
     raise SaltCloudNotFound(
-        'The specified image, {0!r}, could not be found.'.format(vm_image)
+        'The specified images, {0!r}, could not be found.'.format(vm_image)
     )
 
 
@@ -441,7 +441,7 @@ def list_nodes(conn=None, call=None):
     for node in nodes:
         ret[node.name] = {
             'id': node.id,
-            'image': node.image,
+            'images': node.image,
             'private_ips': node.private_ips,
             'public_ips': node.public_ips,
             'size': node.size,

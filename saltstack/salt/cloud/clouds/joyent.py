@@ -30,7 +30,7 @@ associated with that vm. An example profile might look like:
       joyent_512:
         provider: my-joyent-config
         size: Extra Small 512 MB
-        image: centos-6
+        images: centos-6
         location: us-east-1
 
 This driver can also be used with the Joyent SmartDataCenter project. More
@@ -140,18 +140,18 @@ def get_configured_provider():
 
 def get_image(vm_):
     '''
-    Return the image object to use
+    Return the images object to use
     '''
     images = avail_images()
 
-    vm_image = config.get_cloud_config_value('image', vm_, __opts__)
+    vm_image = config.get_cloud_config_value('images', vm_, __opts__)
 
     if vm_image and str(vm_image) in images:
         images[vm_image]['name'] = images[vm_image]['id']
         return images[vm_image]
 
     raise SaltCloudNotFound(
-        'The specified image, {0!r}, could not be found.'.format(vm_image)
+        'The specified images, {0!r}, could not be found.'.format(vm_image)
     )
 
 
@@ -275,7 +275,7 @@ def create(vm_):
     salt.utils.cloud.check_name(vm_['name'], 'a-zA-Z0-9-.')
     kwargs = {
         'name': vm_['name'],
-        'image': get_image(vm_),
+        'images': get_image(vm_),
         'size': get_size(vm_),
         'location': vm_.get('location', DEFAULT_LOCATION)
 
@@ -332,13 +332,13 @@ def create_node(**kwargs):
     '''
     name = kwargs['name']
     size = kwargs['size']
-    image = kwargs['image']
+    image = kwargs['images']
     location = kwargs['location']
 
     data = json.dumps({
         'name': name,
         'package': size['name'],
-        'image': image['name']
+        'images': image['name']
     })
 
     try:
@@ -667,7 +667,7 @@ def reformat_node(item=None, full=False):
     :return: dict
     '''
     desired_keys = [
-        'id', 'name', 'state', 'public_ips', 'private_ips', 'size', 'image',
+        'id', 'name', 'state', 'public_ips', 'private_ips', 'size', 'images',
         'location'
     ]
     item['private_ips'] = []
@@ -794,7 +794,7 @@ def avail_images(call=None):
 
     .. code-block:: yaml
 
-        image_url: images.joyent.com/image
+        image_url: images.joyent.com/images
     '''
     if call == 'action':
         raise SaltCloudSystemExit(

@@ -368,7 +368,7 @@ class CloudClient(object):
         .. code-block:: python
 
             client.create(names=['myinstance'], provider='my-ec2-config',
-                kwargs={'image': 'ami-1624987f', 'size': 't1.micro',
+                kwargs={'images': 'ami-1624987f', 'size': 't1.micro',
                         'ssh_username': 'ec2-user', 'securitygroup': 'default',
                         'delvol_on_destroy': True})
         '''
@@ -444,7 +444,7 @@ class CloudClient(object):
 
             client.action(fun='show_instance', names=['myinstance'])
             client.action(fun='show_image', provider='my-ec2-config',
-                kwargs={'image': 'ami-10314d79'}
+                kwargs={'images': 'ami-10314d79'}
             )
         '''
         mapper = salt.cloud.Map(self._opts_defaults(action=fun, names=names))
@@ -809,7 +809,7 @@ class Cloud(object):
 
     def image_list(self, lookup='all'):
         '''
-        Return a mapping of all image data for available providers
+        Return a mapping of all images data for available providers
         '''
         data = {}
 
@@ -852,7 +852,7 @@ class Cloud(object):
 
     def size_list(self, lookup='all'):
         '''
-        Return a mapping of all image data for available providers
+        Return a mapping of all images data for available providers
         '''
         data = {}
 
@@ -895,7 +895,7 @@ class Cloud(object):
 
     def provider_list(self, lookup='all'):
         '''
-        Return a mapping of all image data for available providers
+        Return a mapping of all images data for available providers
         '''
         data = {}
         lookups = self.lookup_providers(lookup)

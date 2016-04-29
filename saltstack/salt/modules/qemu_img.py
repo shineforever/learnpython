@@ -27,15 +27,15 @@ def __virtual__():
 
 def make_image(location, size, fmt):
     '''
-    Create a blank virtual machine image file of the specified size in
-    megabytes. The image can be created in any format supported by qemu
+    Create a blank virtual machine images file of the specified size in
+    megabytes. The images can be created in any format supported by qemu
 
     CLI Example:
 
     .. code-block:: bash
 
-        salt '*' qemu_img.make_image /tmp/image.qcow 2048 qcow2
-        salt '*' qemu_img.make_image /tmp/image.raw 10240 raw
+        salt '*' qemu_img.make_image /tmp/images.qcow 2048 qcow2
+        salt '*' qemu_img.make_image /tmp/images.raw 10240 raw
     '''
     if not os.path.isabs(location):
         return ''

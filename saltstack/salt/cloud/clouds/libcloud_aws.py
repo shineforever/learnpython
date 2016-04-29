@@ -254,7 +254,7 @@ def ssh_username(vm_):
     # Add the user provided usernames to the end of the list since enough time
     # might need to pass before the remote service is available for logins and
     # the proper username might have passed its iteration.
-    # This has detected in a CentOS 5.7 EC2 image
+    # This has detected in a CentOS 5.7 EC2 images
     usernames.extend(initial)
     return usernames
 
@@ -329,7 +329,7 @@ def create(vm_):
             'private_key', vm_, __opts__, search_global=False
         ),
         'name': vm_['name'],
-        'image': get_image(conn, vm_),
+        'images': get_image(conn, vm_),
         'size': get_size(conn, vm_),
         'location': get_availability_zone(conn, vm_)
     }

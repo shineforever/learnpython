@@ -225,7 +225,7 @@ def action(
 
         salt '*' cloud.action start instance=myinstance
         salt '*' cloud.action stop instance=myinstance
-        salt '*' cloud.action show_image provider=my-ec2-config image=ami-1624987f
+        salt '*' cloud.action show_image provider=my-ec2-config images=ami-1624987f
     '''
     client = _get_client()
     info = client.action(fun, cloudmap, names, provider, instance, kwargs)
@@ -240,7 +240,7 @@ def create(provider, names, **kwargs):
 
     .. code-block:: bash
 
-        salt minionname cloud.create my-ec2-config myinstance image=ami-1624987f size='t1.micro' ssh_username=ec2-user securitygroup=default delvol_on_destroy=True
+        salt minionname cloud.create my-ec2-config myinstance images=ami-1624987f size='t1.micro' ssh_username=ec2-user securitygroup=default delvol_on_destroy=True
     '''
     client = _get_client()
     info = client.create(provider, names, **kwargs)

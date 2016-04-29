@@ -280,7 +280,7 @@ def create(vm_):
     )
 
     try:
-        template = conn.get_vm_by_name(vm_['image'])
+        template = conn.get_vm_by_name(vm_['images'])
         new_instance = template.clone(**clone_kwargs)
         data = new_instance.get_properties()  # pylint: disable=W0612
     except Exception as exc:  # pylint: disable=W0703

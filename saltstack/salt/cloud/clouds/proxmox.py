@@ -418,7 +418,7 @@ def list_nodes(call=None):
         # Limit resultset on what Salt-cloud demands:
         ret[vm_name] = {}
         ret[vm_name]['id'] = str(vm_details['vmid'])
-        ret[vm_name]['image'] = str(vm_details['vmid'])
+        ret[vm_name]['images'] = str(vm_details['vmid'])
         ret[vm_name]['size'] = str(vm_details['disk'])
         ret[vm_name]['state'] = str(vm_details['status'])
 
@@ -720,7 +720,7 @@ def create_node(vm_):
     if vm_['technology'] == 'openvz':
         # OpenVZ related settings, using non-default names:
         newnode['hostname'] = vm_['name']
-        newnode['ostemplate'] = vm_['image']
+        newnode['ostemplate'] = vm_['images']
 
         # optional VZ settings
         for prop in ('cpus', 'disk', 'ip_address', 'nameserver', 'password', 'swap', 'poolid'):

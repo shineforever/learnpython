@@ -309,7 +309,7 @@ def _gen_vol_xml(vmname,
 
 def _qemu_image_info(path):
     '''
-    Detect information for the image at path
+    Detect information for the images at path
     '''
     ret = {}
     out = __salt__['cmd.run']('qemu-img info {0}'.format(path))
@@ -329,7 +329,7 @@ def _qemu_image_info(path):
 # _qemu_image_info()
 def _image_type(vda):
     '''
-    Detect what driver needs to be used for the given image
+    Detect what driver needs to be used for the given images
     '''
     out = __salt__['cmd.run']('qemu-img info {0}'.format(vda))
     if 'file format: qcow2' in out:
@@ -342,7 +342,7 @@ def _image_type(vda):
 # with _disk_profile()
 def _get_image_info(hypervisor, name, **kwargs):
     '''
-    Determine disk image info, such as filename, image format and
+    Determine disk images info, such as filename, images format and
     storage pool, based on which hypervisor is used
     '''
     ret = {}
@@ -535,7 +535,7 @@ def init(name,
 
     .. code-block:: bash
 
-        salt 'hypervisor' virt.init vm_name 4 512 salt://path/to/image.raw
+        salt 'hypervisor' virt.init vm_name 4 512 salt://path/to/images.raw
         salt 'hypervisor' virt.init vm_name 4 512 nic=profile disk=profile
     '''
     hypervisor = __salt__['config.get']('libvirt:hypervisor', hypervisor)
@@ -544,11 +544,11 @@ def init(name,
 
     diskp = None
     seedable = False
-    if image:  # with disk template image
-        # if image was used, assume only one disk, i.e. the
+    if image:  # with disk template images
+        # if images was used, assume only one disk, i.e. the
         # 'default' disk profile
         # TODO: make it possible to use disk profiles and use the
-        # template image as the system disk
+        # template images as the system disk
         diskp = _disk_profile('default', hypervisor, **kwargs)
 
         # When using a disk profile extract the sole dict key of the first
@@ -558,8 +558,8 @@ def init(name,
         disk_file_name = '{0}.{1}'.format(disk_name, disk_type)
 
         if hypervisor in ['esxi', 'vmware']:
-            # TODO: we should be copying the image file onto the ESX host
-            raise SaltInvocationError('virt.init does not support image '
+            # TODO: we should be copying the images file onto the ESX host
+            raise SaltInvocationError('virt.init does not support images '
                                       'template template in conjunction '
                                       'with esxi hypervisor')
         elif hypervisor in ['qemu', 'kvm']:
@@ -582,21 +582,21 @@ def init(name,
                 os.chmod(img_dest, mode)
 
             except (IOError, OSError) as e:
-                raise CommandExecutionError('problem copying image. {0} - {1}'.format(image, e))
+                raise CommandExecutionError('problem copying images. {0} - {1}'.format(image, e))
 
             seedable = True
         else:
-            log.error('unsupported hypervisor when handling disk image')
+            log.error('unsupported hypervisor when handling disk images')
 
     else:
-        # no disk template image specified, create disks based on disk profile
+        # no disk template images specified, create disks based on disk profile
         diskp = _disk_profile(disk, hypervisor, **kwargs)
         if hypervisor in ['qemu', 'kvm']:
             # TODO: we should be creating disks in the local filesystem with
             # qemu-img
             raise SaltInvocationError('virt.init does not support disk '
                                       'profiles in conjunction with '
-                                      'qemu/kvm at this time, use image '
+                                      'qemu/kvm at this time, use images '
                                       'template instead')
         else:
             # assume libvirt manages disks for us
@@ -919,8 +919,8 @@ def get_disks(vm_):
                     snapshots = True
                     continue
 
-                # If this is a copy-on-write image, then the backing file
-                # represents the base image
+                # If this is a copy-on-write images, then the backing file
+                # represents the base images
                 #
                 # backing file: base.qcow2 (actual path: /var/shared/base.qcow2)
                 elif line.startswith('backing file'):
@@ -952,7 +952,7 @@ def get_disks(vm_):
             output = '\n'.join(output)
             disks[dev].update(yaml.safe_load(output))
         except TypeError:
-            disks[dev].update(yaml.safe_load('image: Does not exist'))
+            disks[dev].update(yaml.safe_load('images: Does not exist'))
     return disks
 
 
@@ -1477,7 +1477,7 @@ def destroy(vm_):
 
 def undefine(vm_):
     '''
-    Remove a defined vm, this does not purge the virtual machine image, and
+    Remove a defined vm, this does not purge the virtual machine images, and
     this only works if the vm is powered down
 
     CLI Example:

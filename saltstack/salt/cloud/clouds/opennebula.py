@@ -185,7 +185,7 @@ def list_nodes(call=None):
         image = 'template_id {0}'.format(
             vm.find('TEMPLATE').find('TEMPLATE_ID').text
         )
-        vms[vm.find('NAME').text]['image'] = image
+        vms[vm.find('NAME').text]['images'] = image
         size = 'cpu {0}, memory {1}'.format(
             vm.find('TEMPLATE').find('CPU').text, vm.find('TEMPLATE').find('MEMORY').text
         )
@@ -219,7 +219,7 @@ def list_nodes_full(call=None):
         image = 'template_id {0}'.format(
             vm.find('TEMPLATE').find('TEMPLATE_ID').text
         )
-        vms[vm.find('NAME').text]['image'] = image
+        vms[vm.find('NAME').text]['images'] = image
         size = 'cpu {0}, memory {1}'.format(
             vm.find('TEMPLATE').find('CPU').text, vm.find('TEMPLATE').find('MEMORY').text
         )
@@ -245,17 +245,17 @@ def list_nodes_select(call=None):
 
 def get_image(vm_):
     '''
-    Return the image object to use
+    Return the images object to use
     '''
     images = avail_images()
     vm_image = str(config.get_cloud_config_value(
-        'image', vm_, __opts__, search_global=False
+        'images', vm_, __opts__, search_global=False
     ))
     for image in images:
         if vm_image in (images[image]['name'], images[image]['id']):
             return images[image]['id']
     raise SaltCloudNotFound(
-        'The specified image, {0!r}, could not be found.'.format(vm_image)
+        'The specified images, {0!r}, could not be found.'.format(vm_image)
     )
 
 

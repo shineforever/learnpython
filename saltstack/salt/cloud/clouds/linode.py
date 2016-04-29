@@ -249,10 +249,10 @@ if HAS_LIBCLOUD:
 if HAS_LINODEPY:
     def get_image(conn, vm_):
         '''
-        Return a single image from the Linode API
+        Return a single images from the Linode API
         '''
         images = avail_images(conn)
-        return images[vm_['image']]['id']
+        return images[vm_['images']]['id']
 
     def get_size(conn, vm_):
         '''
@@ -341,7 +341,7 @@ if HAS_LINODEPY:
         for n in nodes:
             thisnode = {}
             thisnode['id'] = n['LINODEID']
-            thisnode['image'] = None
+            thisnode['images'] = None
             thisnode['name'] = n['LABEL']
             thisnode['size'] = n['TOTALRAM']
             thisnode['state'] = n['STATUS']
@@ -826,7 +826,7 @@ def create(vm_):
         kwargs = {
             'name': vm_['name'],
             'clonefrom': vm_['clonefrom'],
-            'image': 'Clone of {0}'.format(vm_['clonefrom']),
+            'images': 'Clone of {0}'.format(vm_['clonefrom']),
             'size': clonesource['size'],
             'auth': get_auth(vm_),
             'ex_private': get_private_ip(vm_),
@@ -839,7 +839,7 @@ def create(vm_):
             'requesting instance',
             'salt/cloud/{0}/requesting'.format(vm_['name']),
             {'kwargs': {'name': kwargs['name'],
-                        'image': kwargs['image'],
+                        'images': kwargs['images'],
                         'size': kwargs['size'],
                         'ex_private': kwargs['ex_private']}},
             transport=__opts__['transport']
@@ -848,7 +848,7 @@ def create(vm_):
         if HAS_LIBCLOUD:
             kwargs = {
                 'name': vm_['name'],
-                'image': get_image(conn, vm_),
+                'images': get_image(conn, vm_),
                 'size': get_size(conn, vm_),
                 'location': get_location(conn, vm_),
                 'auth': get_auth(vm_),
@@ -862,7 +862,7 @@ def create(vm_):
                 'requesting instance',
                 'salt/cloud/{0}/requesting'.format(vm_['name']),
                 {'kwargs': {'name': kwargs['name'],
-                                'image': kwargs['image'].name,
+                                'images': kwargs['images'].name,
                                 'size': kwargs['size'].name,
                                 'location': kwargs['location'].name,
                                 'ex_private': kwargs['ex_private'],
@@ -874,7 +874,7 @@ def create(vm_):
         if HAS_LINODEPY:
             kwargs = {
                 'name': vm_['name'],
-                'image': get_image(conn, vm_),
+                'images': get_image(conn, vm_),
                 'size': get_size(conn, vm_),
                 'location': get_location(conn, vm_),
                 'auth': get_auth(vm_),
@@ -888,7 +888,7 @@ def create(vm_):
                 'requesting instance',
                 'salt/cloud/{0}/requesting'.format(vm_['name']),
                 {'kwargs': {'name': kwargs['name'],
-                                'image': kwargs['image'],
+                                'images': kwargs['images'],
                                 'size': kwargs['size'],
                                 'location': kwargs['location'],
                                 'ex_private': kwargs['ex_private'],

@@ -56,7 +56,7 @@ Available Functions
         docker.installed:
           - name: mysuperdocker
           - hostname: superdocker
-          - image: corp/mysuperdocker_img
+          - images: corp/mysuperdocker_img
 
 - loaded
 
@@ -74,7 +74,7 @@ Available Functions
       my_service:
         docker.running:
           - container: mysuperdocker
-          - image: corp/mysuperdocker_img
+          - images: corp/mysuperdocker_img
           - port_bindings:
             - "5000/tcp":
                   HostIp: ""
@@ -284,7 +284,7 @@ def _parse_volumes(volumes):
 
 def mod_watch(name, sfun=None, *args, **kw):
     if sfun == 'built':
-        # Needs to refresh the image
+        # Needs to refresh the images
         kw['force'] = True
         build_status = built(name, **kw)
         result = build_status['result']
@@ -326,7 +326,7 @@ def pulled(name,
            *args,
            **kwargs):
     '''
-    Pull an image from a docker registry. (`docker pull`)
+    Pull an images from a docker registry. (`docker pull`)
 
     .. note::
 
@@ -341,13 +341,13 @@ def pulled(name,
         execution module.
 
     name
-        Name of the image
+        Name of the images
 
     tag
-        Tag of the image
+        Tag of the images
 
     force
-        Pull even if the image is already pulled
+        Pull even if the images is already pulled
 
     insecure_registry
         Set to ``True`` to allow connections to non-HTTPS registries. Default ``False``.
@@ -377,7 +377,7 @@ def pulled(name,
 
 def pushed(name, tag='latest', insecure_registry=False):
     '''
-    Push an image from a docker registry. (`docker push`)
+    Push an images from a docker registry. (`docker push`)
 
     .. note::
 
@@ -392,10 +392,10 @@ def pushed(name, tag='latest', insecure_registry=False):
         salt.core.dockerio execution module.
 
     name
-        Name of the image
+        Name of the images
 
     tag
-        Tag of the image [Optional]
+        Tag of the images [Optional]
 
     insecure_registry
         Set to ``True`` to allow connections to non-HTTPS registries. Default ``False``.
@@ -417,10 +417,10 @@ def pushed(name, tag='latest', insecure_registry=False):
 
 def loaded(name, source=None, source_hash='', force=False):
     '''
-    Load an image into the local docker registry (`docker load`)
+    Load an images into the local docker registry (`docker load`)
 
     name
-        Name of the docker image
+        Name of the docker images
 
     source
         The source .tar file to download to the minion, created by docker save
@@ -448,7 +448,7 @@ def loaded(name, source=None, source_hash='', force=False):
                 salt.states.file.html#salt.states.file.managed>
 
     force
-        Load even if the image exists
+        Load even if the images exists
     '''
 
     inspect_image = __salt__['docker.inspect_image']
@@ -495,10 +495,10 @@ def built(name,
           timeout=None,
           *args, **kwargs):
     '''
-    Build a docker image from a path or URL to a dockerfile. (`docker build`)
+    Build a docker images from a path or URL to a dockerfile. (`docker build`)
 
     name
-        Name of the image
+        Name of the images
 
     path
         URL (e.g. `url/branch/docker_dir/dockerfile`)
@@ -559,13 +559,13 @@ def installed(name,
               *args, **kwargs):
     '''
     Ensure that a container with the given name exists;
-    if not, build a new container from the specified image.
+    if not, build a new container from the specified images.
     (`docker run`)
 
     name
         Name for the container
 
-    image
+    images
         Image from which to build this container
 
     environment
@@ -587,19 +587,19 @@ def installed(name,
 
     .. note::
         This command does not verify that the named container
-        is running the specified image.
+        is running the specified images.
     '''
     ins_image = __salt__['docker.inspect_image']
     ins_container = __salt__['docker.inspect_container']
     create = __salt__['docker.create_container']
     iinfos = ins_image(image)
     if not iinfos['status']:
-        return _invalid(comment='image "{0}" does not exist'.format(image))
+        return _invalid(comment='images "{0}" does not exist'.format(image))
     cinfos = ins_container(name)
     already_exists = cinfos['status']
     # if container exists but is not started, try to start it
     if already_exists:
-        return _valid(comment='image {0!r} already exists'.format(name))
+        return _valid(comment='images {0!r} already exists'.format(name))
     dports, denvironment = {}, {}
     if not ports:
         ports = []
@@ -710,15 +710,15 @@ def absent(name):
 def present(name, image=None, is_latest=False):
     '''
     If a container with the given name is not present, this state will fail.
-    Supports optionally checking for specific image/version
+    Supports optionally checking for specific images/version
     (`docker inspect`)
 
     name:
         container id
-    image:
-        image the container should be running (defaults to any)
+    images:
+        images the container should be running (defaults to any)
     is_latest:
-        also check if the container runs the latest version of the image (
+        also check if the container runs the latest version of the images (
         latest defined as the latest pulled onto the local machine)
     '''
     ins_container = __salt__['docker.inspect_container']
@@ -732,12 +732,12 @@ def present(name, image=None, is_latest=False):
     if cinfos['status'] and image is None:
         return _valid(comment='Container {0} exists'.format(cid))
     if cinfos['status'] and cinfos['out']['Config']["Image"] == image and not is_latest:
-        return _valid(comment='Container {0} exists and has image {1}'.format(cid, image))
+        return _valid(comment='Container {0} exists and has images {1}'.format(cid, image))
     ins_image = __salt__['docker.inspect_image']
     iinfos = ins_image(image)
     if cinfos['status'] and cinfos['out']['Image'] == iinfos['out']['Id']:
-        return _valid(comment='Container {0} exists and has latest version of image {1}'.format(cid, image))
-    return _invalid(comment='Container {0} found with wrong image'.format(cid or name))
+        return _valid(comment='Container {0} exists and has latest version of images {1}'.format(cid, image))
+    return _invalid(comment='Container {0} found with wrong images'.format(cid or name))
 
 
 def run(name,
@@ -865,12 +865,12 @@ def running(name,
             *args, **kwargs):
     '''
     Ensure that a container is running. If the container does not exist, it
-    will be created from the specified image. (`docker run`)
+    will be created from the specified images. (`docker run`)
 
     name / container
         Name for the container
 
-    image
+    images
         Image from which to build this container
 
     environment
@@ -999,7 +999,7 @@ def running(name,
 
     .. note::
         This command does not verify that the named container
-        is running the specified image.
+        is running the specified images.
     '''
     if container is not None:
         name = container
@@ -1017,7 +1017,7 @@ def running(name,
     if already_exists and (is_running or not start):
         return _valid(comment='container {0!r} already exists'.format(name))
     if not image_exists:
-        return _invalid(comment='image "{0}" does not exist'.format(image))
+        return _invalid(comment='images "{0}" does not exist'.format(image))
     # parse input data
     exposeports, bindports, contvolumes, bindvolumes, denvironment, changes = [], {}, [], {}, {}, []
     if not ports:

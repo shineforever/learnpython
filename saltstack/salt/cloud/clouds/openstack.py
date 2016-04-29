@@ -417,12 +417,12 @@ def request_instance(vm_=None, call=None):
     }
 
     try:
-        kwargs['image'] = get_image(conn, vm_)
+        kwargs['images'] = get_image(conn, vm_)
     except Exception as exc:
         raise SaltCloudSystemExit(
             'Error creating {0} on OPENSTACK\n\n'
-            'Could not find image {1}: {2}\n'.format(
-                vm_['name'], vm_['image'], exc
+            'Could not find images {1}: {2}\n'.format(
+                vm_['name'], vm_['images'], exc
             )
         )
 
@@ -498,7 +498,7 @@ def request_instance(vm_=None, call=None):
         'requesting instance',
         'salt/cloud/{0}/requesting'.format(vm_['name']),
         {'kwargs': {'name': kwargs['name'],
-                    'image': kwargs['image'].name,
+                    'images': kwargs['images'].name,
                     'size': kwargs['size'].name,
                     'profile': vm_['profile']}},
         transport=__opts__['transport']
