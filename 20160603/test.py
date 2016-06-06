@@ -41,7 +41,7 @@ def heap_sort(lst):
 heap_sort(l1)
 print(l1)
 
-s = 123
+s = 223
 
 # l1中找出三个数，使其和最接近s
 
@@ -63,14 +63,15 @@ def find_three(lst, goal):
 					closed = tmp  # 保存当前的三个元素
 				if sum(tmp) - goal > 0:  # 如果三元素的和比目标数大，
 					k -= 1  # K往前取值（即要往小的找）
-				j += 1  # 如果三元素的和比目标数小，j往后取（即要找个大的值）
+				else:
+					j += 1  # 如果三元素的和比目标数小，j往后取（即要找个大的值）
 
 		return closed
 
 
 def main():
-	# ll = [1, 3, 5, 7, 9]
-	# ss = 17
+	# ll = [1, 3, 5, 7, 9, 13, 19, 22, 34, 35]
+	# ss = 23
 	ret = find_three(l1, s)
 	print(ret)
 
