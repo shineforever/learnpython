@@ -1,0 +1,23 @@
+# 格式
+# 日期:(目录, 第一次收作业时间)
+
+6:
+  S13:
+    dir_path: /etc/local/s13
+    first_time: '2016-07-29'
+    check_time: '11:30'
+    mail_to: email.test.com
+    memo:
+  S15:
+    dir_path: /etc/local/s15
+    first_time: '2016-11-21'
+    check_time: '11:30'
+    mail_to: email.test.com
+    memo:
+
+7:
+ S13:
+   dir_path: /home/test
+   first_time: '2016-07-22'
+   check_time: '11:00'
+   mail_to: email.test.com
