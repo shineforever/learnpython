@@ -27,25 +27,25 @@ class SendMail(threading.Thread):
 
     def run(self):
         while True:
-                if self.queue.empty():
-                    break
-                to_list = self.queue.get()
-                me = settings.EMAIL["me"]
-                msg = MIMEText(content)
-                msg['Subject'] = sub
-                msg['From'] = me
-                msg['To'] = to_list
-                try:
-                    s = smtplib.SMTP()
-                    s.connect(mail_host)
-                    s.login(mail_user, mail_pass)
-                    s.sendmail(me, to_list, msg.as_string())
-                    s.close()
-                    logger.info("邮件发送成功:{}".format(to_list))
-                    self.queue.task_done()
-                except Exception as e:
-                    logger.error(str(e))
-                    print(str(e))
+            if self.queue.empty():
+                break
+            to_list = self.queue.get()
+            me = settings.EMAIL["me"]
+            msg = MIMEText(content)
+            msg['Subject'] = sub
+            msg['From'] = me
+            msg['To'] = to_list
+            try:
+                s = smtplib.SMTP()
+                s.connect(mail_host)
+                s.login(mail_user, mail_pass)
+                s.sendmail(me, to_list, msg.as_string())
+                s.close()
+                logger.info("邮件发送成功:{}".format(to_list))
+                self.queue.task_done()
+            except Exception as e:
+                logger.error(str(e))
+                print(str(e))
 
 
 def send_mail():

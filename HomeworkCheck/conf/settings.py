@@ -5,8 +5,8 @@
 
 
 EMAIL = {
-	"host": "",
-	"user": "",
-	"passwd": "",
-	"me": "",
+    "host": "",
+    "user": "",
+    "passwd": "",
+    "me": "",
 }
