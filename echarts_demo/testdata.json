@@ -1,0 +1,11 @@
+{
+  "timestamp": ["2016-02-01", "2016-02-06", "2016-03-07", "2016-03-22", "2016-05-09", "2016-07-03"],
+  "step": [
+    {"total":22, "online":14, "restart": 6, "rollback": 2},
+    {"total":20, "online":14, "restart": 5, "rollback": 1},
+    {"total":32, "online":24, "restart": 6, "rollback": 2},
+    {"total":18, "online":14, "restart": 0, "rollback": 4},
+    {"total":10, "online":5, "restart": 4, "rollback": 1},
+    {"total":17, "online":14, "restart": 3, "rollback": 0}
+  ]
+}

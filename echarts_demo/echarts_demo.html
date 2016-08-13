@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>echarts demo</title>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/shine.js"></script>
+</head>
+<body>
+    <div>
+        <div id="main" style="width: 600px;height: 400px;"></div>
+    </div>
+</body>
+<script src="js/jquery-2.2.3.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    var myChart = echarts.init(document.getElementById("main"), "shine");
+    myChart.showLoading();  //显示加载动画
+
+    myChart.setOption({
+        title: {
+          text: "上线统计"
+        },
+        tooltip: {  // 提示框
+            trigger: 'axis'  //坐标轴触发
+        },
+        legend:{
+            data:['total', 'online', 'restart', 'rollback']
+        },
+        toolbox: {  // 工具
+          feature: {
+              saveAsImage: {}  // 保存图片
+          }
+        },
+        xAxis: {
+            data: []
+        },
+        yAxis: {},
+        dataZoom: [
+            {
+                startValue: "2016-01-01"
+            },
+            {
+                type: 'inside'
+            }
+        ],
+        series: [{
+            name: '上线统计',
+            type: 'bar',
+            data: []
+        }]
+    });
+    myChart.hideLoading();  //隐藏加载图
+
+    $.getJSON("testdata.json").done(function (data) {
+        console.log(data);
+        myChart.setOption({
+            xAxis: {
+                data: data.timestamp
+            },
+            series: [
+                {
+                    name: "total",
+                    type: "line",
+                    data: data.step.map(function (item) {
+                        return item["total"];
+                })
+                },
+                {
+                    name: "online",
+                    type: "line",
+                    data: data.step.map(function (item) {
+                        return item["online"];
+                    })
+                },
+                {
+                    name: "restart",
+                    type: "line",
+                    data: data.step.map(function (item) {
+                        return item["restart"]
+                    })
+                },
+                {
+                    name: "rollback",
+                    type: "line",
+                    data: data.step.map(function (item) {
+                        return item["rollback"]
+                    })
+                }
+            ]
+        });
+    });
+</script>
+</html>

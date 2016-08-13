@@ -8,11 +8,13 @@
 """
 l1 = []
 for i in range(1, 5):
-	for j in range(1, 5):
-		for k in range(1, 5):
-			if i != j != k and i != k:
-				l1.append("{}{}{}".format(i, j, k))
-				# print("{}{}{}".format(i, j, k))
+    for j in range(1, 5):
+        for k in range(1, 5):
+            if i != j != k and i != k:
+                l1.append("{}{}{}".format(i, j, k))
+                # print("{}{}{}".format(i, j, k))
 print(len(l1))
 for i in l1:
-	print(i)
+    print(i)
+
+

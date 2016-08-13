@@ -1,0 +1,8 @@
+{
+  "2016-02-01": {"total":22, "online":14, "restart": 6, "rollback": 2},
+  "2016-02-06": {"total":20, "online":14, "restart": 5, "rollback": 1},
+  "2016-03-07": {"total":32, "online":24, "restart": 6, "rollback": 2},
+  "2016-03-22": {"total":18, "online":14, "restart": 0, "rollback": 4},
+  "2016-05-09": {"total":10, "online":5, "restart": 4, "rollback": 1},
+  "2016-07-03": {"total":17, "online":14, "restart": 3, "rollback": 0}
+}
