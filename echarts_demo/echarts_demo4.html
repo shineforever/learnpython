@@ -1,8 +1,28 @@
-/**
- * Created by qimi on 2016/8/13.
- */
-
-// 处理接口返回的原始JSON数据
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>echarts demo4 多图联动 </title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <script src="js/echarts.min.js"></script>
+    <script src="js/shine.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="main1" style="width: 800px;height: 600px;"></div>
+        <div id="main2" style="width: 800px;height: 600px;"></div>
+        <div>
+            <select id="s1" class="form-control col-md-3">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+        </div>
+    </div>
+</body>
+<script src="js/jquery-2.2.3.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
 function handleData(rawData) {
     var handleData = {};
     rawData.map(function (item) {  // 遍历原始数据进行分类处理
@@ -14,8 +34,6 @@ function handleData(rawData) {
     });  // end map
     return handleData;  // 将处理过的数据返回
 }
-
-// 分离数据供画图
 function splitData(jsonObj) {
     var timeData = [];  // 时间数组
     var values = [];  // 上线数据
@@ -29,7 +47,6 @@ function splitData(jsonObj) {
     }
 }
 
-// 画图
 function drawChart(chartID1, chartID2, titleStr) {
     var myChart1 = echarts.init(document.getElementById(chartID1), "shine");  // 默认chartID1是折线图
     var myChart2 = echarts.init(document.getElementById(chartID2), "shine");  // 默认chartID2是柱状图
@@ -177,16 +194,16 @@ function drawChart(chartID1, chartID2, titleStr) {
         myChart2.setOption(option2);  // 设置图表2
 
         $(chartID1).resize(function () {
-           $(myChart1).resize();  // 根据父DIV自适应大小
+           $(myChart1).resize();
         });
         $(chartID2).resize(function () {
-            $(myChart2).resize();  // 根据父DIV自适应大小
+            $(myChart2).resize();
         });
         echarts.connect([myChart1, myChart2]);  // 将myChat1和myChart2联动
     });
 }
-
-// 监控product和module的select变化
+drawChart("main1", "main2", "ido");
+// 监控select变化
 function monitorSelect(productSelectID, moduleSelectID) {
     $("#"+productSelectID).change(function () {
         console.log($("#"+productSelectID).val());
@@ -197,3 +214,6 @@ function monitorSelect(productSelectID, moduleSelectID) {
         }, 1500)
     })
 }
+monitorSelect("s1", "s2");
+</script>
+</html>
