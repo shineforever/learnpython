@@ -46,6 +46,7 @@ def check_homework(arg_dic):
         # TODO 遍历目录下所有的文件夹，往下第一层是每个人的文件夹(文件夹名是学号)
         # TODO 目标是得到每个人文件夹下最新的文件夹，返回文件名和文件总大小
         # TODO 按本周有没有提交来分类？
+        # TODO 我突然有了一个好idea,bla....
         os.walk()
         pass
 

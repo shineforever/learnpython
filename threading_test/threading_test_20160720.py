@@ -35,7 +35,12 @@ def http_check(url):
 
 if __name__ == "__main__":
     # for url in url_list:
+<<<<<<< HEAD
     #     t = threading.Thread(target=http_check, args=(url,))
     #     t.start()
+=======
+    # 	t = threading.Thread(target=http_check, args=(url,))
+    # 	t.start()
+>>>>>>> b0142050f9b38e12d9a12938e3e8f509fadc10c3
     r = map(http_check, url_list)
 

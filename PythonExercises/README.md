@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Pycharm Markdown support插件
 ===
 呵呵
@@ -29,3 +30,15 @@ print("Hello world!")
 
 
 
+=======
+Markdown support
+===
+
+
+### 三级菜单
+
+
+* 1
+* 2
+* 3
+>>>>>>> b0142050f9b38e12d9a12938e3e8f509fadc10c3
