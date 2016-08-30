@@ -18,8 +18,8 @@ from functools import reduce
 
 
 def normaliza(name):
-	name = name.title()
-	return name
+    name = name.title()
+    return name
 
 l1 = ['adam', 'LISA', 'barT']
 l2 = list(map(normaliza, l1))
@@ -44,7 +44,7 @@ Python提供的sum()函数可以接受一个list并求和，请编写一个prod(
 
 
 def prod(l):
-	return reduce(lambda x, y: x * y, l)
+    return reduce(lambda x, y: x * y, l)
 
 print('3*5*7*9=', prod([3, 5, 7, 9]))
 
@@ -54,13 +54,13 @@ print('3*5*7*9=', prod([3, 5, 7, 9]))
 
 
 def str2float(s):
-	m = s.split('.')
-	i1 = list(map(int, m[0]))
-	i2 = list(map(int, m[1]))
-	i2.reverse()
-	f1 = reduce(lambda x, y: x*10+y, i1)
-	f2 = reduce(lambda x, y: x*0.1+y, i2)
-	return f1+f2/10
+    m = s.split('.')
+    i1 = list(map(int, m[0]))
+    i2 = list(map(int, m[1]))
+    i2.reverse()
+    f1 = reduce(lambda x, y: x*10+y, i1)
+    f2 = reduce(lambda x, y: x*0.1+y, i2)
+    return f1+f2/10
 
 print('字符串转换成浮点数=>', str2float('123.456'))
 print('字符串转换成浮点数=>', str2float('654.321'))

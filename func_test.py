@@ -9,14 +9,14 @@ some test
 
 
 class MyTest(object):
-	def __init__(self, name):
-		self.name = name
+    def __init__(self, name):
+        self.name = name
 
-	def __unicode__(self):
-		return "17"
+    def __unicode__(self):
+        return "17"
 
-	def __str__(self):
-		return self.__unicode__()
+    def __str__(self):
+        return self.__unicode__()
 
 
 a = MyTest(name="Alex")
