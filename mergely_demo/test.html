@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mergely demo</title>
+    <link type="text/css" rel="stylesheet" href="mergely-3.4.2/lib/mergely.css" />
+    <link type="text/css" rel="stylesheet" href="mergely-3.4.2/lib/codemirror.css" />
+</head>
+<body>
+    <h3>mergely demo</h3>
+    <div id="compare">
+
+    </div>
+    <script type="text/javascript" src="jquery-2.2.3.js"></script>
+    <script type="text/javascript" src="mergely-3.4.2/lib/codemirror.min.js"></script>
+    <script type="text/javascript" src="mergely-3.4.2/lib/mergely.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#compare").mergely({
+                cmsettings: {readOnly:false, lineNumbers: true},
+                lhs: function (setValue) {
+                    setValue('the quick red fox\njumped over the hairy dog');
+                },
+                rhs: function (setValue) {
+                    setValue('the quick red fox\njumped over the hairy dog')
+                }
+            });
+        });
+//        var s = $("#compare").mergely("cm", "rhs").getOption("readOnly");
+        var s = $("#compare").mergely("cm", "lhs");
+        console.log(s);
+    </script>
+</body>
+</html>
