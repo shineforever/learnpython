@@ -12,11 +12,11 @@ from functools import wraps
 
 
 def timethis(func):
-	@wraps(func)
-	def wrapper(*args, **kwargs):
-		start = time.perf_counter()
-		ret = func(*args, **kwargs)
-		end = time.perf_counter()
-		print("{}.{}:{}".format(func.__module__, func.__name__, end-start))
-		return ret
-	return wrapper
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        start = time.perf_counter()
+        ret = func(*args, **kwargs)
+        end = time.perf_counter()
+        print("{}.{}:{}".format(func.__module__, func.__name__, end-start))
+        return ret
+    return wrapper

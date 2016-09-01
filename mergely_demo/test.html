@@ -16,7 +16,8 @@
     <script type="text/javascript" src="mergely-3.4.2/lib/mergely.min.js"></script>
     <script>
         $(document).ready(function () {
-            $("#compare").mergely({
+            var g = $("#compare");
+            g.mergely({
                 cmsettings: {readOnly:false, lineNumbers: true},
                 lhs: function (setValue) {
                     setValue('the quick red fox\njumped over the hairy dog');
@@ -25,10 +26,9 @@
                     setValue('the quick red fox\njumped over the hairy dog')
                 }
             });
+            // 设置左侧只读
+            g.mergely("cm", "lhs").setOption("readOnly", 'nocursor');
         });
-//        var s = $("#compare").mergely("cm", "rhs").getOption("readOnly");
-        var s = $("#compare").mergely("cm", "lhs");
-        console.log(s);
     </script>
 </body>
 </html>
