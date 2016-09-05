@@ -14,13 +14,13 @@ LOG_FORMAT = '80.154.42.54 - - [23/Aug/2010:{time} +0000] "GET /phpmy-admin/scri
 
 
 def write_log(filename, nums):
-	count = 0
-	with open(filename, "w") as log_f:
-		while count < nums:
-			time_stamp = "{}:{}".format(time.ctime().split()[3], count)
-			log_f.write(LOG_FORMAT.format(time=time_stamp) + "\n")
-			count += 1
+    count = 0
+    with open(filename, "w") as log_f:
+        while count < nums:
+            time_stamp = "{}:{}".format(time.ctime().split()[3], count)
+            log_f.write(LOG_FORMAT.format(time=time_stamp) + "\n")
+            count += 1
 
 
 if __name__ == "__main__":
-	write_log("test1.log", 10)
+    write_log("test1.log", 10)
