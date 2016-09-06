@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from jsonp_demo_django_server import views as server_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    # check查询的url,db_name:要查找的库，user_name:用户名，check_what:你要查询什么？ 统统交给demo3来处理
+    url(
+        r'^check/(?P<db_name>\w+)/(?P<user_name>\w+)/(?P<check_what>\w+)/callback=(?P<callback_name>\w+)',
+        server_views.demo3
+    ),
 ]
