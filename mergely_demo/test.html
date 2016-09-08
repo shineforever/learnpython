@@ -30,10 +30,6 @@
     <script type="text/javascript" src="mergely-3.4.2/lib/codemirror.js"></script>
     <script type="text/javascript" src="mergely-3.4.2/lib/mergely.js"></script>
     <script>
-        console.log("start...");
-        console.log($("#home").css("display"));
-    </script>
-    <script>
         function mergelyInit(theID, theData) {
             console.log("begin in func:mergelyInit ...");
             var g = $("#"+theID);
@@ -50,8 +46,6 @@
             });
             // 设置左侧为只读模式
             g.mergely("cm", "lhs").setOption("readOnly", "nocursor");
-            // console.log(g.css("display"));
-            // g.css("display", "")
         }
     </script>
     <script>
