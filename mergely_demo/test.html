@@ -37,12 +37,10 @@
         function mergelyInit(theID, theData) {
             console.log("begin in func:mergelyInit ...");
             var g = $("#"+theID);
-            console.log(g);
-            console.log(g.css("display"));
             g.mergely({
+                autoresize: 'false',
                 width: 'auto',
-                display: 'none',
-
+                height: 600,
                 lhs: function (setValue) {
                     setValue(theData)
                 },
@@ -55,6 +53,12 @@
             // console.log(g.css("display"));
             // g.css("display", "")
         }
+    </script>
+    <script>
+        $("body").delegate(".nav, .nav-tabs a", "click", function () {
+            var theID = $(this).attr("href");
+            $(theID).css("display", "block").siblings().css("display", "none");
+        })
     </script>
     <script>
         var data1 = 'home\nhome\nthe quick red fox\njumped over the hairy dog';

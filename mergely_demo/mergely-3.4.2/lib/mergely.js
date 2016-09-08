@@ -398,7 +398,7 @@ jQuery.extend(Mgly.CodeMirrorDiffView.prototype, {
 			ignorews: false,
 			fadein: 'fast',
 			editor_width: '650px',
-			editor_height: '400px',
+			editor_height: '600px',
 			resize_timeout: 500,
 			change_timeout: 150,
 			fgcolor: {a:'#4ba3fa',c:'#a3a3a3',d:'#ff7f7f',  // color for differences (soft color)
@@ -454,15 +454,15 @@ jQuery.extend(Mgly.CodeMirrorDiffView.prototype, {
 		};
 		this.lhs_cmsettings = {};
 		this.rhs_cmsettings = {};
-		
+
 		// save this element for faster queries
 		this.element = jQuery(el);
-		
+
 		// save options if there are any
 		if (options && options.cmsettings) jQuery.extend(this.lhs_cmsettings, cmsettings, options.cmsettings, options.lhs_cmsettings);
 		if (options && options.cmsettings) jQuery.extend(this.rhs_cmsettings, cmsettings, options.cmsettings, options.rhs_cmsettings);
 		//if (options) jQuery.extend(this.settings, options);
-		
+
 		// bind if the element is destroyed
 		this.element.bind('destroyed', jQuery.proxy(this.teardown, this));
 
@@ -619,7 +619,7 @@ jQuery.extend(Mgly.CodeMirrorDiffView.prototype, {
 			this.prev_query[side] = query;
 		}
 		var cursor = this.cursor[this.id];
-		
+
 		if (cursor[direction]()) {
 			editor.setSelection(cursor.from(), cursor.to());
 		}
@@ -664,7 +664,7 @@ jQuery.extend(Mgly.CodeMirrorDiffView.prototype, {
 		}
 		this.merge_rhs_button = jQuery(merge_rhs_button);
 		this.merge_lhs_button = jQuery(merge_lhs_button);
-		
+
 		// create the textarea and canvas elements
 		var height = this.settings.editor_height;
 		var width = this.settings.editor_width;
