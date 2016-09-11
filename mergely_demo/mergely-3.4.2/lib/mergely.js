@@ -435,12 +435,18 @@ jQuery.extend(Mgly.CodeMirrorDiffView.prototype, {
                 self.find('.mergely-canvas').css({ height: content_height + 'px' });
                 self.find('.mergely-column textarea').css({ width: content_width + 'px' });
                 self.css({ width: w, height: h, clear: 'both' });
+                console.log("======================");
+                console.log(self.css("display"));
+                console.log("======================");
                 if (self.css('display') == 'none') {
                     if (this.fadein != false) self.fadeIn(this.fadein);
                     else self.show();
                     if (this.loaded) this.loaded();
                 }
                 if (this.resized) this.resized();
+                console.log("**********************");
+                console.log(self.css("display"));
+                console.log("**********************");
             },
             _debug: '', //scroll,draw,calc,diff,markup,change
             resized: function() { }
