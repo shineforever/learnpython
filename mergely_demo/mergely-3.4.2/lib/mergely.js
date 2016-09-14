@@ -435,18 +435,12 @@ jQuery.extend(Mgly.CodeMirrorDiffView.prototype, {
                 self.find('.mergely-canvas').css({ height: content_height + 'px' });
                 self.find('.mergely-column textarea').css({ width: content_width + 'px' });
                 self.css({ width: w, height: h, clear: 'both' });
-                console.log("======================");
-                console.log(self.css("display"));
-                console.log("======================");
-                if (self.css('display') == 'none') {
-                    if (this.fadein != false) self.fadeIn(this.fadein);
-                    else self.show();
-                    if (this.loaded) this.loaded();
-                }
+                // my change start
+                if (this.loaded) this.loaded();
+                self.siblings().hide();
+                self.show();
+                // my change end
                 if (this.resized) this.resized();
-                console.log("**********************");
-                console.log(self.css("display"));
-                console.log("**********************");
             },
             _debug: '', //scroll,draw,calc,diff,markup,change
             resized: function() { }
@@ -553,7 +547,7 @@ jQuery.extend(Mgly.CodeMirrorDiffView.prototype, {
                 this.element.find('.mergely-margin').css({display: 'block'});
             }
             else {
-                this.element.find('.mergely-margin').css({display: 'none'});
+                this.element.find('.mergely-margin').css({display: 'hide'});
             }
         }
         var le, re;
@@ -645,7 +639,7 @@ jQuery.extend(Mgly.CodeMirrorDiffView.prototype, {
         return d.normal_form();
     },
     bind: function(el) {
-        this.element.hide();//hide
+        // this.element.hide();//hide
         this.id = jQuery(el).attr('id');
         this.changed_timeout = null;
         this.chfns = {};

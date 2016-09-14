@@ -32,12 +32,12 @@
     <script>
         function mergelyInit(theID, theData) {
             console.log("begin in func:mergelyInit ...");
-            var g = $("#"+theID);
+            var g = $(theID);
             g.mergely({
                 cmsettings: {
                     lineNumbers: true
                 },
-                autoresize: 'false',
+                autoresize: 'true',
                 width: 'auto',
                 height: 600,
                 lhs: function (setValue) {
@@ -59,19 +59,32 @@
     <!--</script>-->
     <script>
         var data1 = 'home\nhome\nthe quick red fox\njumped over the hairy dog';
-        var data2 = 'profile\nprofile\nthe quick red fox\njumped over the hairy dog';
-        var data3 = 'message\nmessage\nthe quick red fox\njumped over the hairy dog';
-        var data4 = 'settings\nsettings\nthe quick red fox\njumped over the hairy dog';
-        $(document).ready(function () {
-            console.log($("#home"));
-            console.log($("#profile"));
-            console.log($("#messages"));
-            console.log($("#settings"));
-            mergelyInit("home", data1);
-            mergelyInit("profile", data2);
-            mergelyInit("messages", data3);
-            mergelyInit("settings", data4);
-        });
+        $(".nav, .nav-tabs").delegate("a", "click", function () {
+            var theID = $(this).attr("href");
+            if (!$(theID).hasClass("initedFlag")) {
+                console.log("haven't inited");
+                mergelyInit(theID, data1);  // 初始化diff框
+                $(theID).addClass("initedFlag");
+            }
+            $(theID).siblings().hide();
+            $(theID).show();
+        })
     </script>
+    <!--<script>-->
+        <!--var data1 = 'home\nhome\nthe quick red fox\njumped over the hairy dog';-->
+        <!--var data2 = 'profile\nprofile\nthe quick red fox\njumped over the hairy dog';-->
+        <!--var data3 = 'message\nmessage\nthe quick red fox\njumped over the hairy dog';-->
+        <!--var data4 = 'settings\nsettings\nthe quick red fox\njumped over the hairy dog';-->
+        <!--$(document).ready(function () {-->
+            <!--console.log($("#home"));-->
+            <!--console.log($("#profile"));-->
+            <!--console.log($("#messages"));-->
+            <!--console.log($("#settings"));-->
+            <!--mergelyInit("#home", data1);-->
+            <!--mergelyInit("#profile", data2);-->
+            <!--mergelyInit("#messages", data3);-->
+            <!--mergelyInit("#settings", data4);-->
+        <!--});-->
+    <!--</script>-->
 </body>
 </html>

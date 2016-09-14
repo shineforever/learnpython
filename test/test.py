@@ -28,5 +28,11 @@ import re
 # print(p.findall('abAB'))
 
 # 匹配字符串^ab
-p1 = re.compile(r'\^ab')
-print(p1.findall('^abAB  ^abc ccc ABc'))
+# p1 = re.compile(r'\^ab')
+# print(p1.findall('^abAB  ^abc ccc ABc'))
+
+# 按行打印
+with open("test", "r+") as f:
+    for line in f:
+        print(f.tell())
+        # print(line.strip())
