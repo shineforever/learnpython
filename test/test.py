@@ -32,7 +32,14 @@ import re
 # print(p1.findall('^abAB  ^abc ccc ABc'))
 
 # 按行打印
-with open("test", "r+") as f:
-    for line in f:
-        print(f.tell())
-        # print(line.strip())
+# with open("test", "r+") as f:
+#     for line in f:
+#         print(f.tell())
+#         print(line.strip())
+
+# 写入测试
+l = ["A", "B", "C"]
+l2 = ["张", "三", "李", "四"]
+with open("test", "wb") as f:
+    f.write("".join(l2) + "\n")
+
