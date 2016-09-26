@@ -7,6 +7,7 @@ import string
 import random
 import os
 import re
+import json
 
 # print(string.ascii_letters)
 # print(string.printable)
@@ -38,8 +39,16 @@ import re
 #         print(line.strip())
 
 # 写入测试
-l = ["A", "B", "C"]
-l2 = ["张", "三", "李", "四"]
-with open("test", "wb") as f:
-    f.write("".join(l2) + "\n")
+# l = ["A", "B", "C"]
+# l2 = ["张", "三", "李", "四"]
+# with open("test.json", "") as f:
+#     acc = json.load(f)
+#     ind = acc["user"].index("zhangsan")
+#     acc["locked_flag"][ind] = 1
+#     json.dump(acc, f, ensure_ascii=False)
+
+import menu_demo
+
+
+
 

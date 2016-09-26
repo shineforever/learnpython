@@ -1,0 +1,14 @@
+{
+    "zhangsan": {
+        "name": "zhangsan",
+        "pwd": "827ccb0eea8a706c4c34a16891f84e7b",
+        "balance": 10000,
+        "locked_flag": 1
+    },
+    "lisi": {
+        "name": "lisi",
+        "pwd": "",
+        "balance": 20000,
+        "locked_flag": 0
+    }
+}
