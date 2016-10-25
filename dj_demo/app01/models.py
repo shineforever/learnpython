@@ -4,7 +4,7 @@ from django.db import models
 
 
 class Publisher(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=30, verbose_name=u"出版社名称")
     address = models.CharField(max_length=30)
     city = models.CharField(max_length=60)
     state_province = models.CharField(max_length=30)
@@ -31,10 +31,10 @@ class Author(models.Model):
 
 
 class Book(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, verbose_name=u"书名")
     authors = models.ManyToManyField(Author)
     publisher = models.ForeignKey(Publisher)
-    publication_date = models.DateField()
+    publication_date = models.DateField(verbose_name=u"出版日期")
 
     def __str__(self):
         return "《{}》".format(self.title)
